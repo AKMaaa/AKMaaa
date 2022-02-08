@@ -41,7 +41,7 @@ Here are some ideas to get you started:
   <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
 </p>
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=monokai&column=7&hide_border=true)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=monokai&column=7&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
 [![](https://raw.githubusercontent.com/AKMaaa/AKMaaa/main/profile-summary-card-output/monokai/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 [![](https://raw.githubusercontent.com/AKMaaa/AKMaaa/main/profile-summary-card-output/monokai/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/AKMaaa/AKMaaa/main/profile-summary-card-output/monokai/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 [![](https://raw.githubusercontent.com/AKMaaa/AKMaaa/main/profile-summary-card-output/monokai/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/AKMaaa/AKMaaa/main/profile-summary-card-output/monokai/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
