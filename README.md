@@ -34,7 +34,7 @@ Here are some ideas to get you started:
 </p>
 </p>
 
-
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=AKMaaa&theme=monokai&hide_border=true&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
 
 <p align="left"> 
   <img alt="Top Langs" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&layout=compact&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
