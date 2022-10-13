@@ -27,11 +27,6 @@ Here are some ideas to get you started:
   <a href="https://github.com/AKMaaa">
     <img height="20" src="https://img.shields.io/github/followers/AKMaaa?label=follow&logo=github&style=flat" />
   </a>
- <h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://twitter.com/godpotbot" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="godpotbot" height="30" width="40" /></a>
-<a href="https://instagram.com/godpotbot" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="godpotbot" height="30" width="40" /></a>
-</p>
 </p>
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=AKMaaa&theme=monokai&hide_border=true&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
