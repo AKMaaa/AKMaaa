@@ -33,7 +33,7 @@ Here are some ideas to get you started:
 
 <p align="left"> 
   <img alt="Top Langs" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&layout=compact&langs_count=10&count-private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
-  <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true"/>
+  <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&count-private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true"/>
 </p>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=monokai&column=7&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
