@@ -32,8 +32,8 @@ Here are some ideas to get you started:
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=AKMaaa&theme=monokai&hide_border=true&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
 
 <p align="left"> 
-  <img alt="Top Langs" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&layout=compact&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
-  <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
+  <img alt="Top Langs" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true" />
+  <img alt="github stats" height="150px" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&count_private=true&show_icons=true&show_icons=true&theme=monokai&hide_border=true/>
 </p>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=monokai&column=7&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
