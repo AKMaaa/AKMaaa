@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-- 🌱 I’m currently learning **JavaScript / CSS / HTML / JavaScript / Java / Python / p5.js / Processing / GLSL**
+- 🌱 I’m currently learning ** / HTML・CSS・SCSS / JavaScript・Vue・React / Java・Processing / Python / GLSL / Go / Kotlin**
 
 - ⚡ Fun fact **CreativeCoding**
 
