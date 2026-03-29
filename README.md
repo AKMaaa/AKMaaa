@@ -53,9 +53,18 @@ Let's build something amazing together! 💖
 📈 GitHub Statistics & Activity:
 </pre>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&theme=ambient_gradient&hide_border=true&count_private=true" alt="GitHub Stats" />
-</div>
+<p align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&theme=ambient_gradient&hide_border=true&count_private=true" alt="Akira Maeda's GitHub stats" />
+  </a>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&layout=compact&langs_count=8&card_width=320&theme=ambient_gradient&hide_border=true" alt="Top languages" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>Stats by <a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a></sub>
+</p>
 
 ## 🎯 Experience & Background 🎯
 
@@ -68,31 +77,34 @@ Let's build something amazing together! 💖
 
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
-| **Engineer** | OpenHeart, Inc. | 2025.5 - Present | AI画像処理技術開発 |
-| **Trainee** | Simplex Holdings | 2025.2 - Present | Financial Technology |
+| **スタッフ** | [NPO法人 学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | 教育デザイン・AIリテラシー推進など |
+| **Trainee** | [Simplex Holdings](https://www.simplex.holdings/) | 2025.2 - Present | Financial Technology |
+
+### 💼 Experience（職歴・インターン）
+
+| Position | Company | Period | Description |
+|----------|---------|--------|-------------|
+| **Web Engineer** | [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | |
+| **Engineer** | [OpenHeart, Inc.](https://openheart.co.jp/) | 2025.5 - 2026.3 | AI画像処理技術開発 |
+| **UI Designer** | [サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | |
+| **Software Engineer** | [Sony](https://www.sony.com/) | 2023.2 | |
+| **Campus Leader** | [Notion](https://www.notion.so/) | 2024.8 - 2025.7 | |
+| **Engineer** | [シンプレクス](https://www.simplex.inc/) | 2024.9 | |
+| **Web Engineer** | [NAVITIME](https://www.navitime.co.jp/) | 2022.9 | |
+| **Designer** | [IBM](https://www.ibm.com/jp-ja) | 2022.9 | |
+| **Business Consultant** | [船井総研](https://www.funaisoken.co.jp/) | 2022.8 | |
 
 ### 🎓 Education
 
 | Degree | Institution | Period | Field | Achievement |
 |--------|-------------|--------|-------|-------------|
-| **Master's Degree** | 公立はこだて未来大学大学院 | 2024.4 - 2026.3 | システム情報科学・メディアデザイン | 🏆 日本教育工学会 優秀発表賞 |
-
-### 🚀 All Internships
-
-| Position | Company | Period |
-|----------|---------|--------|
-| **UI Designer** | サイバーエージェント | 2023.3 |
-| **Software Engineer** | Sony | 2023.2 |
-| **Campus Leader** | Notion | 2024.8-2025.7 |
-| **Engineer** | シンプレクス | 2024.9 |
-| **Web Engineer** | NAVITIME | 2022.9 |
-| **Designer** | IBM | 2022.9 |
-| **Business Consultant** | 船井総研 | 2022.8 |
+| **Master's Degree** | 公立はこだて未来大学大学院 | 2024.4 - 2026.3 | システム情報科学・メディアデザイン | 🏆 日本教育工学会 優秀発表賞（2025.3・2026.3） |
 
 ### 🏆 Awards & Achievements
 
 | Award | Organization | Date |
 |-------|-------------|------|
+| 🏆 **優秀発表賞** | 日本教育工学会 | 2026.3 |
 | 🏆 **優秀発表賞** | 日本教育工学会 | 2025.3 |
 | 🥇 **最優秀賞** | P2HACKS 2022 | 2022.12 |
 
@@ -104,29 +116,22 @@ Let's build something amazing together! 💖
 </pre>
 
 <div align="center">
-  <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/track/0zREAcrf30zc0oKx42pdod?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-
-## 🧩 Puzzle Game 🧩
-
-<pre>
-<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./puzzle-game.sh</span>
-🎮 サイバーパズルチャレンジ:
-</pre>
-
-<div align="center">
-
-### 💡 暗号を解読せよ
-
-> 「私は常に未来へと進むが、決して動かない。私は何？」
-
-<details>
-<summary><strong>答えを見る</strong></summary>
-
-時計の針 ⏰
-
-</details>
-
+  <table>
+    <tr>
+      <td align="center" valign="top" width="33%">
+        <a href="https://youtu.be/o2X8Kpn34_M"><img src="data/litty.png" alt="litty" width="240" style="border-radius: 12px;" /></a>
+        <br /><strong>litty</strong>
+      </td>
+      <td align="center" valign="top" width="33%">
+        <a href="https://youtu.be/ED-kdgPsnPI"><img src="data/badhop.jpg" alt="badhop" width="240" style="border-radius: 12px;" /></a>
+        <br /><strong>badhop</strong>
+      </td>
+      <td align="center" valign="top" width="33%">
+        <a href="https://youtu.be/VerIQQtPGUM"><img src="data/999dobby.png" alt="999dobby" width="240" style="border-radius: 12px;" /></a>
+        <br /><strong>999dobby</strong>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ## 💌 Contact 💌
