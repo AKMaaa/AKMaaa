@@ -45,27 +45,6 @@ Let's build something amazing together! 💖
 🔧 Tools: VSCode, Figma, Slack, Trello, Notion
 </pre>
 
-## 📊 GitHub Analytics 📊
-
-<pre>
-<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./github-analytics.sh</span>
-📊 Profile Views: <img src="https://komarev.com/ghpvc/?username=AKMaaa&label=Profile%20views&color=ff69b4&style=flat" alt="Profile views" />
-📈 GitHub Statistics & Activity:
-</pre>
-
-<p align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&theme=ambient_gradient&hide_border=true&count_private=true" alt="Akira Maeda's GitHub stats" />
-  </a>
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AKMaaa&layout=compact&langs_count=8&card_width=320&theme=ambient_gradient&hide_border=true" alt="Top languages" />
-  </a>
-</p>
-
-<p align="center">
-  <sub>Stats by <a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a></sub>
-</p>
-
 ## 🎯 Experience & Background 🎯
 
 <pre>
@@ -78,7 +57,7 @@ Let's build something amazing together! 💖
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
 | **スタッフ** | [NPO法人 学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | 教育デザイン・AIリテラシー推進など |
-| **Trainee** | [Simplex Holdings](https://www.simplex.holdings/) | 2025.2 - Present | Financial Technology |
+| **スタッフ** | [Simplex Holdings](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
 
 ### 💼 Experience（職歴・インターン）
 
@@ -99,6 +78,18 @@ Let's build something amazing together! 💖
 | Degree | Institution | Period | Field | Achievement |
 |--------|-------------|--------|-------|-------------|
 | **Master's Degree** | 公立はこだて未来大学大学院 | 2024.4 - 2026.3 | システム情報科学・メディアデザイン | 🏆 日本教育工学会 優秀発表賞（2025.3・2026.3） |
+
+### 🔬 Research
+
+<pre>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">cat research.txt</span>
+📚 議論を基盤とした学習 × LLMエージェント / AIリテラシー教育
+🔗 researchmap: <a href="https://researchmap.jp/akira-maeda">researchmap.jp/akira-maeda</a>
+</pre>
+
+- **LLMエージェント** の役割設計・UI/UX
+- ワークショップ・科学コミュニケーションを通じた **AIリテラシー教育** の開発と実践
+- 生成AIの授業利用・キャリア教育など、**教育工学 / ヒューマンインタラクション** の応用
 
 ### 🏆 Awards & Achievements
 
@@ -139,6 +130,7 @@ Let's build something amazing together! 💖
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./contact.sh</span>
 💖 GitHub: <a href="https://github.com/AKMaaa">@AKMaaa</a>
+🔬 researchmap: <a href="https://researchmap.jp/akira-maeda">researchmap.jp/akira-maeda</a>
 🐦 Twitter: <a href="https://twitter.com/AKMaaa">@AKMaaa</a>
 💼 LinkedIn: <a href="https://www.linkedin.com/in/akitch-maeda-akira/">akitch-maeda-akira</a>
 🎯 Wantedly: <a href="https://www.wantedly.com/id/akira_maeda_q">akira_maeda_q</a>
