@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../library/format';
+import { formatStack, getWorks } from '../library/microcms';
+
+const items = await getWorks({ orders: '-date' });
+---
+
+<BaseLayout
+	title="works | Maeda Akira"
+	description="Maeda Akira のアプリケーション作品"
+	current="works"
+	pageLabel="works"
+>
+	{
+		items.length === 0 ? (
+			<p class="empty">投稿がまだありません</p>
+		) : (
+			<ul class="entry-list">
+				{items.map((item) => {
+					const stack = formatStack(item.stack);
+
+					return (
+						<li class="entry">
+							{item.date && (
+								<p class="entry-meta">
+									<time datetime={item.date}>{formatDate(item.date)}</time>
+								</p>
+							)}
+							<h2 class="entry-title">{item.title}</h2>
+							{item.summary && <p class="entry-body">{item.summary}</p>}
+							{stack && <p class="entry-sub">{stack}</p>}
+							{(item.url || item.repo) && (
+								<p class="entry-links">
+									{item.url && (
+										<a href={item.url} target="_blank" rel="noopener noreferrer">
+											site
+										</a>
+									)}
+									{item.repo && (
+										<a href={item.repo} target="_blank" rel="noopener noreferrer">
+											repository
+										</a>
+									)}
+								</p>
+							)}
+						</li>
+					);
+				})}
+			</ul>
+		)
+	}
+</BaseLayout>

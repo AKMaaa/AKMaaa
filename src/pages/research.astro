@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../library/format';
+import { getResearch } from '../library/microcms';
+
+const items = await getResearch({ orders: '-date' });
+const researchmapUrl = 'https://researchmap.jp/akira-maeda';
+---
+
+<BaseLayout
+	title="research | Maeda Akira"
+	description="Maeda Akira の学会発表・研究・論文"
+	current="research"
+	pageLabel="research"
+>
+	<p class="page-lead">
+		科学コミュニケーション、教育工学、情報工学。AIリテラシーや対話型ワークショップ、LLMエージェントのデザインなどに取り組んでいます。詳細な業績一覧は{' '}
+		<a href={researchmapUrl} target="_blank" rel="noopener noreferrer">researchmap</a>
+		{' '}を参照してください。
+	</p>
+
+	{
+		items.length === 0 ? (
+			<p class="empty">投稿がまだありません（microCMS の research API を作成するとここに表示されます）</p>
+		) : (
+			<ul class="entry-list">
+				{items.map((item) => {
+					const sub = [item.venue, item.role].filter(Boolean).join(' / ');
+
+					return (
+						<li class="entry">
+							<p class="entry-meta">
+								{item.date ? <time datetime={item.date}>{formatDate(item.date)}</time> : null}
+							</p>
+							<h2 class="entry-title">{item.title}</h2>
+							{sub && <p class="entry-sub">{sub}</p>}
+							{item.summary && <div class="entry-body" set:html={item.summary} />}
+							{item.link && (
+								<p class="entry-links">
+									<a href={item.link} target="_blank" rel="noopener noreferrer">
+										関連リンク
+									</a>
+								</p>
+							)}
+						</li>
+					);
+				})}
+			</ul>
+		)
+	}
+</BaseLayout>

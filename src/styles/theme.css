@@ -1,0 +1,183 @@
+@import '@picocss/pico/css/pico.min.css';
+
+:root,
+[data-theme='light'] {
+	--font-serif:
+		'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+	--font-en: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+
+	--bg: #ffffff;
+	--surface: #ffffff;
+	--text: #1c1917;
+	--text-secondary: #57534e;
+	--muted: #8a847c;
+	--line: #eceae6;
+	--line-strong: #ddd8d0;
+	--focus: #1c1917;
+	--side-width: 17rem;
+	--ease: 180ms ease;
+
+	--pico-font-family: var(--font-serif);
+	--pico-font-family-monospace: var(--font-en);
+	--pico-font-size: 100%;
+	--pico-line-height: 1.85;
+	--pico-font-weight: 400;
+	--pico-background-color: #ffffff;
+	--pico-color: var(--text);
+	--pico-text-selection-color: rgba(28, 25, 23, 0.12);
+	--pico-muted-color: var(--muted);
+	--pico-muted-border-color: var(--line);
+	--pico-primary: #2c2825;
+	--pico-primary-background: #2c2825;
+	--pico-primary-underline: rgba(44, 40, 37, 0.45);
+	--pico-primary-hover: #1c1917;
+	--pico-primary-hover-background: #1c1917;
+	--pico-primary-focus: rgba(44, 40, 37, 0.18);
+	--pico-primary-inverse: #ffffff;
+	--pico-secondary: var(--text-secondary);
+	--pico-secondary-background: #f5f4f2;
+	--pico-secondary-hover-background: #ebe9e6;
+	--pico-contrast: var(--text);
+	--pico-contrast-background: #ffffff;
+	--pico-form-element-background-color: #ffffff;
+	--pico-form-element-border-color: var(--line-strong);
+	--pico-form-element-color: var(--text);
+	--pico-form-element-placeholder-color: var(--muted);
+	--pico-form-element-spacing-vertical: 0.75rem;
+	--pico-form-element-spacing-horizontal: 0.9rem;
+	--pico-border-radius: 0.12rem;
+	--pico-typography-spacing-vertical: 1.15rem;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: none;
+	min-height: 100%;
+	background: #ffffff;
+	color: var(--text);
+	font-family: var(--font-serif);
+	font-weight: 400;
+	line-height: 1.85;
+	-webkit-font-smoothing: antialiased;
+}
+
+main,
+main.container,
+main.container-fluid {
+	max-width: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	opacity: 0.5;
+	color: inherit;
+}
+
+a:focus-visible {
+	outline: 1px solid var(--focus);
+	outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--text);
+	font-weight: 500;
+}
+
+.contact-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 3rem;
+}
+
+.contact-intro a {
+	font-family: var(--font-en);
+	font-weight: 300;
+	letter-spacing: 0.02em;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	width: fit-content;
+}
+
+.contact-intro .mail {
+	font-size: 1.15rem;
+}
+
+.contact-intro .social {
+	font-size: 0.95rem;
+	color: var(--text-secondary);
+}
+
+.contact-form {
+	max-width: 26rem;
+	display: grid;
+	gap: 1.5rem;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+}
+
+.contact-form label {
+	display: grid;
+	gap: 0.5rem;
+	margin: 0;
+}
+
+.contact-form label > span {
+	font-family: var(--font-en);
+	font-size: 0.82rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	color: var(--muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	border-width: 0 0 1px;
+	border-style: solid;
+	border-color: var(--line-strong);
+	background: transparent;
+	box-shadow: none;
+}
+
+.contact-form textarea {
+	min-height: 9rem;
+	resize: vertical;
+}
+
+.contact-form .actions {
+	margin-top: 0.5rem;
+}
+
+.contact-form button[type='submit'] {
+	width: auto;
+	margin: 0;
+	padding: 0.55rem 1.4rem;
+	border-radius: 0;
+}
+
+.contact-form .honey {
+	position: absolute !important;
+	left: -10000px !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}

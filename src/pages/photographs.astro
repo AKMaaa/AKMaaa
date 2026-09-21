@@ -1,0 +1,31 @@
+---
+import { photographs } from '../data/photographs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="photographs | Maeda Akira"
+	description="Maeda Akira の写真"
+	current="photographs"
+	pageLabel="photographs"
+>
+	<p class="page-lead">趣味で撮った写真です。仮画像を置いています。</p>
+
+	<ul class="photo-grid">
+		{
+			photographs.map((photo) => (
+				<li class="photo-item">
+					<figure>
+						<img src={photo.src} alt={photo.alt} width="1200" height="800" loading="lazy" />
+						<figcaption class="photo-caption">
+							<strong>{photo.title}</strong>
+							<span>
+								{[photo.place, photo.year].filter(Boolean).join(' / ')}
+							</span>
+						</figcaption>
+					</figure>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import { hobbies } from '../data/hobbies';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="hobbies | Maeda Akira"
+	description="Maeda Akira の趣味"
+	current="hobbies"
+	pageLabel="hobbies"
+>
+	<ul class="entry-list hobby-list">
+		{
+			hobbies.map((item) => (
+				<li class="entry">
+					<h2 class="entry-title">{item.title}</h2>
+					<p class="entry-body">{item.summary}</p>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>

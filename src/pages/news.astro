@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../library/format';
+import { getNews } from '../library/microcms';
+
+const items = await getNews();
+---
+
+<BaseLayout
+	title="news | Maeda Akira"
+	description="Maeda Akira の短いお知らせ・活動報告"
+	current="news"
+	pageLabel="news"
+>
+	{
+		items.length === 0 ? (
+			<p class="empty">投稿がまだありません</p>
+		) : (
+			<ul class="entry-list">
+				{items.map((item) => (
+					<li class="entry">
+						<p class="entry-meta">
+							{item.date ? (
+								<time datetime={item.date}>{formatDate(item.date)}</time>
+							) : null}
+						</p>
+						<h2 class="entry-title">{item.title}</h2>
+						{item.body && <div class="entry-body" set:html={item.body} />}
+						{item.link && (
+							<p class="entry-links">
+								<a href={item.link} target="_blank" rel="noopener noreferrer">
+									関連リンク
+								</a>
+							</p>
+						)}
+					</li>
+				))}
+			</ul>
+		)
+	}
+</BaseLayout>
