@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../library/format';
+import { getNews, hasMicroCMSCredentials } from '../../library/microcms';
+
+const items = await getNews();
+const emptyMessage = hasMicroCMSCredentials()
+	? '投稿がまだありません'
+	: 'microCMS の認証情報が未設定です';
+---
+
+<BaseLayout
+	title="news | Maeda Akira"
+	description="Maeda Akira の短いお知らせ・活動報告"
+	current="news"
+	pageLabel="news"
+>
+	{
+		items.length === 0 ? (
+			<p class="empty">{emptyMessage}</p>
+		) : (
+			<ul class="news-index">
+				{items.map((item) => (
+					<li>
+						<a class="news-index-item" href={`/news/${item.id}/`}>
+							<span class="news-index-date">
+								{item.date ? (
+									<time datetime={item.date}>{formatDate(item.date)}</time>
+								) : (
+									<span>—</span>
+								)}
+							</span>
+							<span class="news-index-title">{item.title}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		)
+	}
+</BaseLayout>

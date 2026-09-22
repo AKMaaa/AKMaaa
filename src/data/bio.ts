@@ -1,4 +1,4 @@
-export type CareerType = 'employment' | 'internship' | 'side' | 'education';
+export type CareerType = 'employment' | 'parttime' | 'internship' | 'side' | 'education';
 
 export type CareerItem = {
 	period: string;
@@ -34,7 +34,8 @@ export type SocialLink = {
 
 export const careerTypeLabels: Record<'all' | CareerType, string> = {
 	all: 'すべて',
-	employment: '就職',
+	employment: '新卒入社',
+	parttime: 'アルバイト',
 	internship: 'インターン',
 	side: 'サイド',
 	education: '学歴',
@@ -43,6 +44,7 @@ export const careerTypeLabels: Record<'all' | CareerType, string> = {
 export const careerFilters: Array<'all' | CareerType> = [
 	'all',
 	'employment',
+	'parttime',
 	'internship',
 	'side',
 	'education',
@@ -64,12 +66,11 @@ export const career: CareerItem[] = [
 		logoPath: '/images/logos/simplex-holdings.png',
 		logoDomain: 'simplex.holdings',
 		type: 'employment',
-		note: 'Fintech',
 	},
 	{
 		period: '2023.10 — Present',
 		role: '広報 / エンジニア',
-		org: 'NPO法人 学び足しデザイン工房（aiEDU JAPAN）',
+		org: '特定非営利活動法人 学び足しデザイン工房',
 		orgUrl: 'https://upskillingjp.org/',
 		logoPath: '/images/logos/upskilling.png',
 		logoDomain: 'upskillingjp.org',
@@ -82,22 +83,21 @@ export const career: CareerItem[] = [
 		orgUrl: 'https://www.hakoreco.com/',
 		logoPath: '/images/logos/hakoreco.svg',
 		logoDomain: 'hakoreco.com',
-		type: 'employment',
+		type: 'parttime',
 	},
 	{
 		period: '2025.5 — 2026.3',
 		role: 'Engineer',
-		org: 'OpenHeart, Inc.',
+		org: '株式会社オープンハート',
 		orgUrl: 'https://openheart.co.jp/',
 		logoPath: '/images/logos/openheart.svg',
 		logoDomain: 'openheart.co.jp',
-		type: 'side',
-		note: 'AI画像処理',
+		type: 'parttime',
 	},
 	{
 		period: '2024.8 — 2025.7',
 		role: 'Campus Leader',
-		org: 'Notion',
+		org: 'Notion Labs, Inc.',
 		orgUrl: 'https://www.notion.so/',
 		logoPath: '/images/logos/notion.png',
 		logoDomain: 'notion.so',
@@ -106,26 +106,25 @@ export const career: CareerItem[] = [
 	{
 		period: '2025.2 — 2026.3',
 		role: 'Trainee',
-		org: 'Simplex Holdings',
+		org: 'シンプレクス・ホールディングス株式会社',
 		orgUrl: 'https://www.simplex.holdings/',
 		logoPath: '/images/logos/simplex-holdings.png',
 		logoDomain: 'simplex.holdings',
 		type: 'internship',
-		note: 'Financial Technology',
 	},
 	{
 		period: '2024.9',
 		role: 'Engineer',
-		org: 'シンプレクス',
-		orgUrl: 'https://www.simplex.inc/',
-		logoPath: '/images/logos/simplex.png',
-		logoDomain: 'simplex.inc',
+		org: 'シンプレクス・ホールディングス株式会社',
+		orgUrl: 'https://www.simplex.holdings/',
+		logoPath: '/images/logos/simplex-holdings.png',
+		logoDomain: 'simplex.holdings',
 		type: 'internship',
 	},
 	{
 		period: '2023.3',
 		role: 'UI Designer',
-		org: 'サイバーエージェント',
+		org: '株式会社サイバーエージェント',
 		orgUrl: 'https://www.cyberagent.co.jp/',
 		logoPath: '/images/logos/cyberagent.png',
 		logoDomain: 'cyberagent.co.jp',
@@ -134,16 +133,16 @@ export const career: CareerItem[] = [
 	{
 		period: '2023.2',
 		role: 'Software Engineer',
-		org: 'Sony',
-		orgUrl: 'https://www.sony.com/',
+		org: 'ソニーセミコンダクタソリューションズ株式会社',
+		orgUrl: 'https://www.sony-semiconductor.co.jp/',
 		logoPath: '/images/logos/sony.png',
-		logoDomain: 'sony.com',
+		logoDomain: 'sony-semiconductor.co.jp',
 		type: 'internship',
 	},
 	{
 		period: '2022.9',
 		role: 'Web Engineer',
-		org: 'NAVITIME',
+		org: '株式会社ナビタイムジャパン',
 		orgUrl: 'https://www.navitime.co.jp/',
 		logoPath: '/images/logos/navitime.png',
 		logoDomain: 'navitime.co.jp',
@@ -152,7 +151,7 @@ export const career: CareerItem[] = [
 	{
 		period: '2022.9',
 		role: 'Designer',
-		org: 'IBM',
+		org: '日本アイ・ビー・エム株式会社',
 		orgUrl: 'https://www.ibm.com/jp-ja',
 		logoPath: '/images/logos/ibm.png',
 		logoDomain: 'ibm.com',
@@ -161,7 +160,7 @@ export const career: CareerItem[] = [
 	{
 		period: '2022.8',
 		role: 'Business Consultant',
-		org: '船井総研',
+		org: '株式会社船井総合研究所',
 		orgUrl: 'https://www.funaisoken.co.jp/',
 		logoPath: '/images/logos/funai.png',
 		logoDomain: 'funaisoken.co.jp',
@@ -186,14 +185,6 @@ export const career: CareerItem[] = [
 		logoDomain: 'fun.ac.jp',
 		type: 'education',
 		note: '情報デザインコース',
-	},
-	{
-		period: '2016.4 — 2019.3',
-		role: '総合科学科',
-		org: '大阪府立泉北高等学校',
-		orgUrl: 'https://www.osaka-c.ed.jp/senboku/',
-		logoDomain: 'osaka-c.ed.jp',
-		type: 'education',
 	},
 ];
 

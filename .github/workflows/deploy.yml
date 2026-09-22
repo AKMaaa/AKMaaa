@@ -25,6 +25,9 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+        # GitHub → Settings → Secrets and variables → Actions に
+        # MICROCMS_SERVICE_DOMAIN / MICROCMS_API_KEY を登録しないと
+        # 本番の /news は空になります。
 
   deploy:
     needs: build

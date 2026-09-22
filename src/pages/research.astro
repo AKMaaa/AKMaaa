@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { formatDate } from '../library/format';
 import { getResearch } from '../library/microcms';
 
-const items = await getResearch({ orders: '-date' });
+const items = await getResearch();
 const researchmapUrl = 'https://researchmap.jp/akira-maeda';
 ---
 
@@ -25,12 +25,16 @@ const researchmapUrl = 'https://researchmap.jp/akira-maeda';
 		) : (
 			<ul class="entry-list">
 				{items.map((item) => {
-					const sub = [item.venue, item.role].filter(Boolean).join(' / ');
+					const sub = [item.venue, item.role, item.author]
+						.filter(Boolean)
+						.join(' / ');
 
 					return (
 						<li class="entry">
 							<p class="entry-meta">
-								{item.date ? <time datetime={item.date}>{formatDate(item.date)}</time> : null}
+								{item.date ? (
+									<time datetime={item.date}>{formatDate(item.date)}</time>
+								) : null}
 							</p>
 							<h2 class="entry-title">{item.title}</h2>
 							{sub && <p class="entry-sub">{sub}</p>}

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../library/format';
+import {
+	getNews,
+	getNewsDetail,
+	getNewsNeighbors,
+} from '../../library/microcms';
+
+export async function getStaticPaths() {
+	const items = await getNews();
+	return items.map((item) => ({
+		params: { id: item.id },
+	}));
+}
+
+const { id } = Astro.params;
+
+if (!id) {
+	return Astro.redirect('/news/');
+}
+
+const item = await getNewsDetail(id);
+
+if (!item) {
+	return Astro.redirect('/news/');
+}
+
+const { newer, older } = await getNewsNeighbors(id);
+---
+
+<BaseLayout
+	title={`${item.title} | news | Maeda Akira`}
+	description={item.title}
+	current="news"
+	pageLabel="news"
+>
+	<article class="article">
+		<header class="article-header">
+			<p class="entry-meta">
+				{
+					item.date ? (
+						<time datetime={item.date}>{formatDate(item.date)}</time>
+					) : null
+				}
+				{
+					item.category ? (
+						<>
+							<span class="article-meta-sep" aria-hidden="true">
+								/
+							</span>
+							<span>{item.category}</span>
+						</>
+					) : null
+				}
+			</p>
+			<h1 class="article-title">{item.title}</h1>
+		</header>
+
+		{
+			item.thumbnail && (
+				<figure class="article-hero">
+					<img
+						src={`${item.thumbnail.url}?w=1400`}
+						alt={item.thumbnail.alt || ''}
+						width={item.thumbnail.width ?? 1400}
+						height={item.thumbnail.height ?? 788}
+						loading="eager"
+					/>
+				</figure>
+			)
+		}
+
+		{item.body && <div class="article-body prose" set:html={item.body} />}
+
+		{
+			item.link && (
+				<p class="entry-links">
+					<a href={item.link} target="_blank" rel="noopener noreferrer">
+						関連リンク
+					</a>
+				</p>
+			)
+		}
+
+		<nav class="article-nav" aria-label="前後の記事">
+			{
+				older ? (
+					<a class="article-nav-link is-older" href={`/news/${older.id}/`}>
+						<span class="article-nav-label">older</span>
+						<span class="article-nav-title">{older.title}</span>
+					</a>
+				) : (
+					<span class="article-nav-link is-older is-empty" aria-hidden="true" />
+				)
+			}
+			{
+				newer ? (
+					<a class="article-nav-link is-newer" href={`/news/${newer.id}/`}>
+						<span class="article-nav-label">newer</span>
+						<span class="article-nav-title">{newer.title}</span>
+					</a>
+				) : (
+					<span class="article-nav-link is-newer is-empty" aria-hidden="true" />
+				)
+			}
+		</nav>
+
+		<p class="article-back">
+			<a href="/news/">← news</a>
+		</p>
+	</article>
+</BaseLayout>

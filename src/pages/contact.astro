@@ -1,8 +1,6 @@
 ---
 import { contactEmail } from '../data/bio';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const facebookUrl = 'https://www.facebook.com/profile.php?id=100092407533693';
 ---
 
 <BaseLayout
@@ -13,7 +11,6 @@ const facebookUrl = 'https://www.facebook.com/profile.php?id=100092407533693';
 >
 	<div class="contact-intro">
 		<a class="mail" href={`mailto:${contactEmail}`}>{contactEmail}</a>
-		<a class="social" href={facebookUrl} target="_blank" rel="noopener noreferrer">facebook</a>
 	</div>
 
 	<form

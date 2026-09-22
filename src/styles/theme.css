@@ -9,13 +9,14 @@
 	--bg: #ffffff;
 	--surface: #ffffff;
 	--text: #1c1917;
-	--text-secondary: #57534e;
+	--text-secondary: #444444;
 	--muted: #8a847c;
 	--line: #eceae6;
 	--line-strong: #ddd8d0;
 	--focus: #1c1917;
 	--side-width: 17rem;
 	--ease: 180ms ease;
+	--page-pad-x: clamp(1.75rem, 7vw, 5rem);
 
 	--pico-font-family: var(--font-serif);
 	--pico-font-family-monospace: var(--font-en);
@@ -72,6 +73,46 @@ main.container-fluid {
 	margin: 0;
 }
 
+/* Pico のリストマーカー（四角い点）を全消し。本文だけ後で戻す */
+ul,
+ol,
+menu {
+	list-style: none !important;
+	list-style-type: none !important;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none !important;
+	list-style-type: none !important;
+}
+
+ul li::marker,
+ol li::marker,
+li::marker {
+	content: '' !important;
+	font-size: 0 !important;
+}
+
+/* Pico が li::before で点を付ける場合の保険（本文リストは除外） */
+body :where(ul, ol) > li::before {
+	content: none !important;
+	display: none !important;
+	width: 0 !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: 0 !important;
+}
+
+.prose :where(ul, ol) > li::before {
+	display: inline !important;
+	width: auto !important;
+	height: auto !important;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -79,7 +120,6 @@ a {
 }
 
 a:hover {
-	opacity: 0.5;
 	color: inherit;
 }
 
@@ -115,11 +155,6 @@ h3 {
 	font-size: 1.15rem;
 }
 
-.contact-intro .social {
-	font-size: 0.95rem;
-	color: var(--text-secondary);
-}
-
 .contact-form {
 	max-width: 26rem;
 	display: grid;
@@ -148,6 +183,7 @@ h3 {
 .contact-form textarea {
 	width: 100%;
 	margin: 0;
+	padding: 0.55rem 0;
 	border-radius: 0;
 	border-width: 0 0 1px;
 	border-style: solid;
@@ -162,14 +198,41 @@ h3 {
 }
 
 .contact-form .actions {
-	margin-top: 0.5rem;
+	margin-top: 0.35rem;
+	text-align: left;
 }
 
-.contact-form button[type='submit'] {
-	width: auto;
+.contact-form button[type='submit'],
+.contact-form button[type='submit']:is(:hover, :focus, :active) {
+	all: unset;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	width: fit-content;
 	margin: 0;
-	padding: 0.55rem 1.4rem;
+	padding: 0.2rem 0;
+	font-family: var(--font-en);
+	font-size: 0.95rem;
+	font-weight: 300;
+	letter-spacing: 0.06em;
+	color: var(--text);
+	text-decoration: underline;
+	text-underline-offset: 0.28em;
+	text-decoration-thickness: 1px;
+	background-color: transparent;
+	border: none;
 	border-radius: 0;
+	box-shadow: none;
+	transition: opacity var(--ease);
+}
+
+.contact-form button[type='submit']:hover {
+	opacity: 0.5;
+}
+
+.contact-form button[type='submit']:focus-visible {
+	outline: 1px solid var(--focus);
+	outline-offset: 3px;
 }
 
 .contact-form .honey {
