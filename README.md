@@ -1,13 +1,62 @@
 <div align="center">
 
 # Akira Maeda
-### Full Stack / AI × Education Engineer
+### Agent Design · Education · Engineering · UX
+
+`Agent Design` · `Education` · `Engineering` · `UX` · `LLM Agents` · `AI Literacy`
 
 [![GitHub](https://img.shields.io/badge/GitHub-AKMaaa-FF2D95?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AKMaaa)
-[![researchmap](https://img.shields.io/badge/researchmap-akira--maeda-2DE2E6?style=for-the-badge)](https://researchmap.jp/akira-maeda)
+[![Org](https://img.shields.io/badge/Org-NPO%20Upskilling%20Design%20Studio-2DE2E6?style=for-the-badge)](https://github.com/NPO-Upskilling-Design-Studio)
+[![researchmap](https://img.shields.io/badge/researchmap-akira--maeda-FF2D95?style=for-the-badge)](https://researchmap.jp/akira-maeda)
+[![Achievements](https://img.shields.io/badge/GitHub-Achievements-2DE2E6?style=for-the-badge&logo=github)](https://github.com/AKMaaa?tab=achievements)
 [![Profile views](https://komarev.com/ghpvc/?username=AKMaaa&color=ff2d95&style=for-the-badge)](https://github.com/AKMaaa)
 
-![typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3500&pause=800&color=FF2D95&center=true&vCenter=true&multiline=true&repeat=true&width=680&height=70&lines=Building+AI+%C3%97+Learning+Systems;Web+%2F+Full+Stack+%2F+Design;Hakodate+%E2%86%92+Tokyo+%7C+Open+to+collaborate)
+![typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3500&pause=800&color=FF2D95&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=70&lines=Agent+Design+%C3%97+Education+%C3%97+Engineering+%C3%97+UX;LLM+Agents+for+Discussion-based+Learning;Hakodate+%E2%86%92+Tokyo+%7C+Build+%26+Research)
+
+```mermaid
+%%{init: {
+  "theme": "dark",
+  "themeVariables": {
+    "primaryColor": "#1A1020",
+    "primaryTextColor": "#F4F0F7",
+    "primaryBorderColor": "#FF2D95",
+    "lineColor": "#2DE2E6",
+    "secondaryColor": "#12121A",
+    "tertiaryColor": "#0B0B10",
+    "fontFamily": "ui-monospace, monospace"
+  }
+}}%%
+flowchart LR
+  subgraph FOCUS["✦ FOCUS"]
+    AD["🎯 Agent Design"]
+    ED["📚 Education"]
+    EN["⚙️ Engineering"]
+    UX["✨ UX"]
+  end
+
+  AD --> CORE["🧠 LLM Agents"]
+  ED --> CORE
+  EN --> CORE
+  UX --> CORE
+
+  CORE --> OUT1["💬 Discussion-based Learning"]
+  CORE --> OUT2["🧪 AI Literacy Workshops"]
+  CORE --> OUT3["🖥️ Full-stack Systems"]
+
+  OUT1 --> IMPACT["🚀 Human × AI Coexistence"]
+  OUT2 --> IMPACT
+  OUT3 --> IMPACT
+
+  classDef focus fill:#1A1020,stroke:#FF2D95,stroke-width:2px,color:#F4F0F7
+  classDef core fill:#102028,stroke:#2DE2E6,stroke-width:2px,color:#F4F0F7
+  classDef out fill:#141018,stroke:#FF9F1C,stroke-width:1.5px,color:#F4F0F7
+  classDef impact fill:#0B0B10,stroke:#FF2D95,stroke-width:3px,color:#2DE2E6
+
+  class AD,ED,EN,UX focus
+  class CORE core
+  class OUT1,OUT2,OUT3 out
+  class IMPACT impact
+```
 
 </div>
 
@@ -130,11 +179,11 @@ Let's build something amazing together! 💖
 
 ### 🎓 Education
 
-| Degree | Institution | Period | Field | Achievement |
-|--------|-------------|--------|-------|-------------|
-| **Master's Degree** | 公立はこだて未来大学大学院 | 2024.4 - 2026.3 | システム情報科学・メディアデザイン | 🏆 日本教育工学会 優秀発表賞（2025.3・2026.3） |
+| Degree | Institution | Period | Field |
+|--------|-------------|--------|-------|
+| **修士** | 公立はこだて未来大学大学院 | 2024.4 - 2026.3 | システム情報科学・メディアデザイン |
 
-### 🔬 Research
+### 🔬 Research & Publications
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">cat research.txt</span>
@@ -146,16 +195,22 @@ Let's build something amazing together! 💖
 - ワークショップ・科学コミュニケーションを通じた **AIリテラシー教育** の開発と実践
 - 生成AIの授業利用・キャリア教育など、**教育工学 / ヒューマンインタラクション** の応用
 
+| Year | Venue | Paper |
+|------|-------|-------|
+| 2026 | AIED 2026 (Springer) | [Effects of Job Task Focused Career Education for Human–AI Coexistence on Students’ AI Career Interest and Career Adaptability](https://link.springer.com/content/pdf/10.1007/978-3-032-29770-9_34) |
+| 2025 | ICLEA 2025 | [Effectiveness of Instruction on the Utilization of Generative AI in Problem Solving: A Case Study of Japanese Junior High School](https://library.apsce.net/index.php/ICLEA/article/view/5485) |
+
     </td>
     <td width="45%" valign="top">
 
-### 🏆 Awards & Achievements
+### 🏆 Awards & Honors
 
-| Award | Organization | Date |
-|-------|-------------|------|
-| 🏆 **優秀発表賞** | 日本教育工学会 | 2026.3 |
-| 🏆 **優秀発表賞** | 日本教育工学会 | 2025.3 |
-| 🥇 **最優秀賞** | P2HACKS 2022 | 2022.12 |
+| Date | Award | Organization |
+|------|-------|--------------|
+| 2026.7 | **第一種奨学金 特に優れた業績による返還免除（全額）** · 修士 | 独立行政法人日本学生支援機構 |
+| 2026.3 | **学生セッション優秀発表賞** · 2026年春季全国大会（第48回大会） | 日本教育工学会 |
+| 2025.3 | **学生セッション優秀発表賞** · 2025年春季全国大会（第46回大会） | 日本教育工学会 |
+| 2022.12 | **最優秀賞** | P2HACKS 2022 |
 
     </td>
   </tr>
