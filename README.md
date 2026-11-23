@@ -45,6 +45,17 @@ Let's build something amazing together! 💖
 🔧 Tools: VSCode, Figma, Slack, Trello, Notion
 </pre>
 
+## 📊 Languages 📊
+
+<pre>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh</span>
+</pre>
+
+<p align="left">
+  <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" alt="Top languages by repos" width="400" />
+  <img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="Top languages by commits" width="400" />
+</p>
+
 ## 🎯 Experience & Background 🎯
 
 <pre>
