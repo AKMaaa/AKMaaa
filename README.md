@@ -13,6 +13,8 @@
 
 ![typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3500&pause=800&color=FF2D95&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=70&lines=Agent+Design+%C3%97+Education+%C3%97+Engineering+%C3%97+UX;LLM+Agents+for+Discussion-based+Learning;Hakodate+%E2%86%92+Tokyo+%7C+Build+%26+Research)
 
+<img src="./data/agent-playbook.svg" alt="Agent Playbook: Learner to Agent to Outcome" width="100%" />
+
 ```mermaid
 %%{init: {
   "theme": "dark",
