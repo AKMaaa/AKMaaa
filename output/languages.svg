@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1220" viewBox="0 0 920 1220" role="img" aria-label="Language spectrum for AKMaaa">
+<rect width="100%" height="100%" rx="18" fill="#0B0B10"/>
+<rect x="12" y="12" width="896" height="1196" rx="14" fill="#12121A" stroke="#FF2D95" stroke-opacity="0.35"/>
+<text x="28" y="44" fill="#FF2D95" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">LANGUAGE SPECTRUM</text>
+<text x="892" y="44" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">AKMaaa · private + org included</text>
+<text x="28" y="62" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">32 languages · weighted by source bytes</text>
+<rect x="28" y="77" width="22" height="22" rx="6" fill="#4F5D95"/>
+<text x="39" y="92" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PH</text>
+<text x="58" y="92" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">PHP</text>
+<rect x="250" y="82" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="82" width="235.15" height="12" rx="6" fill="#4F5D95"/>
+<text x="760" y="92" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">49.0%</text>
+<rect x="28" y="111" width="22" height="22" rx="6" fill="#f1e05a"/>
+<text x="39" y="126" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">JA</text>
+<text x="58" y="126" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">JavaScript</text>
+<rect x="250" y="116" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="116" width="149.56" height="12" rx="6" fill="#f1e05a"/>
+<text x="760" y="126" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">31.2%</text>
+<rect x="28" y="145" width="22" height="22" rx="6" fill="#DA5B0B"/>
+<text x="39" y="160" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">JU</text>
+<text x="58" y="160" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Jupyter Notebook</text>
+<rect x="250" y="150" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="150" width="40.89" height="12" rx="6" fill="#DA5B0B"/>
+<text x="760" y="160" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">8.5%</text>
+<rect x="28" y="179" width="22" height="22" rx="6" fill="#563d7c"/>
+<text x="39" y="194" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">CS</text>
+<text x="58" y="194" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">CSS</text>
+<rect x="250" y="184" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="184" width="29.56" height="12" rx="6" fill="#563d7c"/>
+<text x="760" y="194" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">6.2%</text>
+<rect x="28" y="213" width="22" height="22" rx="6" fill="#3178c6"/>
+<text x="39" y="228" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">TY</text>
+<text x="58" y="228" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">TypeScript</text>
+<rect x="250" y="218" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="218" width="12.45" height="12" rx="6" fill="#3178c6"/>
+<text x="760" y="228" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">2.6%</text>
+<rect x="28" y="247" width="22" height="22" rx="6" fill="#e34c26"/>
+<text x="39" y="262" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">HT</text>
+<text x="58" y="262" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">HTML</text>
+<rect x="250" y="252" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="252" width="4.49" height="12" rx="6" fill="#e34c26"/>
+<text x="760" y="262" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.9%</text>
+<rect x="28" y="281" width="22" height="22" rx="6" fill="#c6538c"/>
+<text x="39" y="296" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">SC</text>
+<text x="58" y="296" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">SCSS</text>
+<rect x="250" y="286" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="286" width="4.00" height="12" rx="6" fill="#c6538c"/>
+<text x="760" y="296" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.6%</text>
+<rect x="28" y="315" width="22" height="22" rx="6" fill="#41b883"/>
+<text x="39" y="330" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">VU</text>
+<text x="58" y="330" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Vue</text>
+<rect x="250" y="320" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="320" width="4.00" height="12" rx="6" fill="#41b883"/>
+<text x="760" y="330" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.3%</text>
+<rect x="28" y="349" width="22" height="22" rx="6" fill="#3D6117"/>
+<text x="39" y="364" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">TE</text>
+<text x="58" y="364" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">TeX</text>
+<rect x="250" y="354" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="354" width="4.00" height="12" rx="6" fill="#3D6117"/>
+<text x="760" y="364" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.2%</text>
+<rect x="28" y="383" width="22" height="22" rx="6" fill="#b07219"/>
+<text x="39" y="398" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">JA</text>
+<text x="58" y="398" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Java</text>
+<rect x="250" y="388" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="388" width="4.00" height="12" rx="6" fill="#b07219"/>
+<text x="760" y="398" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="28" y="417" width="22" height="22" rx="6" fill="#3572A5"/>
+<text x="39" y="432" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PY</text>
+<text x="58" y="432" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Python</text>
+<rect x="250" y="422" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="422" width="4.00" height="12" rx="6" fill="#3572A5"/>
+<text x="760" y="432" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="28" y="451" width="22" height="22" rx="6" fill="#00B4AB"/>
+<text x="39" y="466" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">DA</text>
+<text x="58" y="466" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Dart</text>
+<rect x="250" y="456" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="456" width="4.00" height="12" rx="6" fill="#00B4AB"/>
+<text x="760" y="466" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="28" y="485" width="22" height="22" rx="6" fill="hsl(137 72% 58%)"/>
+<text x="39" y="500" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PR</text>
+<text x="58" y="500" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Processing</text>
+<rect x="250" y="490" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="490" width="4.00" height="12" rx="6" fill="hsl(137 72% 58%)"/>
+<text x="760" y="500" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="28" y="519" width="22" height="22" rx="6" fill="#ff3e00"/>
+<text x="39" y="534" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">SV</text>
+<text x="58" y="534" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Svelte</text>
+<rect x="250" y="524" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="524" width="4.00" height="12" rx="6" fill="#ff3e00"/>
+<text x="760" y="534" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="553" width="22" height="22" rx="6" fill="#198CE7"/>
+<text x="39" y="568" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">R</text>
+<text x="58" y="568" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">R</text>
+<rect x="250" y="558" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="558" width="4.00" height="12" rx="6" fill="#198CE7"/>
+<text x="760" y="568" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="587" width="22" height="22" rx="6" fill="#ff5a03"/>
+<text x="39" y="602" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">AS</text>
+<text x="58" y="602" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Astro</text>
+<rect x="250" y="592" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="592" width="4.00" height="12" rx="6" fill="#ff5a03"/>
+<text x="760" y="602" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="621" width="22" height="22" rx="6" fill="#f34b7d"/>
+<text x="39" y="636" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">C+</text>
+<text x="58" y="636" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">C++</text>
+<rect x="250" y="626" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="626" width="4.00" height="12" rx="6" fill="#f34b7d"/>
+<text x="760" y="636" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="655" width="22" height="22" rx="6" fill="hsl(5 72% 58%)"/>
+<text x="39" y="670" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">CM</text>
+<text x="58" y="670" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">CMake</text>
+<rect x="250" y="660" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="660" width="4.00" height="12" rx="6" fill="hsl(5 72% 58%)"/>
+<text x="760" y="670" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="689" width="22" height="22" rx="6" fill="#00ADD8"/>
+<text x="39" y="704" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">GO</text>
+<text x="58" y="704" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Go</text>
+<rect x="250" y="694" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="694" width="4.00" height="12" rx="6" fill="#00ADD8"/>
+<text x="760" y="704" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="723" width="22" height="22" rx="6" fill="#fcb32c"/>
+<text x="39" y="738" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">MD</text>
+<text x="58" y="738" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">MDX</text>
+<rect x="250" y="728" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="728" width="4.00" height="12" rx="6" fill="#fcb32c"/>
+<text x="760" y="738" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="757" width="22" height="22" rx="6" fill="hsl(20 72% 58%)"/>
+<text x="39" y="772" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">HA</text>
+<text x="58" y="772" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Handlebars</text>
+<rect x="250" y="762" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="762" width="4.00" height="12" rx="6" fill="hsl(20 72% 58%)"/>
+<text x="760" y="772" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="791" width="22" height="22" rx="6" fill="hsl(271 72% 58%)"/>
+<text x="39" y="806" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">HA</text>
+<text x="58" y="806" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Hack</text>
+<rect x="250" y="796" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="796" width="4.00" height="12" rx="6" fill="hsl(271 72% 58%)"/>
+<text x="760" y="806" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="825" width="22" height="22" rx="6" fill="hsl(225 72% 58%)"/>
+<text x="39" y="840" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">ST</text>
+<text x="58" y="840" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Stylus</text>
+<rect x="250" y="830" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="830" width="4.00" height="12" rx="6" fill="hsl(225 72% 58%)"/>
+<text x="760" y="840" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="859" width="22" height="22" rx="6" fill="hsl(253 72% 58%)"/>
+<text x="39" y="874" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PL</text>
+<text x="58" y="874" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">PLpgSQL</text>
+<rect x="250" y="864" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="864" width="4.00" height="12" rx="6" fill="hsl(253 72% 58%)"/>
+<text x="760" y="874" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="893" width="22" height="22" rx="6" fill="#F05138"/>
+<text x="39" y="908" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">SW</text>
+<text x="58" y="908" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Swift</text>
+<rect x="250" y="898" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="898" width="4.00" height="12" rx="6" fill="#F05138"/>
+<text x="760" y="908" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="927" width="22" height="22" rx="6" fill="#384d54"/>
+<text x="39" y="942" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">DO</text>
+<text x="58" y="942" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Dockerfile</text>
+<rect x="250" y="932" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="932" width="4.00" height="12" rx="6" fill="#384d54"/>
+<text x="760" y="942" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="961" width="22" height="22" rx="6" fill="#555555"/>
+<text x="39" y="976" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">C</text>
+<text x="58" y="976" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">C</text>
+<rect x="250" y="966" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="966" width="4.00" height="12" rx="6" fill="#555555"/>
+<text x="760" y="976" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="995" width="22" height="22" rx="6" fill="#A97BFF"/>
+<text x="39" y="1010" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">KO</text>
+<text x="58" y="1010" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Kotlin</text>
+<rect x="250" y="1000" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="1000" width="4.00" height="12" rx="6" fill="#A97BFF"/>
+<text x="760" y="1010" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="1029" width="22" height="22" rx="6" fill="hsl(336 72% 58%)"/>
+<text x="39" y="1044" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PE</text>
+<text x="58" y="1044" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Perl</text>
+<rect x="250" y="1034" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="1034" width="4.00" height="12" rx="6" fill="hsl(336 72% 58%)"/>
+<text x="760" y="1044" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="1063" width="22" height="22" rx="6" fill="hsl(86 72% 58%)"/>
+<text x="39" y="1078" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">PR</text>
+<text x="58" y="1078" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Prolog</text>
+<rect x="250" y="1068" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="1068" width="4.00" height="12" rx="6" fill="hsl(86 72% 58%)"/>
+<text x="760" y="1078" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="1097" width="22" height="22" rx="6" fill="#89e051"/>
+<text x="39" y="1112" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">SH</text>
+<text x="58" y="1112" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Shell</text>
+<rect x="250" y="1102" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="1102" width="4.00" height="12" rx="6" fill="#89e051"/>
+<text x="760" y="1112" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="28" y="1131" width="22" height="22" rx="6" fill="hsl(203 72% 58%)"/>
+<text x="39" y="1146" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">OB</text>
+<text x="58" y="1146" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">Objective-C</text>
+<rect x="250" y="1136" width="480" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="250" y="1136" width="4.00" height="12" rx="6" fill="hsl(203 72% 58%)"/>
+<text x="760" y="1146" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+</svg>

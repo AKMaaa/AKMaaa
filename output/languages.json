@@ -1,0 +1,166 @@
+{
+  "username": "AKMaaa",
+  "languages": [
+    {
+      "name": "PHP",
+      "bytes": 58398236,
+      "percent": 48.99
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 37143012,
+      "percent": 31.16
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 10154530,
+      "percent": 8.52
+    },
+    {
+      "name": "CSS",
+      "bytes": 7340203,
+      "percent": 6.16
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 3091521,
+      "percent": 2.59
+    },
+    {
+      "name": "HTML",
+      "bytes": 1114161,
+      "percent": 0.93
+    },
+    {
+      "name": "SCSS",
+      "bytes": 698925,
+      "percent": 0.59
+    },
+    {
+      "name": "Vue",
+      "bytes": 388448,
+      "percent": 0.33
+    },
+    {
+      "name": "TeX",
+      "bytes": 257523,
+      "percent": 0.22
+    },
+    {
+      "name": "Java",
+      "bytes": 137855,
+      "percent": 0.12
+    },
+    {
+      "name": "Python",
+      "bytes": 108170,
+      "percent": 0.09
+    },
+    {
+      "name": "Dart",
+      "bytes": 79286,
+      "percent": 0.07
+    },
+    {
+      "name": "Processing",
+      "bytes": 64858,
+      "percent": 0.05
+    },
+    {
+      "name": "Svelte",
+      "bytes": 40765,
+      "percent": 0.03
+    },
+    {
+      "name": "R",
+      "bytes": 31332,
+      "percent": 0.03
+    },
+    {
+      "name": "Astro",
+      "bytes": 30443,
+      "percent": 0.03
+    },
+    {
+      "name": "C++",
+      "bytes": 29616,
+      "percent": 0.02
+    },
+    {
+      "name": "CMake",
+      "bytes": 19619,
+      "percent": 0.02
+    },
+    {
+      "name": "Go",
+      "bytes": 18268,
+      "percent": 0.02
+    },
+    {
+      "name": "MDX",
+      "bytes": 18231,
+      "percent": 0.02
+    },
+    {
+      "name": "Handlebars",
+      "bytes": 17334,
+      "percent": 0.01
+    },
+    {
+      "name": "Hack",
+      "bytes": 7222,
+      "percent": 0.01
+    },
+    {
+      "name": "Stylus",
+      "bytes": 3512,
+      "percent": 0.0
+    },
+    {
+      "name": "PLpgSQL",
+      "bytes": 2647,
+      "percent": 0.0
+    },
+    {
+      "name": "Swift",
+      "bytes": 2442,
+      "percent": 0.0
+    },
+    {
+      "name": "Dockerfile",
+      "bytes": 2333,
+      "percent": 0.0
+    },
+    {
+      "name": "C",
+      "bytes": 1425,
+      "percent": 0.0
+    },
+    {
+      "name": "Kotlin",
+      "bytes": 1159,
+      "percent": 0.0
+    },
+    {
+      "name": "Perl",
+      "bytes": 792,
+      "percent": 0.0
+    },
+    {
+      "name": "Prolog",
+      "bytes": 613,
+      "percent": 0.0
+    },
+    {
+      "name": "Shell",
+      "bytes": 390,
+      "percent": 0.0
+    },
+    {
+      "name": "Objective-C",
+      "bytes": 38,
+      "percent": 0.0
+    }
+  ],
+  "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12"
+}

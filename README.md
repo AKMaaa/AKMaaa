@@ -95,7 +95,7 @@ Let's build something amazing together! 💖
 
 <!-- SKILLICONS:START -->
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,py,java,go,html,css,react,vue,nodejs,fastapi,docker,github,figma&perline=14" alt="Skill icons" />
+  <img src="https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12" alt="Skill icons" />
 </p>
 <!-- SKILLICONS:END -->
 
