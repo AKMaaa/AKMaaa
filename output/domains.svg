@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="432" viewBox="0 0 920 432" role="img" aria-label="Domain spectrum for AKMaaa">
+<rect width="100%" height="100%" rx="14" fill="#0B0B10"/>
+<rect x="10" y="10" width="900" height="412" rx="10" fill="#12121A" stroke="#2DE2E6" stroke-opacity="0.4"/>
+<text x="24" y="36" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">DOMAIN SPECTRUM</text>
+<text x="896" y="36" text-anchor="end" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Frontend · Backend · Mobile · CI · Data…</text>
+<text x="24" y="52" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">mapped from language bytes · YAML/CI often under-counted by GitHub linguist</text>
+<rect x="24" y="68" width="22" height="22" rx="6" fill="#FF2D95"/>
+<text x="35" y="83" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">BE</text>
+<text x="54" y="78" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Backend</text>
+<text x="54" y="92" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">PHP, Java, Python, Go</text>
+<rect x="200" y="76" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="76" width="275.62" height="12" rx="6" fill="#FF2D95"/>
+<text x="880" y="86" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">49.2%</text>
+<rect x="24" y="104" width="22" height="22" rx="6" fill="#38BDF8"/>
+<text x="35" y="119" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">FE</text>
+<text x="54" y="114" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Frontend</text>
+<text x="54" y="128" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">JavaScript, CSS, TypeScript, HTML</text>
+<rect x="200" y="112" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="112" width="234.36" height="12" rx="6" fill="#38BDF8"/>
+<text x="880" y="122" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">41.8%</text>
+<rect x="24" y="140" width="22" height="22" rx="6" fill="#FF9F1C"/>
+<text x="35" y="155" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">ML</text>
+<text x="54" y="150" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Data / ML</text>
+<text x="54" y="164" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Jupyter Notebook, R, PLpgSQL</text>
+<rect x="200" y="148" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="148" width="47.86" height="12" rx="6" fill="#FF9F1C"/>
+<text x="880" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">8.5%</text>
+<rect x="24" y="176" width="22" height="22" rx="6" fill="#EAB308"/>
+<text x="35" y="191" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">RD</text>
+<text x="54" y="186" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Research / Docs</text>
+<text x="54" y="200" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">TeX</text>
+<rect x="200" y="184" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="184" width="4.00" height="12" rx="6" fill="#EAB308"/>
+<text x="880" y="194" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.2%</text>
+<rect x="24" y="212" width="22" height="22" rx="6" fill="#A855F7"/>
+<text x="35" y="227" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">MO</text>
+<text x="54" y="222" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Mobile</text>
+<text x="54" y="236" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Dart, Swift, Kotlin, Objective-C</text>
+<rect x="200" y="220" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="220" width="4.00" height="12" rx="6" fill="#A855F7"/>
+<text x="880" y="230" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="24" y="248" width="22" height="22" rx="6" fill="#F472B6"/>
+<text x="35" y="263" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">CR</text>
+<text x="54" y="258" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Creative</text>
+<text x="54" y="272" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Processing</text>
+<rect x="200" y="256" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="256" width="4.00" height="12" rx="6" fill="#F472B6"/>
+<text x="880" y="266" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.1%</text>
+<rect x="24" y="284" width="22" height="22" rx="6" fill="#2DE2E6"/>
+<text x="35" y="299" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">SY</text>
+<text x="54" y="294" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Systems</text>
+<text x="54" y="308" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">C++, C</text>
+<rect x="200" y="292" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="292" width="4.00" height="12" rx="6" fill="#2DE2E6"/>
+<text x="880" y="302" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="24" y="320" width="22" height="22" rx="6" fill="#22C55E"/>
+<text x="35" y="335" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">CI</text>
+<text x="54" y="330" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">CI / DevOps</text>
+<text x="54" y="344" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">CMake, Dockerfile, Shell</text>
+<rect x="200" y="328" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="328" width="4.00" height="12" rx="6" fill="#22C55E"/>
+<text x="880" y="338" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+<rect x="24" y="356" width="22" height="22" rx="6" fill="#9A93A5"/>
+<text x="35" y="371" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">OT</text>
+<text x="54" y="366" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Other</text>
+<text x="54" y="380" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Prolog</text>
+<rect x="200" y="364" width="560" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="200" y="364" width="4.00" height="12" rx="6" fill="#9A93A5"/>
+<text x="880" y="374" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.0%</text>
+</svg>

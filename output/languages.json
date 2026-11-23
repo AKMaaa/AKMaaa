@@ -162,5 +162,53 @@
       "percent": 0.0
     }
   ],
-  "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12"
+  "domains": [
+    {
+      "name": "Backend",
+      "bytes": 58670543,
+      "percent": 49.22
+    },
+    {
+      "name": "Frontend",
+      "bytes": 49886555,
+      "percent": 41.85
+    },
+    {
+      "name": "Data / ML",
+      "bytes": 10188509,
+      "percent": 8.55
+    },
+    {
+      "name": "Research / Docs",
+      "bytes": 257523,
+      "percent": 0.22
+    },
+    {
+      "name": "Mobile",
+      "bytes": 82925,
+      "percent": 0.07
+    },
+    {
+      "name": "Creative",
+      "bytes": 64858,
+      "percent": 0.05
+    },
+    {
+      "name": "Systems",
+      "bytes": 31041,
+      "percent": 0.03
+    },
+    {
+      "name": "CI / DevOps",
+      "bytes": 22342,
+      "percent": 0.02
+    },
+    {
+      "name": "Other",
+      "bytes": 613,
+      "percent": 0.0
+    }
+  ],
+  "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12",
+  "note": "YAML/GitHub Actions often under-counted by the languages API"
 }
