@@ -1,13 +1,26 @@
-# Akira Maeda
+<div align="center">
 
-## 💻 Terminal Profile 💻
+# Akira Maeda
+### Full Stack / AI × Education Engineer
+
+[![GitHub](https://img.shields.io/badge/GitHub-AKMaaa-FF2D95?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AKMaaa)
+[![researchmap](https://img.shields.io/badge/researchmap-akira--maeda-2DE2E6?style=for-the-badge)](https://researchmap.jp/akira-maeda)
+[![Profile views](https://komarev.com/ghpvc/?username=AKMaaa&color=ff2d95&style=for-the-badge)](https://github.com/AKMaaa)
+
+![typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3500&pause=800&color=FF2D95&center=true&vCenter=true&multiline=true&repeat=true&width=680&height=70&lines=Building+AI+%C3%97+Learning+Systems;Web+%2F+Full+Stack+%2F+Design;Hakodate+%E2%86%92+Tokyo+%7C+Open+to+collaborate)
+
+</div>
+
+---
+
+## 💻 Terminal Profile
 
 <table>
   <tr>
-    <td width="50%" align="center">
-      <img src="data/gal.gif" alt="Terminal Profile" width="400" />
+    <td width="42%" align="center" valign="top">
+      <img src="data/gal.gif" alt="Terminal Profile" width="340" />
     </td>
-    <td width="50%" align="left">
+    <td width="58%" align="left" valign="top">
       <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">whoami</span>
 Akira Maeda - Full Stack Developer 💖
@@ -34,7 +47,70 @@ Let's build something amazing together! 💖
   </tr>
 </table>
 
-## 💎 Tech Stack 💎
+---
+
+## 🧊 3D Contributions
+
+<div align="center">
+  <img src="./profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph" width="100%" />
+</div>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AKMaaa&theme=radical&hide_border=true&background=0B0B10&ring=FF2D95&fire=2DE2E6&currStreakLabel=FF2D95" alt="GitHub streak" height="160" />
+  <img src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&include_all_commits=true&count_private=true&theme=radical&hide_border=true&bg_color=0B0B10&title_color=FF2D95&icon_color=2DE2E6&text_color=F4F0F7" alt="GitHub stats" height="160" />
+</p>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=4" alt="GitHub trophies" />
+</div>
+
+---
+
+## ⚔️ Engineer Dashboard
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./output/metrics.dashboard.svg" alt="Activity dashboard" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <img src="./output/metrics.isocalendar.svg" alt="Isocalendar" width="100%" />
+      <img src="./output/metrics.achievements.svg" alt="Achievements" width="100%" />
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="./profile-summary-card-output/radical/3-stats.svg" alt="Summary stats" width="48%" />
+  <img src="./profile-summary-card-output/radical/4-productive-time.svg" alt="Productive time" width="48%" />
+</p>
+
+---
+
+## 🧬 Language Spectrum · all languages
+
+<pre>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh --all --private --org</span>
+</pre>
+
+<!-- SKILLICONS:START -->
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,js,py,java,go,html,css,react,vue,nodejs,fastapi,docker,github,figma&perline=14" alt="Skill icons" />
+</p>
+<!-- SKILLICONS:END -->
+
+<div align="center">
+  <img src="./output/languages.svg" alt="All languages with percentages" width="100%" />
+</div>
+
+<p align="center">
+  <img src="./output/metrics.languages.svg" alt="Languages detail" width="48%" />
+  <img src="./profile-summary-card-output/radical/2-most-commit-language.svg" alt="Most commit language" width="48%" />
+</p>
+
+---
+
+## 💎 Tech Stack
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">ls tech-stack/</span>
@@ -45,18 +121,13 @@ Let's build something amazing together! 💖
 🔧 Tools: VSCode, Figma, Slack, Trello, Notion
 </pre>
 
-## 📊 Languages 📊
-
-<pre>
-<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh</span>
-</pre>
-
-<p align="left">
-  <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" alt="Top languages by repos" width="400" />
-  <img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="Top languages by commits" width="400" />
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=js,ts,py,java,go,react,vue,nodejs,express,fastapi,html,css,docker,mysql,mongodb,linux,github,figma&perline=9" alt="Tech stack icons" />
 </p>
 
-## 🎯 Experience & Background 🎯
+---
+
+## 🎯 Experience & Background
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">cat experience.txt</span>
@@ -84,6 +155,10 @@ Let's build something amazing together! 💖
 | **Designer** | [IBM](https://www.ibm.com/jp-ja) | 2022.9 | |
 | **Business Consultant** | [船井総研](https://www.funaisoken.co.jp/) | 2022.8 | |
 
+<table>
+  <tr>
+    <td width="55%" valign="top">
+
 ### 🎓 Education
 
 | Degree | Institution | Period | Field | Achievement |
@@ -102,6 +177,9 @@ Let's build something amazing together! 💖
 - ワークショップ・科学コミュニケーションを通じた **AIリテラシー教育** の開発と実践
 - 生成AIの授業利用・キャリア教育など、**教育工学 / ヒューマンインタラクション** の応用
 
+    </td>
+    <td width="45%" valign="top">
+
 ### 🏆 Awards & Achievements
 
 | Award | Organization | Date |
@@ -110,7 +188,13 @@ Let's build something amazing together! 💖
 | 🏆 **優秀発表賞** | 日本教育工学会 | 2025.3 |
 | 🥇 **最優秀賞** | P2HACKS 2022 | 2022.12 |
 
-## 🎵 Music Player 🎵
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🎵 Music Player
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./music.sh</span>
@@ -121,22 +205,24 @@ Let's build something amazing together! 💖
   <table>
     <tr>
       <td align="center" valign="top" width="33%">
-        <a href="https://youtu.be/o2X8Kpn34_M"><img src="data/litty.png" alt="litty" width="240" style="border-radius: 12px;" /></a>
+        <a href="https://youtu.be/o2X8Kpn34_M"><img src="data/litty.png" alt="litty" width="200" style="border-radius: 12px;" /></a>
         <br /><strong>litty</strong>
       </td>
       <td align="center" valign="top" width="33%">
-        <a href="https://youtu.be/ED-kdgPsnPI"><img src="data/badhop.jpg" alt="badhop" width="240" style="border-radius: 12px;" /></a>
+        <a href="https://youtu.be/ED-kdgPsnPI"><img src="data/badhop.jpg" alt="badhop" width="200" style="border-radius: 12px;" /></a>
         <br /><strong>badhop</strong>
       </td>
       <td align="center" valign="top" width="33%">
-        <a href="https://youtu.be/VerIQQtPGUM"><img src="data/999dobby.png" alt="999dobby" width="240" style="border-radius: 12px;" /></a>
+        <a href="https://youtu.be/VerIQQtPGUM"><img src="data/999dobby.png" alt="999dobby" width="200" style="border-radius: 12px;" /></a>
         <br /><strong>999dobby</strong>
       </td>
     </tr>
   </table>
 </div>
 
-## 💌 Contact 💌
+---
+
+## 💌 Contact
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./contact.sh</span>
@@ -147,3 +233,11 @@ Let's build something amazing together! 💖
 🎯 Wantedly: <a href="https://www.wantedly.com/id/akira_maeda_q">akira_maeda_q</a>
 📧 Email: <a href="mailto:akira@aiedu.jp">akira@aiedu.jp</a>
 </pre>
+
+---
+
+<div align="center">
+
+⚡ *Neon pink × electric cyan · private & org repos counted in language spectrum* ⚡
+
+</div>
