@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="166" viewBox="0 0 920 166" role="img" aria-label="AI LLM toolkit radar">
+<rect width="100%" height="100%" rx="14" fill="#0B0B10"/>
+<rect x="10" y="10" width="900" height="146" rx="10" fill="#12121A" stroke="#FF2D95" stroke-opacity="0.45"/>
+<text x="24" y="36" fill="#FF2D95" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">AI / LLM RADAR</text>
+<text x="896" y="36" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">deps + manifests · private/org included</text>
+<text x="24" y="52" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Gemini · OpenAI · Claude · LangChain… scanned from package.json / requirements / pyproject</text>
+<text x="24" y="80" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Gemini</text>
+<rect x="240" y="70" width="520" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="240" y="70" width="520.00" height="12" rx="6" fill="#FF2D95"/>
+<text x="896" y="80" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">2 repos</text>
+<text x="24" y="114" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">OpenAI</text>
+<rect x="240" y="104" width="520" height="12" rx="6" fill="#1E1E2A"/>
+<rect x="240" y="104" width="520.00" height="12" rx="6" fill="#2DE2E6"/>
+<text x="896" y="114" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">2 repos</text>
+</svg>

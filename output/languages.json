@@ -209,6 +209,16 @@
       "percent": 0.0
     }
   ],
+  "ai_toolkit": {
+    "Gemini": {
+      "repos": 2,
+      "hits": 2
+    },
+    "OpenAI": {
+      "repos": 2,
+      "hits": 2
+    }
+  },
   "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"
 }
