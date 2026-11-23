@@ -58,6 +58,12 @@ flowchart LR
   class IMPACT impact
 ```
 
+<p>
+  <img src="https://img.shields.io/badge/now-building_discussion_agents-FF2D95?style=for-the-badge" alt="now building" />
+  <img src="https://img.shields.io/badge/mode-AI_literacy_×_UX-2DE2E6?style=for-the-badge" alt="mode" />
+  <img src="https://img.shields.io/badge/stack-full--stack_+_research-9A93A5?style=for-the-badge" alt="stack" />
+</p>
+
 </div>
 
 ---
@@ -111,6 +117,33 @@ Let's build something amazing together! 💖
 <div align="center">
   <img src="./output/trophy.svg" alt="GitHub trophies" width="100%" />
 </div>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./output/github-snake.svg" />
+    <img src="./output/github-snake.svg" alt="github contribution snake" width="100%" />
+  </picture>
+</div>
+
+---
+
+## 🧠 AI / LLM Radar
+
+<pre>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./scan-ai-stack.sh --gemini --openai --langchain</span>
+</pre>
+
+<div align="center">
+  <img src="./output/ai-radar.svg" alt="AI and LLM toolkit radar" width="100%" />
+</div>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Gemini-scan-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/OpenAI-scan-10A37F?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI" />
+  <img src="https://img.shields.io/badge/Claude-scan-D97706?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
+  <img src="https://img.shields.io/badge/LangChain-scan-1C3C3C?style=for-the-badge" alt="LangChain" />
+</p>
 
 ---
 
@@ -166,7 +199,7 @@ Let's build something amazing together! 💖
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
 | **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=hakoreco.com&sz=32" width="16" height="16" alt="" /> [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | アルバイト |
-| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=openheart.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社オープンハート](https://openheart.co.jp/) | 2025.5 - 2026.3 | アルバイト · AI画像処理技術開発 |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=openheart.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社オープンハート](https://openheart.co.jp/) | 2025.5 - 2026.3 | アルバイト |
 | **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=cyberagent.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | インターン |
 | **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=sony-semiconductor.co.jp&sz=32" width="16" height="16" alt="" /> [ソニーセミコンダクタソリューションズ株式会社](https://www.sony-semiconductor.co.jp/) | 2023.2 | インターン |
 | **Campus Leader** | <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=32" width="16" height="16" alt="" /> [Notion Labs, Inc.](https://www.notion.so/) | 2024.8 - 2025.7 | インターン |

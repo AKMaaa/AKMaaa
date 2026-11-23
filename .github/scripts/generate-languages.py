@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import os
 import ssl
@@ -302,26 +303,181 @@ def escape(text: str) -> str:
     )
 
 
-def collect_languages() -> dict[str, int]:
-    totals: dict[str, int] = defaultdict(int)
+# Detected via dependency manifests / common import strings
+AI_SIGNALS: dict[str, list[str]] = {
+    "Gemini": [
+        "@google/generative-ai",
+        "@google/genai",
+        "google-generativeai",
+        "google.generativeai",
+        "generativelanguage.googleapis.com",
+        "gemini-1.",
+        "gemini-2.",
+        "models/gemini",
+    ],
+    "OpenAI": [
+        '"openai"',
+        "'openai'",
+        "openai>=",
+        "openai==",
+        "@openai/",
+        "langchain-openai",
+        "ChatOpenAI",
+        "from openai",
+        "import openai",
+    ],
+    "Claude / Anthropic": [
+        "anthropic",
+        "@anthropic-ai",
+        "ChatAnthropic",
+        "claude-3",
+        "claude-sonnet",
+    ],
+    "LangChain": ["langchain", "@langchain/"],
+    "LangGraph": ["langgraph", "@langchain/langgraph"],
+    "Vercel AI SDK": ['"ai":', "'ai':", "@ai-sdk/", "from \"ai\"", "from 'ai'"],
+    "LlamaIndex": ["llama-index", "llama_index", "llamaindex"],
+    "Hugging Face": ["transformers", "huggingface_hub", "@huggingface/"],
+    "Ollama": ["ollama", "langchain-ollama"],
+    "Cohere": ["cohere", "@cohere"],
+    "Mistral": ["mistralai", "@mistralai"],
+}
+
+MANIFEST_CANDIDATES = (
+    "package.json",
+    "requirements.txt",
+    "pyproject.toml",
+    "Pipfile",
+    "composer.json",
+)
+
+
+def list_repos() -> list:
     repos = paged(
         "https://api.github.com/user/repos?affiliation=owner,collaborator,organization_member&sort=updated"
     )
+    return [r for r in repos if not r.get("fork")]
+
+
+def collect_languages(repos: list) -> dict[str, int]:
+    totals: dict[str, int] = defaultdict(int)
     print(f"repos scanned: {len(repos)}")
     for repo in repos:
-        if repo.get("fork"):
-            continue
         full = repo["full_name"]
         try:
             langs = api(f"https://api.github.com/repos/{full}/languages")
         except urllib.error.HTTPError as exc:
-            print(f"skip {full}: {exc}")
+            print(f"skip langs {full}: {exc}")
             continue
         if not isinstance(langs, dict):
             continue
         for lang, bytes_count in langs.items():
             totals[lang] += int(bytes_count)
     return dict(totals)
+
+
+def fetch_text(full: str, path: str, branch: str) -> str | None:
+    url = f"https://api.github.com/repos/{full}/contents/{urllib.parse.quote(path)}?ref={urllib.parse.quote(branch)}"
+    try:
+        data = api(url)
+    except urllib.error.HTTPError:
+        return None
+    if not isinstance(data, dict) or data.get("encoding") != "base64":
+        return None
+    try:
+        return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+    except Exception:
+        return None
+
+
+def collect_ai_toolkit(repos: list) -> dict[str, dict]:
+    """Return {label: {repos: int, hits: int}} for detected LLM / AI SDKs."""
+    found: dict[str, dict] = {
+        label: {"repos": set(), "hits": 0} for label in AI_SIGNALS
+    }
+    # Cap to keep Actions runtime / rate limits reasonable
+    scan = repos[:80]
+    print(f"ai toolkit scan: {len(scan)} repos")
+    for repo in scan:
+        full = repo["full_name"]
+        branch = repo.get("default_branch") or "main"
+        blob_parts: list[str] = []
+        for path in MANIFEST_CANDIDATES:
+            text = fetch_text(full, path, branch)
+            if text:
+                blob_parts.append(text.lower())
+        if not blob_parts:
+            continue
+        blob = "\n".join(blob_parts)
+        for label, needles in AI_SIGNALS.items():
+            hit = False
+            for needle in needles:
+                if needle.lower() in blob:
+                    found[label]["hits"] += 1
+                    hit = True
+            if hit:
+                found[label]["repos"].add(full)
+
+    out: dict[str, dict] = {}
+    for label, data in found.items():
+        if data["repos"]:
+            out[label] = {"repos": len(data["repos"]), "hits": data["hits"]}
+    return out
+
+
+def render_ai_toolkit_svg(toolkit: dict[str, dict]) -> str:
+    ranked = sorted(toolkit.items(), key=lambda x: (x[1]["repos"], x[1]["hits"]), reverse=True)
+    width = 920
+    if not ranked:
+        height = 120
+        return "\n".join(
+            [
+                f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+                f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
+                f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.35"/>',
+                f'<text x="28" y="48" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">AI / LLM RADAR</text>',
+                f'<text x="28" y="78" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">no Gemini / OpenAI / LangChain signals in scanned manifests yet</text>',
+                "</svg>",
+            ]
+        )
+
+    pad_x = 24
+    pad_top = 62
+    row_h = 34
+    height = pad_top + 12 + len(ranked) * row_h + 24
+    max_repos = max(v["repos"] for _, v in ranked) or 1
+    bar_x = 240
+    bar_w = 520
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="AI LLM toolkit radar">',
+        f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
+        f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.45"/>',
+        f'<text x="{pad_x}" y="36" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">AI / LLM RADAR</text>',
+        f'<text x="{width - pad_x}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">deps + manifests · private/org included</text>',
+        f'<text x="{pad_x}" y="52" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Gemini · OpenAI · Claude · LangChain… scanned from package.json / requirements / pyproject</text>',
+    ]
+
+    palette = [PINK, CYAN, "#FF9F1C", "#A855F7", "#22C55E", "#38BDF8", "#F472B6", "#EAB308"]
+    for i, (label, data) in enumerate(ranked):
+        y = pad_top + i * row_h
+        fill = palette[i % len(palette)]
+        filled = max(8, bar_w * (data["repos"] / max_repos))
+        parts.append(
+            f'<text x="{pad_x}" y="{y + 18}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{escape(label)}</text>'
+        )
+        parts.append(
+            f'<rect x="{bar_x}" y="{y + 8}" width="{bar_w}" height="12" rx="6" fill="{BAR_TRACK}"/>'
+        )
+        parts.append(
+            f'<rect x="{bar_x}" y="{y + 8}" width="{filled:.2f}" height="12" rx="6" fill="{fill}"/>'
+        )
+        parts.append(
+            f'<text x="{width - pad_x}" y="{y + 18}" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">{data["repos"]} repos</text>'
+        )
+
+    parts.append("</svg>")
+    return "\n".join(parts)
 
 
 def render_svg(totals: dict[str, int]) -> str:
@@ -403,7 +559,8 @@ def render_skillicons(totals: dict[str, int]) -> str:
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    totals = collect_languages()
+    repos = list_repos()
+    totals = collect_languages(repos)
     if not totals:
         raise SystemExit("no language data found")
 
@@ -416,6 +573,12 @@ def main() -> None:
     domains_path = OUT_DIR / "domains.svg"
     domains_path.write_text(domains_svg, encoding="utf-8")
     print(f"wrote {domains_path}")
+
+    toolkit = collect_ai_toolkit(repos)
+    ai_svg = render_ai_toolkit_svg(toolkit)
+    ai_path = OUT_DIR / "ai-radar.svg"
+    ai_path.write_text(ai_svg, encoding="utf-8")
+    print(f"wrote {ai_path} ({len(toolkit)} signals)")
 
     icons_url = render_skillicons(totals)
     d_totals = domain_totals(totals)
@@ -430,6 +593,7 @@ def main() -> None:
             {"name": n, "bytes": b, "percent": round(b / d_sum * 100, 2)}
             for n, b in sorted(d_totals.items(), key=lambda x: x[1], reverse=True)
         ],
+        "ai_toolkit": toolkit,
         "skillicons": icons_url,
         "note": "YAML/GitHub Actions often under-counted by the languages API",
     }

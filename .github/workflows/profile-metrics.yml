@@ -69,6 +69,14 @@ jobs:
           options: >-
             username=${{ github.repository_owner }}&theme=radical&column=7&margin-w=8&margin-h=4&no-frame=true
 
+      - name: Contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            output/github-snake.svg
+            output/github-snake-dark.svg?palette=github-dark
+
       - name: Commit generated assets
         run: |
           git config user.name github-actions[bot]
@@ -78,7 +86,7 @@ jobs:
             echo "no changes"
             exit 0
           fi
-          git commit -m "chore: refresh 3d grass, trophies, language & domain spectrum"
+          git commit -m "chore: refresh profile visuals, AI radar & spectra"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             echo "push conflict, retry $i"
