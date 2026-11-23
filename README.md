@@ -56,11 +56,11 @@ Let's build something amazing together! 💖
 </div>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AKMaaa&theme=radical&hide_border=true&background=0B0B10&ring=FF2D95&fire=2DE2E6&currStreakLabel=FF2D95" alt="GitHub streak" height="160" />
+  <img src="https://streak-stats.demolab.com/?user=AKMaaa&theme=radical&hide_border=true&background=0B0B10&ring=FF2D95&fire=2DE2E6&currStreakLabel=FF2D95&sideLabels=FF2D95&dates=9A93A5" alt="GitHub streak" height="160" />
 </p>
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=AKMaaa&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=4" alt="GitHub trophies" />
+  <img src="./output/trophy.svg" alt="GitHub trophies" width="100%" />
 </div>
 
 ---
@@ -107,22 +107,22 @@ Let's build something amazing together! 💖
 
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
-| **スタッフ** | [NPO法人 学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | 教育デザイン・AIリテラシー推進など |
-| **スタッフ** | [Simplex Holdings](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
+| **スタッフ** | <img src="https://www.google.com/s2/favicons?domain=upskillingjp.org&sz=32" width="16" height="16" alt="" /> [NPO法人学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | 教育デザイン・AIリテラシー推進など |
+| **スタッフ** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
 
 ### 💼 Experience（職歴・インターン）
 
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
-| **Web Engineer** | [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | |
-| **Engineer** | [OpenHeart, Inc.](https://openheart.co.jp/) | 2025.5 - 2026.3 | AI画像処理技術開発 |
-| **UI Designer** | [サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | |
-| **Software Engineer** | [Sony](https://www.sony.com/) | 2023.2 | |
-| **Campus Leader** | [Notion](https://www.notion.so/) | 2024.8 - 2025.7 | |
-| **Engineer** | [シンプレクス](https://www.simplex.inc/) | 2024.9 | |
-| **Web Engineer** | [NAVITIME](https://www.navitime.co.jp/) | 2022.9 | |
-| **Designer** | [IBM](https://www.ibm.com/jp-ja) | 2022.9 | |
-| **Business Consultant** | [船井総研](https://www.funaisoken.co.jp/) | 2022.8 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=hakoreco.com&sz=32" width="16" height="16" alt="" /> [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=openheart.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社オープンハート](https://openheart.co.jp/) | 2025.5 - 2026.3 | AI画像処理技術開発 |
+| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=cyberagent.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=sony-semiconductor.co.jp&sz=32" width="16" height="16" alt="" /> [ソニーセミコンダクタソリューションズ株式会社](https://www.sony-semiconductor.co.jp/) | 2023.2 | |
+| **Campus Leader** | <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=32" width="16" height="16" alt="" /> [Notion Labs, Inc.](https://www.notion.so/) | 2024.8 - 2025.7 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2024.9 | インターン |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=navitime.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社ナビタイムジャパン](https://www.navitime.co.jp/) | 2022.9 | |
+| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=ibm.com&sz=32" width="16" height="16" alt="" /> [日本アイ・ビー・エム株式会社](https://www.ibm.com/jp-ja) | 2022.9 | |
+| **ビジネスコンサルタント** | <img src="https://www.google.com/s2/favicons?domain=funaisoken.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社船井総合研究所](https://www.funaisoken.co.jp/) | 2022.8 | |
 
 <table>
   <tr>
@@ -197,7 +197,6 @@ Let's build something amazing together! 💖
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./contact.sh</span>
 💖 GitHub: <a href="https://github.com/AKMaaa">@AKMaaa</a>
 🔬 researchmap: <a href="https://researchmap.jp/akira-maeda">researchmap.jp/akira-maeda</a>
-🐦 Twitter: <a href="https://twitter.com/AKMaaa">@AKMaaa</a>
 💼 LinkedIn: <a href="https://www.linkedin.com/in/akitch-maeda-akira/">akitch-maeda-akira</a>
 🎯 Wantedly: <a href="https://www.wantedly.com/id/akira_maeda_q">akira_maeda_q</a>
 📧 Email: <a href="mailto:akira@aiedu.jp">akira@aiedu.jp</a>

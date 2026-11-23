@@ -61,22 +61,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
+      - name: GitHub trophies (self-hosted generate)
+        uses: soulteary/github-profile-trophy-action@v1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: output/trophy.svg
+          options: >-
+            username=${{ github.repository_owner }}&theme=radical&column=7&margin-w=8&margin-h=4&no-frame=true
+
       - name: Commit generated assets
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          # drop unused metrics leftovers if present
-          git rm -f --ignore-unmatch \
-            output/metrics.dashboard.svg \
-            output/metrics.languages.svg \
-            output/metrics.achievements.svg \
-            output/metrics.isocalendar.svg || true
           git add output profile-3d-contrib README.md || true
           if git diff --staged --quiet; then
             echo "no changes"
             exit 0
           fi
-          git commit -m "chore: refresh 3d grass & language spectrum"
+          git commit -m "chore: refresh 3d grass, trophies & language spectrum"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             echo "push conflict, retry $i"

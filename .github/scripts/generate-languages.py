@@ -176,52 +176,62 @@ def collect_languages() -> dict[str, int]:
 
 
 def render_svg(totals: dict[str, int]) -> str:
+    """Compact 2-column spectrum — still lists every language."""
     ranked = sorted(totals.items(), key=lambda x: x[1], reverse=True)
     total = sum(v for _, v in ranked) or 1
-    rows = ranked  # ALL languages
+    rows = ranked
 
-    row_h = 34
-    pad_x = 28
-    pad_top = 72
+    cols = 2
+    row_h = 22
+    pad_x = 20
+    pad_top = 56
     width = 920
-    height = pad_top + 24 + len(rows) * row_h + 36
-    bar_x = 250
-    bar_w = 480
-    pct_x = 760
+    col_w = (width - pad_x * 2) // cols
+    n_rows = (len(rows) + cols - 1) // cols
+    height = pad_top + 12 + n_rows * row_h + 20
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Language spectrum for {USERNAME}">',
-        f'<rect width="100%" height="100%" rx="18" fill="{BG}"/>',
-        f'<rect x="12" y="12" width="{width-24}" height="{height-24}" rx="14" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.35"/>',
-        f'<text x="{pad_x}" y="44" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">LANGUAGE SPECTRUM</text>',
-        f'<text x="{width - pad_x}" y="44" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">{escape(USERNAME)} · private + org included</text>',
-        f'<text x="{pad_x}" y="62" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{len(rows)} languages · weighted by source bytes</text>',
+        f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
+        f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.35"/>',
+        f'<text x="{pad_x}" y="34" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">LANGUAGE SPECTRUM</text>',
+        f'<text x="{width - pad_x}" y="34" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{escape(USERNAME)} · private + org · {len(rows)} langs</text>',
     ]
 
     for i, (name, bytes_count) in enumerate(rows):
-        y = pad_top + i * row_h
+        col = i // n_rows
+        row = i % n_rows
+        x0 = pad_x + col * col_w
+        y = pad_top + row * row_h
         pct = bytes_count / total * 100
         fill = color_for(name)
-        filled = max(4, bar_w * (bytes_count / total))
-        # Colored glyph (GitHub README SVG blocks most external images)
         abbrev = escape((name[:2] if len(name) > 1 else name).upper())
+        glyph = 16
+        label_x = x0 + glyph + 6
+        bar_x = x0 + 118
+        bar_w = col_w - 168
+        pct_x = x0 + col_w - 12
+        filled = max(3, bar_w * (bytes_count / total))
+
         parts.append(
-            f'<rect x="{pad_x}" y="{y + 5}" width="22" height="22" rx="6" fill="{fill}"/>'
+            f'<rect x="{x0}" y="{y + 2}" width="{glyph}" height="{glyph}" rx="4" fill="{fill}"/>'
         )
         parts.append(
-            f'<text x="{pad_x + 11}" y="{y + 20}" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">{abbrev}</text>'
+            f'<text x="{x0 + glyph/2}" y="{y + 13}" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">{abbrev}</text>'
+        )
+        # Truncate long names so two columns stay readable
+        shown = name if len(name) <= 12 else name[:11] + "…"
+        parts.append(
+            f'<text x="{label_x}" y="{y + 14}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{escape(shown)}</text>'
         )
         parts.append(
-            f'<text x="{pad_x + 30}" y="{y + 20}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">{escape(name)}</text>'
+            f'<rect x="{bar_x}" y="{y + 5}" width="{bar_w}" height="8" rx="4" fill="{BAR_TRACK}"/>'
         )
         parts.append(
-            f'<rect x="{bar_x}" y="{y + 10}" width="{bar_w}" height="12" rx="6" fill="{BAR_TRACK}"/>'
+            f'<rect x="{bar_x}" y="{y + 5}" width="{filled:.2f}" height="8" rx="4" fill="{fill}"/>'
         )
         parts.append(
-            f'<rect x="{bar_x}" y="{y + 10}" width="{filled:.2f}" height="12" rx="6" fill="{fill}"/>'
-        )
-        parts.append(
-            f'<text x="{pct_x}" y="{y + 20}" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{pct:.1f}%</text>'
+            f'<text x="{pct_x}" y="{y + 14}" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">{pct:.1f}%</text>'
         )
 
     parts.append("</svg>")
