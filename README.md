@@ -114,10 +114,10 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🧬 Languages
+## 🧬 Languages & Domains
 
 <pre>
-<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh --all --private --org</span>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh --all --private --org && ./domains.sh</span>
 </pre>
 
 <!-- SKILLICONS:START -->
@@ -127,6 +127,8 @@ Let's build something amazing together! 💖
 <!-- SKILLICONS:END -->
 
 <div align="center">
+  <img src="./output/domains.svg" alt="Domain spectrum: Frontend Backend Mobile CI Data" width="100%" />
+  <br />
   <img src="./output/languages.svg" alt="All languages with percentages" width="100%" />
 </div>
 
@@ -156,22 +158,22 @@ Let's build something amazing together! 💖
 
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
-| **スタッフ** | <img src="https://www.google.com/s2/favicons?domain=upskillingjp.org&sz=32" width="16" height="16" alt="" /> [NPO法人学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | 教育デザイン・AIリテラシー推進など |
-| **スタッフ** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
+| **研究員** | <img src="https://www.google.com/s2/favicons?domain=upskillingjp.org&sz=32" width="16" height="16" alt="" /> [NPO法人学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | R&D・システム開発部 |
+| **エンジニア（正社員）** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
 
-### 💼 Experience（職歴・インターン）
+### 💼 Experience（アルバイト・インターン）
 
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
-| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=hakoreco.com&sz=32" width="16" height="16" alt="" /> [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | |
-| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=openheart.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社オープンハート](https://openheart.co.jp/) | 2025.5 - 2026.3 | AI画像処理技術開発 |
-| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=cyberagent.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | |
-| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=sony-semiconductor.co.jp&sz=32" width="16" height="16" alt="" /> [ソニーセミコンダクタソリューションズ株式会社](https://www.sony-semiconductor.co.jp/) | 2023.2 | |
-| **Campus Leader** | <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=32" width="16" height="16" alt="" /> [Notion Labs, Inc.](https://www.notion.so/) | 2024.8 - 2025.7 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=hakoreco.com&sz=32" width="16" height="16" alt="" /> [ハコレコドットコム株式会社](https://www.hakoreco.com/) | 2021.9 - 2026.3 | アルバイト |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=openheart.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社オープンハート](https://openheart.co.jp/) | 2025.5 - 2026.3 | アルバイト · AI画像処理技術開発 |
+| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=cyberagent.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社サイバーエージェント](https://www.cyberagent.co.jp/) | 2023.3 | インターン |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=sony-semiconductor.co.jp&sz=32" width="16" height="16" alt="" /> [ソニーセミコンダクタソリューションズ株式会社](https://www.sony-semiconductor.co.jp/) | 2023.2 | インターン |
+| **Campus Leader** | <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=32" width="16" height="16" alt="" /> [Notion Labs, Inc.](https://www.notion.so/) | 2024.8 - 2025.7 | インターン |
 | **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2024.9 | インターン |
-| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=navitime.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社ナビタイムジャパン](https://www.navitime.co.jp/) | 2022.9 | |
-| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=ibm.com&sz=32" width="16" height="16" alt="" /> [日本アイ・ビー・エム株式会社](https://www.ibm.com/jp-ja) | 2022.9 | |
-| **ビジネスコンサルタント** | <img src="https://www.google.com/s2/favicons?domain=funaisoken.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社船井総合研究所](https://www.funaisoken.co.jp/) | 2022.8 | |
+| **エンジニア** | <img src="https://www.google.com/s2/favicons?domain=navitime.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社ナビタイムジャパン](https://www.navitime.co.jp/) | 2022.9 | インターン |
+| **デザイナー** | <img src="https://www.google.com/s2/favicons?domain=ibm.com&sz=32" width="16" height="16" alt="" /> [日本アイ・ビー・エム株式会社](https://www.ibm.com/jp-ja) | 2022.9 | インターン |
+| **ビジネスコンサルタント** | <img src="https://www.google.com/s2/favicons?domain=funaisoken.co.jp&sz=32" width="16" height="16" alt="" /> [株式会社船井総合研究所](https://www.funaisoken.co.jp/) | 2022.8 | インターン |
 
 <table>
   <tr>

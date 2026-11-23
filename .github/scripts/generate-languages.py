@@ -68,6 +68,82 @@ LANG_COLORS: dict[str, str] = {
     "Jupyter Notebook": "#DA5B0B",
 }
 
+# Primary domain per language (exclusive — clean domain %)
+DOMAIN_OF: dict[str, str] = {
+    "JavaScript": "Frontend",
+    "TypeScript": "Frontend",
+    "HTML": "Frontend",
+    "CSS": "Frontend",
+    "SCSS": "Frontend",
+    "Sass": "Frontend",
+    "Less": "Frontend",
+    "Stylus": "Frontend",
+    "Vue": "Frontend",
+    "Svelte": "Frontend",
+    "Astro": "Frontend",
+    "MDX": "Frontend",
+    "Handlebars": "Frontend",
+    "PHP": "Backend",
+    "Python": "Backend",
+    "Ruby": "Backend",
+    "Go": "Backend",
+    "Java": "Backend",
+    "C#": "Backend",
+    "Perl": "Backend",
+    "Hack": "Backend",
+    "Elixir": "Backend",
+    "Scala": "Backend",
+    "Dart": "Mobile",
+    "Kotlin": "Mobile",
+    "Swift": "Mobile",
+    "Objective-C": "Mobile",
+    "Dockerfile": "CI / DevOps",
+    "Shell": "CI / DevOps",
+    "PowerShell": "CI / DevOps",
+    "Makefile": "CI / DevOps",
+    "CMake": "CI / DevOps",
+    "YAML": "CI / DevOps",
+    "YML": "CI / DevOps",
+    "Nix": "CI / DevOps",
+    "Jupyter Notebook": "Data / ML",
+    "R": "Data / ML",
+    "MATLAB": "Data / ML",
+    "PLpgSQL": "Data / ML",
+    "SQL": "Data / ML",
+    "C": "Systems",
+    "C++": "Systems",
+    "Rust": "Systems",
+    "Zig": "Systems",
+    "TeX": "Research / Docs",
+    "Markdown": "Research / Docs",
+    "Processing": "Creative",
+    "Prolog": "Other",
+}
+
+DOMAIN_COLORS: dict[str, str] = {
+    "Frontend": "#38BDF8",
+    "Backend": "#FF2D95",
+    "Mobile": "#A855F7",
+    "CI / DevOps": "#22C55E",
+    "Data / ML": "#FF9F1C",
+    "Systems": "#2DE2E6",
+    "Research / Docs": "#EAB308",
+    "Creative": "#F472B6",
+    "Other": "#9A93A5",
+}
+
+DOMAIN_GLYPH: dict[str, str] = {
+    "Frontend": "FE",
+    "Backend": "BE",
+    "Mobile": "MO",
+    "CI / DevOps": "CI",
+    "Data / ML": "ML",
+    "Systems": "SY",
+    "Research / Docs": "RD",
+    "Creative": "CR",
+    "Other": "OT",
+}
+
 # skillicons / simple slug map
 SKILLICON: dict[str, str] = {
     "TypeScript": "ts",
@@ -92,6 +168,7 @@ SKILLICON: dict[str, str] = {
     "Dockerfile": "docker",
     "Astro": "astro",
     "Markdown": "md",
+    "YAML": "githubactions",
     "SQL": "postgres",
     "GraphQL": "graphql",
     "Dart": "dart",
@@ -102,7 +179,79 @@ SKILLICON: dict[str, str] = {
     "Elixir": "elixir",
     "Zig": "zig",
     "Nix": "nix",
+    "Kotlin": "kotlin",
 }
+
+
+def domain_totals(lang_totals: dict[str, int]) -> dict[str, int]:
+    domains: dict[str, int] = defaultdict(int)
+    for name, bytes_count in lang_totals.items():
+        domain = DOMAIN_OF.get(name, "Other")
+        domains[domain] += bytes_count
+    return dict(domains)
+
+
+def render_domains_svg(lang_totals: dict[str, int]) -> str:
+    domains = domain_totals(lang_totals)
+    ranked = sorted(domains.items(), key=lambda x: x[1], reverse=True)
+    total = sum(v for _, v in ranked) or 1
+
+    row_h = 36
+    pad_x = 24
+    pad_top = 64
+    width = 920
+    height = pad_top + 16 + len(ranked) * row_h + 28
+    bar_x = 200
+    bar_w = 560
+    pct_x = 880
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Domain spectrum for {USERNAME}">',
+        f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
+        f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{CYAN}" stroke-opacity="0.4"/>',
+        f'<text x="{pad_x}" y="36" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">DOMAIN SPECTRUM</text>',
+        f'<text x="{width - pad_x}" y="36" text-anchor="end" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Frontend · Backend · Mobile · CI · Data…</text>',
+        f'<text x="{pad_x}" y="52" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">mapped from language bytes · YAML/CI often under-counted by GitHub linguist</text>',
+    ]
+
+    for i, (name, bytes_count) in enumerate(ranked):
+        y = pad_top + i * row_h
+        pct = bytes_count / total * 100
+        fill = DOMAIN_COLORS.get(name, "#9A93A5")
+        glyph = DOMAIN_GLYPH.get(name, "??")
+        filled = max(4, bar_w * (bytes_count / total))
+        # member languages (top 3 in this domain)
+        members = [
+            lang
+            for lang, _ in sorted(lang_totals.items(), key=lambda x: x[1], reverse=True)
+            if DOMAIN_OF.get(lang, "Other") == name
+        ][:4]
+        member_txt = escape(", ".join(members)) if members else ""
+
+        parts.append(
+            f'<rect x="{pad_x}" y="{y + 4}" width="22" height="22" rx="6" fill="{fill}"/>'
+        )
+        parts.append(
+            f'<text x="{pad_x + 11}" y="{y + 19}" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">{escape(glyph)}</text>'
+        )
+        parts.append(
+            f'<text x="{pad_x + 30}" y="{y + 14}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{escape(name)}</text>'
+        )
+        parts.append(
+            f'<text x="{pad_x + 30}" y="{y + 28}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">{member_txt}</text>'
+        )
+        parts.append(
+            f'<rect x="{bar_x}" y="{y + 12}" width="{bar_w}" height="12" rx="6" fill="{BAR_TRACK}"/>'
+        )
+        parts.append(
+            f'<rect x="{bar_x}" y="{y + 12}" width="{filled:.2f}" height="12" rx="6" fill="{fill}"/>'
+        )
+        parts.append(
+            f'<text x="{pct_x}" y="{y + 22}" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{pct:.1f}%</text>'
+        )
+
+    parts.append("</svg>")
+    return "\n".join(parts)
 
 
 def api(url: str) -> object:
@@ -263,14 +412,26 @@ def main() -> None:
     svg_path.write_text(svg, encoding="utf-8")
     print(f"wrote {svg_path}")
 
+    domains_svg = render_domains_svg(totals)
+    domains_path = OUT_DIR / "domains.svg"
+    domains_path.write_text(domains_svg, encoding="utf-8")
+    print(f"wrote {domains_path}")
+
     icons_url = render_skillicons(totals)
+    d_totals = domain_totals(totals)
+    d_sum = sum(d_totals.values()) or 1
     meta = {
         "username": USERNAME,
         "languages": [
             {"name": n, "bytes": b, "percent": round(b / sum(totals.values()) * 100, 2)}
             for n, b in sorted(totals.items(), key=lambda x: x[1], reverse=True)
         ],
+        "domains": [
+            {"name": n, "bytes": b, "percent": round(b / d_sum * 100, 2)}
+            for n, b in sorted(d_totals.items(), key=lambda x: x[1], reverse=True)
+        ],
         "skillicons": icons_url,
+        "note": "YAML/GitHub Actions often under-counted by the languages API",
     }
     meta_path = OUT_DIR / "languages.json"
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
