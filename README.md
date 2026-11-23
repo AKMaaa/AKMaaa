@@ -49,7 +49,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🧊 3D Contributions
+## 🧊 Contributions
 
 <div align="center">
   <img src="./profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph" width="100%" />
@@ -57,7 +57,6 @@ Let's build something amazing together! 💖
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=AKMaaa&theme=radical&hide_border=true&background=0B0B10&ring=FF2D95&fire=2DE2E6&currStreakLabel=FF2D95" alt="GitHub streak" height="160" />
-  <img src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&include_all_commits=true&count_private=true&theme=radical&hide_border=true&bg_color=0B0B10&title_color=FF2D95&icon_color=2DE2E6&text_color=F4F0F7" alt="GitHub stats" height="160" />
 </p>
 
 <div align="center">
@@ -66,28 +65,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## ⚔️ Engineer Dashboard
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="./output/metrics.dashboard.svg" alt="Activity dashboard" width="100%" />
-    </td>
-    <td width="50%" valign="top">
-      <img src="./output/metrics.isocalendar.svg" alt="Isocalendar" width="100%" />
-      <img src="./output/metrics.achievements.svg" alt="Achievements" width="100%" />
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <img src="./profile-summary-card-output/radical/3-stats.svg" alt="Summary stats" width="48%" />
-  <img src="./profile-summary-card-output/radical/4-productive-time.svg" alt="Productive time" width="48%" />
-</p>
-
----
-
-## 🧬 Language Spectrum · all languages
+## 🧬 Languages
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./languages.sh --all --private --org</span>
@@ -103,11 +81,6 @@ Let's build something amazing together! 💖
   <img src="./output/languages.svg" alt="All languages with percentages" width="100%" />
 </div>
 
-<p align="center">
-  <img src="./output/metrics.languages.svg" alt="Languages detail" width="48%" />
-  <img src="./profile-summary-card-output/radical/2-most-commit-language.svg" alt="Most commit language" width="48%" />
-</p>
-
 ---
 
 ## 💎 Tech Stack
@@ -120,10 +93,6 @@ Let's build something amazing together! 💖
 🛠️ Others: Git, Docker, Linux, MySQL, MongoDB
 🔧 Tools: VSCode, Figma, Slack, Trello, Notion
 </pre>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,py,java,go,react,vue,nodejs,express,fastapi,html,css,docker,mysql,mongodb,linux,github,figma&perline=9" alt="Tech stack icons" />
-</p>
 
 ---
 
@@ -233,11 +202,3 @@ Let's build something amazing together! 💖
 🎯 Wantedly: <a href="https://www.wantedly.com/id/akira_maeda_q">akira_maeda_q</a>
 📧 Email: <a href="mailto:akira@aiedu.jp">akira@aiedu.jp</a>
 </pre>
-
----
-
-<div align="center">
-
-⚡ *Neon pink × electric cyan · private & org repos counted in language spectrum* ⚡
-
-</div>

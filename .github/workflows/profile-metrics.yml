@@ -61,78 +61,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      - name: Metrics — activity dashboard
-        uses: lowlighter/metrics@latest
-        with:
-          filename: output/metrics.dashboard.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: ${{ github.repository_owner }}
-          config_timezone: Asia/Tokyo
-          base: header, activity, repositories
-          output_action: none
-
-      - name: Metrics — languages detail (top + %)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: output/metrics.languages.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: ${{ github.repository_owner }}
-          config_timezone: Asia/Tokyo
-          base: ""
-          plugin_languages: yes
-          plugin_languages_details: bytes-size, percentage, lines
-          plugin_languages_limit: 8
-          plugin_languages_threshold: 0%
-          plugin_languages_other: yes
-          plugin_languages_colors: >-
-            0:#FF2D95, 1:#2DE2E6, 2:#FF9F1C, 3:#A855F7, 4:#22C55E,
-            5:#38BDF8, 6:#F472B6, 7:#EAB308
-          output_action: none
-
-      - name: Metrics — achievements
-        uses: lowlighter/metrics@latest
-        with:
-          filename: output/metrics.achievements.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: ${{ github.repository_owner }}
-          config_timezone: Asia/Tokyo
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
-          plugin_achievements_secrets: yes
-          output_action: none
-
-      - name: Metrics — isocalendar
-        uses: lowlighter/metrics@latest
-        with:
-          filename: output/metrics.isocalendar.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: ${{ github.repository_owner }}
-          config_timezone: Asia/Tokyo
-          base: ""
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-          output_action: none
-
-      - name: Collect metrics renders
-        run: |
-          mkdir -p output
-          if [ -d /metrics_renders ]; then
-            sudo cp -a /metrics_renders/. ./
-          fi
-          ls -la output profile-3d-contrib 2>/dev/null || true
-
       - name: Commit generated assets
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
+          # drop unused metrics leftovers if present
+          git rm -f --ignore-unmatch \
+            output/metrics.dashboard.svg \
+            output/metrics.languages.svg \
+            output/metrics.achievements.svg \
+            output/metrics.isocalendar.svg || true
           git add output profile-3d-contrib README.md || true
           if git diff --staged --quiet; then
             echo "no changes"
             exit 0
           fi
-          git commit -m "chore: refresh profile metrics & language spectrum"
+          git commit -m "chore: refresh 3d grass & language spectrum"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             echo "push conflict, retry $i"
