@@ -194,7 +194,7 @@ Let's build something amazing together! 💖
 | Position | Company | Period | Description |
 |----------|---------|--------|-------------|
 | **研究員** | <img src="https://www.google.com/s2/favicons?domain=upskillingjp.org&sz=32" width="16" height="16" alt="" /> [NPO法人学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | R&D・システム開発部 |
-| **エンジニア（正社員）** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology |
+| **エンジニア（正社員）** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology / Enterprise DX |
 
 ### 💼 Experience（アルバイト・インターン）
 
