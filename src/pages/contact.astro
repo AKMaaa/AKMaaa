@@ -3,7 +3,10 @@ import { contactEmail } from '../data/bio';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const turnstileSiteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '').trim();
-const contactApi = (import.meta.env.PUBLIC_CONTACT_API_URL ?? '').trim();
+const contactApi = (
+	import.meta.env.PUBLIC_CONTACT_API_URL ??
+	'https://akmaaa-contact.akmaaa.workers.dev'
+).trim();
 const turnstileEnabled = turnstileSiteKey.length > 0;
 const endpoint = contactApi || `https://formsubmit.co/${contactEmail}`;
 const sent = Astro.url.searchParams.get('sent') === '1';
