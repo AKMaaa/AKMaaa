@@ -427,76 +427,128 @@ def collect_ai_toolkit(repos: list) -> dict[str, dict]:
     return out
 
 
-RPG_SLOT_KIND: dict[str, str] = {
-    "Gemini": "WEAPON",
-    "OpenAI": "WEAPON",
-    "Claude / Anthropic": "WEAPON",
-    "Mistral": "WEAPON",
-    "Cohere": "WEAPON",
-    "LangChain": "ARMOR",
-    "LangGraph": "ARMOR",
-    "Vercel AI SDK": "ARMOR",
-    "LlamaIndex": "ARMOR",
-    "Hugging Face": "SKILL",
-    "Ollama": "SKILL",
-}
+# ぶき = hardware you fight with (manual — GitHub can't see your desk)
+HARDWARE_WEAPONS: list[tuple[str, str, int]] = [
+    ("MacBook Pro", "main rig", 99),
+    ("Windows", "dual boot", 70),
+    ("Linux", "server / CLI", 85),
+]
+
+# よろい = stack that protects / carries production work
+ARMOR_LANG_PRIORITY = [
+    "TypeScript",
+    "JavaScript",
+    "PHP",
+    "Python",
+    "Vue",
+    "Go",
+    "Java",
+    "Dockerfile",
+    "Astro",
+    "Swift",
+    "Kotlin",
+]
+
+# じゅもん = AI APIs + research magic (always show research identity)
+RESEARCH_SPELLS: list[tuple[str, str, int]] = [
+    ("Agent Design", "research core", 90),
+    ("AI Literacy", "workshop magic", 88),
+    ("Discussion Agents", "learning UX", 86),
+]
 
 
-def render_ai_toolkit_svg(toolkit: dict[str, dict]) -> str:
-    """RPG inventory / loadout board for detected AI stack."""
+def build_loadout(
+    toolkit: dict[str, dict], lang_totals: dict[str, int]
+) -> dict[str, list[tuple[str, str, int]]]:
+    """
+    ぶき   = hardware
+    よろい = languages / frameworks from repos
+    じゅもん = AI SDKs + research spells
+    """
+    weapons = [(n, sub, lv) for n, sub, lv in HARDWARE_WEAPONS]
+
+    armor: list[tuple[str, str, int]] = []
+    total_bytes = sum(lang_totals.values()) or 1
+    # prefer curated order, then fill by size
+    seen = set()
+    for name in ARMOR_LANG_PRIORITY:
+        if name in lang_totals and lang_totals[name] > 0:
+            pct = max(1, round(100 * lang_totals[name] / total_bytes))
+            armor.append((name, f"{pct}% of code", min(99, max(10, pct * 2))))
+            seen.add(name)
+    for name, b in sorted(lang_totals.items(), key=lambda x: x[1], reverse=True):
+        if name in seen or name in ("HTML", "CSS", "SCSS", "Markdown", "TeX", "Hack"):
+            continue
+        if len(armor) >= 4:
+            break
+        pct = max(1, round(100 * b / total_bytes))
+        armor.append((name, f"{pct}% of code", min(99, max(10, pct * 2))))
+
+    spells: list[tuple[str, str, int]] = []
+    for label, data in sorted(
+        toolkit.items(), key=lambda x: (x[1]["repos"], x[1]["hits"]), reverse=True
+    ):
+        spells.append((label, f'{data["repos"]} repos', min(99, 40 + data["repos"] * 15)))
+    for name, sub, lv in RESEARCH_SPELLS:
+        if len(spells) >= 4:
+            break
+        if all(name != s[0] for s in spells):
+            spells.append((name, sub, lv))
+
+    return {
+        "WEAPON": weapons[:3],
+        "ARMOR": armor[:3],
+        "SKILL": spells[:3],
+    }
+
+
+def render_ai_toolkit_svg(
+    toolkit: dict[str, dict], lang_totals: dict[str, int] | None = None
+) -> str:
+    """DQ command window: hardware / stack / AI+research loadout."""
     width = 920
     height = 320
-    ranked = sorted(toolkit.items(), key=lambda x: (x[1]["repos"], x[1]["hits"]), reverse=True)
-    buckets = {"WEAPON": [], "ARMOR": [], "SKILL": []}
-    for label, data in ranked:
-        kind = RPG_SLOT_KIND.get(label, "SKILL")
-        buckets[kind].append((label, data))
+    buckets = build_loadout(toolkit, lang_totals or {})
 
-    # Dragon Quest-ish command window: double cream frame + chunky blocks
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="crispEdges" role="img" aria-label="AI loadout RPG inventory">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="crispEdges" role="img" aria-label="RPG loadout inventory">',
         f'<rect width="100%" height="100%" fill="{BG}"/>',
         f'<rect x="6" y="6" width="{width-12}" height="{height-12}" fill="{CREAM}"/>',
         f'<rect x="12" y="12" width="{width-24}" height="{height-24}" fill="{BG}"/>',
         f'<rect x="18" y="18" width="{width-36}" height="{height-36}" fill="{PANEL}"/>',
-        f'<text x="36" y="48" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">どうぐ / LOADOUT</text>',
-        f'<text x="{width-36}" y="48" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">ぶき · よろい · じゅもん</text>',
+        f'<text x="36" y="44" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">どうぐ / LOADOUT</text>',
+        f'<text x="{width-36}" y="44" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">ぶき=ハード · よろい=スタック · じゅもん=AI/研究</text>',
     ]
 
     col_meta = [
-        ("ぶき", 36, PINK, "WEAPON"),
-        ("よろい", 328, CYAN, "ARMOR"),
-        ("じゅもん", 620, CREAM, "SKILL"),
+        ("ぶき", 36, PINK, "HARDWARE"),
+        ("よろい", 328, CYAN, "STACK"),
+        ("じゅもん", 620, CREAM, "AI / MAGIC"),
     ]
     kind_map = {"ぶき": "WEAPON", "よろい": "ARMOR", "じゅもん": "SKILL"}
     for title, x0, accent, eng in col_meta:
         kind = kind_map[title]
-        parts.append(f'<rect x="{x0}" y="64" width="264" height="232" fill="{CREAM}"/>')
-        parts.append(f'<rect x="{x0+6}" y="70" width="252" height="220" fill="{SLOT}"/>')
-        parts.append(f'<rect x="{x0+6}" y="70" width="252" height="32" fill="{accent}"/>')
+        parts.append(f'<rect x="{x0}" y="58" width="264" height="238" fill="{CREAM}"/>')
+        parts.append(f'<rect x="{x0+6}" y="64" width="252" height="226" fill="{SLOT}"/>')
+        parts.append(f'<rect x="{x0+6}" y="64" width="252" height="32" fill="{accent}"/>')
         parts.append(
-            f'<text x="{x0 + 132}" y="92" text-anchor="middle" fill="{BG}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">{title}</text>'
+            f'<text x="{x0 + 132}" y="86" text-anchor="middle" fill="{BG}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">{title}</text>'
         )
         parts.append(
-            f'<text x="{x0 + 132}" y="118" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">{eng}</text>'
+            f'<text x="{x0 + 132}" y="112" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">{eng}</text>'
         )
-        items = buckets[kind][:3]
-        if not items:
-            parts.append(
-                f'<text x="{x0 + 132}" y="190" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">——</text>'
-            )
-            continue
-        for i, (label, data) in enumerate(items):
-            y = 132 + i * 48
-            parts.append(f'<rect x="{x0 + 18}" y="{y}" width="228" height="40" fill="{CREAM}"/>')
-            parts.append(f'<rect x="{x0 + 22}" y="{y+4}" width="220" height="32" fill="#14141E"/>')
-            parts.append(f'<rect x="{x0 + 28}" y="{y+10}" width="20" height="20" fill="{accent}"/>')
+        items = buckets.get(kind, [])[:3]
+        for i, (label, sub, lv) in enumerate(items):
+            y = 124 + i * 50
+            parts.append(f'<rect x="{x0 + 18}" y="{y}" width="228" height="42" fill="{CREAM}"/>')
+            parts.append(f'<rect x="{x0 + 22}" y="{y+4}" width="220" height="34" fill="#14141E"/>')
+            parts.append(f'<rect x="{x0 + 28}" y="{y+11}" width="20" height="20" fill="{accent}"/>')
             short = label if len(label) <= 16 else label[:15] + "…"
             parts.append(
                 f'<text x="{x0 + 56}" y="{y + 18}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{escape(short)}</text>'
             )
             parts.append(
-                f'<text x="{x0 + 56}" y="{y + 32}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">LV{data["repos"]}</text>'
+                f'<text x="{x0 + 56}" y="{y + 32}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">LV{lv} · {escape(sub)}</text>'
             )
 
     parts.append("</svg>")
@@ -710,7 +762,7 @@ def main() -> None:
     print(f"wrote {domains_path}")
 
     toolkit = collect_ai_toolkit(repos)
-    ai_svg = render_ai_toolkit_svg(toolkit)
+    ai_svg = render_ai_toolkit_svg(toolkit, totals)
     ai_path = OUT_DIR / "ai-radar.svg"
     ai_path.write_text(ai_svg, encoding="utf-8")
     print(f"wrote {ai_path} ({len(toolkit)} signals)")

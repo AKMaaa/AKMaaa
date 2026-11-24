@@ -153,10 +153,11 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🎒 どうぐ · AI EQUIPMENT
+## 🎒 どうぐ
 
 <pre>
-<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;">equip --scan gemini openai langchain</span>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;"># ぶき=ハード / よろい=スタック / じゅもん=AI・研究</span>
+<span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;">equip --hardware --stack --magic</span>
 </pre>
 
 <p align="center">
