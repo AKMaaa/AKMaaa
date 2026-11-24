@@ -483,6 +483,7 @@ def build_loadout(
             break
         pct = max(1, round(100 * b / total_bytes))
         armor.append((name, f"{pct}% of code", min(99, max(10, pct * 2))))
+    armor.sort(key=lambda x: x[2], reverse=True)
 
     spells: list[tuple[str, str, int]] = []
     for label, data in sorted(
