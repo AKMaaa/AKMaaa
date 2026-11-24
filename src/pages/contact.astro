@@ -1,6 +1,12 @@
 ---
 import { contactEmail } from '../data/bio';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const turnstileSiteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '').trim();
+const contactApi = (import.meta.env.PUBLIC_CONTACT_API_URL ?? '').trim();
+const turnstileEnabled = turnstileSiteKey.length > 0;
+const endpoint = contactApi || `https://formsubmit.co/${contactEmail}`;
+const sent = Astro.url.searchParams.get('sent') === '1';
 ---
 
 <BaseLayout
@@ -11,15 +17,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 	<div class="contact-intro">
 		<a class="mail" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+		{
+			sent && (
+				<p class="contact-sent">メッセージを受け付けました。ありがとうございます。</p>
+			)
+		}
 	</div>
 
 	<form
 		class="contact-form"
-		action={`https://formsubmit.co/${contactEmail}`}
+		action={endpoint}
 		method="POST"
+		data-turnstile={turnstileEnabled ? 'on' : 'off'}
 	>
 		<input type="hidden" name="_subject" value="Portfolio contact — Maeda Akira" />
 		<input type="hidden" name="_template" value="table" />
+		{/* Worker 経由時は Turnstile を Worker が検証。直 FormSubmit 時の保険 */}
 		<input type="hidden" name="_captcha" value="false" />
 		<input
 			type="text"
@@ -51,8 +64,71 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<textarea name="message" rows="6" required placeholder="Message"></textarea>
 		</label>
 
+		{
+			turnstileEnabled ? (
+				<div class="turnstile-field">
+					<span class="turnstile-label">verification</span>
+					<div
+						class="cf-turnstile"
+						data-sitekey={turnstileSiteKey}
+						data-theme="light"
+						data-size="normal"
+						data-callback="onContactTurnstileSuccess"
+						data-expired-callback="onContactTurnstileExpire"
+						data-error-callback="onContactTurnstileExpire"
+						data-retry="auto"
+					/>
+				</div>
+			) : (
+				<p class="turnstile-missing">
+					Turnstile 未設定です。<code>PUBLIC_TURNSTILE_SITE_KEY</code> を入れてください。
+				</p>
+			)
+		}
+
 		<div class="actions">
-			<button type="submit">send</button>
+			<button type="submit" disabled={turnstileEnabled} data-contact-submit>
+				send
+			</button>
 		</div>
 	</form>
 </BaseLayout>
+
+{
+	turnstileEnabled && (
+		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+	)
+}
+
+<script is:inline>
+	(() => {
+		const form = document.querySelector('.contact-form');
+		const submit = document.querySelector('[data-contact-submit]');
+		if (!(form instanceof HTMLFormElement) || !(submit instanceof HTMLButtonElement)) return;
+
+		const gated = form.dataset.turnstile === 'on';
+
+		window.onContactTurnstileSuccess = () => {
+			if (gated) submit.disabled = false;
+		};
+
+		window.onContactTurnstileExpire = () => {
+			if (gated) submit.disabled = true;
+		};
+
+		form.addEventListener('submit', (event) => {
+			if (!gated) return;
+			const token = form.querySelector(
+				'textarea[name="cf-turnstile-response"], input[name="cf-turnstile-response"]',
+			);
+			const value =
+				token instanceof HTMLTextAreaElement || token instanceof HTMLInputElement
+					? token.value.trim()
+					: '';
+			if (!value) {
+				event.preventDefault();
+				submit.disabled = true;
+			}
+		});
+	})();
+</script>

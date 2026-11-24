@@ -11,19 +11,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 	<ul class="photo-grid">
 		{
-			photographs.map((photo) => (
-				<li class="photo-item">
-					<figure>
-						<img src={photo.src} alt={photo.alt} width="1200" height="800" loading="lazy" />
-						<figcaption class="photo-caption">
-							<strong>{photo.title}</strong>
-							<span>
-								{[photo.place, photo.year].filter(Boolean).join(' / ')}
-							</span>
-						</figcaption>
-					</figure>
-				</li>
-			))
+			photographs.map((photo) => {
+				const portrait = photo.height > photo.width;
+				const classes = [
+					'photo-item',
+					photo.featured ? 'is-featured' : '',
+					portrait ? 'is-portrait' : '',
+				]
+					.filter(Boolean)
+					.join(' ');
+
+				return (
+					<li class={classes}>
+						<figure>
+							<img
+								src={photo.src}
+								alt={photo.alt}
+								width={photo.width}
+								height={photo.height}
+								loading="lazy"
+								decoding="async"
+							/>
+							<figcaption class="photo-caption">
+								<strong>{photo.title}</strong>
+								<span>
+									{[photo.place, photo.year].filter(Boolean).join(' / ')}
+								</span>
+							</figcaption>
+						</figure>
+					</li>
+				);
+			})
 		}
 	</ul>
 </BaseLayout>

@@ -25,9 +25,12 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
+          PUBLIC_CONTACT_API_URL: ${{ secrets.PUBLIC_CONTACT_API_URL }}
         # GitHub → Settings → Secrets and variables → Actions に
-        # MICROCMS_SERVICE_DOMAIN / MICROCMS_API_KEY を登録しないと
-        # 本番の /news は空になります。
+        # MICROCMS_* / PUBLIC_TURNSTILE_SITE_KEY / PUBLIC_CONTACT_API_URL
+        # Turnstile の Secret Key は Worker の Encrypted Secret のみ
+        # （workers/contact → wrangler secret put TURNSTILE_SECRET_KEY）
 
   deploy:
     needs: build

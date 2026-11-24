@@ -1,0 +1,10 @@
+name = "akmaaa-contact"
+main = "src/index.ts"
+compatibility_date = "2025-11-01"
+
+# 公開してよい値だけ vars に書く。
+# TURNSTILE_SECRET_KEY は Dashboard の Encrypt / `wrangler secret put` で入れる。
+[vars]
+CONTACT_TO = "akira.vvs@upskillingjp.org"
+THANKS_URL = "https://akmaaa.github.io/AKMaaa/contact/?sent=1"
+ALLOW_ORIGIN = "https://akmaaa.github.io"

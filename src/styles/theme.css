@@ -155,6 +155,15 @@ h3 {
 	font-size: 1.15rem;
 }
 
+.contact-sent {
+	margin: 0;
+	font-family: var(--font-en);
+	font-size: 0.9rem;
+	font-weight: 300;
+	letter-spacing: 0.02em;
+	color: var(--text-secondary);
+}
+
 .contact-form {
 	max-width: 26rem;
 	display: grid;
@@ -197,9 +206,46 @@ h3 {
 	resize: vertical;
 }
 
+.contact-form .turnstile-field {
+	display: grid;
+	gap: 0.65rem;
+}
+
+.contact-form .turnstile-label {
+	font-family: var(--font-en);
+	font-size: 0.82rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	color: var(--muted);
+}
+
+.contact-form .cf-turnstile {
+	width: fit-content;
+	min-height: 65px;
+}
+
+.contact-form .turnstile-missing {
+	margin: 0;
+	font-family: var(--font-en);
+	font-size: 0.85rem;
+	font-weight: 300;
+	line-height: 1.55;
+	color: var(--muted);
+}
+
+.contact-form .turnstile-missing code {
+	font-size: 0.8em;
+}
+
 .contact-form .actions {
 	margin-top: 0.35rem;
 	text-align: left;
+}
+
+.contact-form button[type='submit']:disabled {
+	opacity: 0.35;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
 .contact-form button[type='submit'],

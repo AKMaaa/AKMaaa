@@ -1,0 +1,15 @@
+{
+  "name": "akmaaa-contact",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:turnstile": "wrangler secret put TURNSTILE_SECRET_KEY"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261123.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.168.0"
+  }
+}
