@@ -10,10 +10,10 @@
 <p>
   <img src="./data/rpg/pixel-corner.svg" width="28" alt="" />
   &nbsp;
-  <img src="./data/rpg/pixel-weapon.jpg" width="42" alt="weapon" />
-  <img src="./data/rpg/pixel-armor.jpg" width="42" alt="armor" />
-  <img src="./data/rpg/pixel-skill.jpg" width="42" alt="skill" />
-  <img src="./data/rpg/pixel-nightowl.jpg" width="42" alt="night owl" />
+  <img src="./data/rpg/pixel-weapon.svg" width="48" alt="weapon" style="image-rendering: pixelated;" />
+  <img src="./data/rpg/pixel-armor.svg" width="48" alt="armor" style="image-rendering: pixelated;" />
+  <img src="./data/rpg/pixel-skill.svg" width="48" alt="skill" style="image-rendering: pixelated;" />
+  <img src="./data/rpg/pixel-nightowl.svg" width="48" alt="night owl" style="image-rendering: pixelated;" />
   &nbsp;
   <img src="./data/rpg/pixel-corner.svg" width="28" alt="" style="transform: scaleX(-1);" />
 </p>
@@ -85,7 +85,7 @@ flowchart LR
 
 ---
 
-## 🕹️ STATUS WINDOW
+## 🪟 ステータス
 
 <table>
   <tr>
@@ -121,7 +121,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🗺️ FIELD MAP · CONTRIBUTIONS
+## 🗺️ フィールド · CONTRIBUTIONS
 
 <div align="center">
   <img src="./profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph" width="100%" />
@@ -132,8 +132,8 @@ Let's build something amazing together! 💖
     <td width="50%" align="center" valign="top">
       <img src="./output/hour-ring.svg" alt="Commit hour chrono ring JST" width="100%" />
       <br />
-      <img src="./data/rpg/pixel-nightowl.jpg" alt="night owl" width="72" />
-      <br /><sub>NIGHT OWL CLASS UNLOCKED</sub>
+      <img src="./data/rpg/pixel-nightowl.svg" alt="night owl" width="80" style="image-rendering: pixelated;" />
+      <br /><sub>よふかし クラス</sub>
     </td>
     <td width="50%" align="center" valign="top">
       <img src="https://streak-stats.demolab.com/?user=AKMaaa&theme=radical&hide_border=true&background=07070C&ring=FF2D95&fire=2DE2E6&currStreakLabel=E8E0D0&sideLabels=E8E0D0&dates=9A93A5" alt="GitHub streak" height="170" />
@@ -153,16 +153,16 @@ Let's build something amazing together! 💖
 
 ---
 
-## ⚔️ LOADOUT · AI EQUIPMENT
+## 🎒 どうぐ · AI EQUIPMENT
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;">equip --scan gemini openai langchain</span>
 </pre>
 
 <p align="center">
-  <img src="./data/rpg/pixel-weapon.jpg" height="56" alt="weapon" />
-  <img src="./data/rpg/pixel-armor.jpg" height="56" alt="armor" />
-  <img src="./data/rpg/pixel-skill.jpg" height="56" alt="skill" />
+  <img src="./data/rpg/pixel-weapon.svg" height="64" alt="weapon" style="image-rendering: pixelated;" />
+  <img src="./data/rpg/pixel-armor.svg" height="64" alt="armor" style="image-rendering: pixelated;" />
+  <img src="./data/rpg/pixel-skill.svg" height="64" alt="skill" style="image-rendering: pixelated;" />
 </p>
 
 <div align="center">
@@ -171,7 +171,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🧬 SKILL TREE · LANGUAGES & DOMAINS
+## 🧬 じゅもんツリー · LANGUAGES
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;">./skilltree.sh --all --private --org</span>
@@ -191,7 +191,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 💎 TECH INVENTORY
+## 💎 アイテム · TECH
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">ls tech-stack/</span>
@@ -204,21 +204,21 @@ Let's build something amazing together! 💖
 
 ---
 
-## 📜 QUEST LOG · EXPERIENCE
+## 📜 ぼうけんのしょ · EXPERIENCE
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">cat experience.txt</span>
 📊 Professional Experience & Education:
 </pre>
 
-### 🏰 Active Quests · Current Positions
+### 🏰 いまのクエスト · Current Positions
 
 | Role | Guild | Period | Notes |
 |------|-------|--------|-------|
 | **研究員** | <img src="https://www.google.com/s2/favicons?domain=upskillingjp.org&sz=32" width="16" height="16" alt="" /> [NPO法人学び足しデザイン工房](https://upskillingjp.org/) | 2026.3 - Present | R&D・システム開発部 |
 | **エンジニア（正社員）** | <img src="https://www.google.com/s2/favicons?domain=simplex.holdings&sz=32" width="16" height="16" alt="" /> [シンプレクス・ホールディングス株式会社](https://www.simplex.holdings/) | 2026.04 - Present | Financial Technology / Enterprise DX |
 
-### 🗡️ Cleared Quests · アルバイト・インターン
+### 🗡️ クリア済み · アルバイト・インターン
 
 | Role | Guild | Period | Notes |
 |------|-------|--------|-------|
@@ -277,7 +277,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 🎧 SOUNDTRACK
+## 🎧 サウンドトラック
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #2DE2E6;">./jukebox.sh --litty --badhop --999dobby</span>
@@ -304,7 +304,7 @@ Let's build something amazing together! 💖
 
 ---
 
-## 📡 PARTY LINK · CONTACT
+## 📡 なかま募集 · CONTACT
 
 <pre>
 <span style="color: #ff1493;">akira@gal:~$</span> <span style="color: #ff69b4;">./contact.sh</span>

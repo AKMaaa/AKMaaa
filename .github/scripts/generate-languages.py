@@ -452,56 +452,51 @@ def render_ai_toolkit_svg(toolkit: dict[str, dict]) -> str:
         kind = RPG_SLOT_KIND.get(label, "SKILL")
         buckets[kind].append((label, data))
 
+    # Dragon Quest-ish command window: double cream frame + chunky blocks
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="crispEdges" role="img" aria-label="AI loadout RPG inventory">',
         f'<rect width="100%" height="100%" fill="{BG}"/>',
-        f'<rect x="8" y="8" width="{width-16}" height="{height-16}" fill="{PANEL}" stroke="{CREAM}" stroke-width="2"/>',
-        f'<rect x="8" y="8" width="12" height="12" fill="{CYAN}"/>',
-        f'<rect x="{width-20}" y="8" width="12" height="12" fill="{PINK}"/>',
-        f'<rect x="8" y="{height-20}" width="12" height="12" fill="{PINK}"/>',
-        f'<rect x="{width-20}" y="{height-20}" width="12" height="12" fill="{CYAN}"/>',
-        f'<text x="28" y="36" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">LOADOUT // AI EQUIPMENT</text>',
-        f'<text x="{width-28}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">WEAPON · ARMOR · SKILL</text>',
+        f'<rect x="6" y="6" width="{width-12}" height="{height-12}" fill="{CREAM}"/>',
+        f'<rect x="12" y="12" width="{width-24}" height="{height-24}" fill="{BG}"/>',
+        f'<rect x="18" y="18" width="{width-36}" height="{height-36}" fill="{PANEL}"/>',
+        f'<text x="36" y="48" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">どうぐ / LOADOUT</text>',
+        f'<text x="{width-36}" y="48" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">ぶき · よろい · じゅもん</text>',
     ]
 
     col_meta = [
-        ("WEAPON", 28, PINK, "⚔ ATK APIs"),
-        ("ARMOR", 328, CYAN, "🛡 FRAMEWORK"),
-        ("SKILL", 628, CREAM, "✦ UTILITY"),
+        ("ぶき", 36, PINK, "WEAPON"),
+        ("よろい", 328, CYAN, "ARMOR"),
+        ("じゅもん", 620, CREAM, "SKILL"),
     ]
-    for kind, x0, accent, subtitle in col_meta:
+    kind_map = {"ぶき": "WEAPON", "よろい": "ARMOR", "じゅもん": "SKILL"}
+    for title, x0, accent, eng in col_meta:
+        kind = kind_map[title]
+        parts.append(f'<rect x="{x0}" y="64" width="264" height="232" fill="{CREAM}"/>')
+        parts.append(f'<rect x="{x0+6}" y="70" width="252" height="220" fill="{SLOT}"/>')
+        parts.append(f'<rect x="{x0+6}" y="70" width="252" height="32" fill="{accent}"/>')
         parts.append(
-            f'<rect x="{x0}" y="52" width="264" height="244" fill="{SLOT}" stroke="{accent}" stroke-width="2"/>'
+            f'<text x="{x0 + 132}" y="92" text-anchor="middle" fill="{BG}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">{title}</text>'
         )
         parts.append(
-            f'<rect x="{x0}" y="52" width="264" height="28" fill="{accent}"/>'
+            f'<text x="{x0 + 132}" y="118" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">{eng}</text>'
         )
-        parts.append(
-            f'<text x="{x0 + 132}" y="71" text-anchor="middle" fill="#07070C" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{kind}</text>'
-        )
-        parts.append(
-            f'<text x="{x0 + 132}" y="98" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">{escape(subtitle)}</text>'
-        )
-        items = buckets[kind][:4]
+        items = buckets[kind][:3]
         if not items:
             parts.append(
-                f'<text x="{x0 + 132}" y="180" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">empty slot</text>'
+                f'<text x="{x0 + 132}" y="190" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">——</text>'
             )
             continue
         for i, (label, data) in enumerate(items):
-            y = 112 + i * 42
+            y = 132 + i * 48
+            parts.append(f'<rect x="{x0 + 18}" y="{y}" width="228" height="40" fill="{CREAM}"/>')
+            parts.append(f'<rect x="{x0 + 22}" y="{y+4}" width="220" height="32" fill="#14141E"/>')
+            parts.append(f'<rect x="{x0 + 28}" y="{y+10}" width="20" height="20" fill="{accent}"/>')
+            short = label if len(label) <= 16 else label[:15] + "…"
             parts.append(
-                f'<rect x="{x0 + 14}" y="{y}" width="236" height="34" fill="#14141E" stroke="{accent}" stroke-opacity="0.55"/>'
+                f'<text x="{x0 + 56}" y="{y + 18}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{escape(short)}</text>'
             )
             parts.append(
-                f'<rect x="{x0 + 20}" y="{y + 7}" width="20" height="20" fill="{accent}"/>'
-            )
-            short = label if len(label) <= 18 else label[:17] + "…"
-            parts.append(
-                f'<text x="{x0 + 48}" y="{y + 15}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">{escape(short)}</text>'
-            )
-            parts.append(
-                f'<text x="{x0 + 48}" y="{y + 28}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">LV.{data["repos"]} · {data["hits"]} hits</text>'
+                f'<text x="{x0 + 56}" y="{y + 32}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">LV{data["repos"]}</text>'
             )
 
     parts.append("</svg>")
@@ -561,11 +556,13 @@ def render_hour_ring_svg(hours: dict[int, int]) -> str:
     night_pct = round(100 * night / total)
 
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="geometricPrecision" role="img" aria-label="Commit hour ring">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="crispEdges" role="img" aria-label="Commit hour ring">',
         f'<rect width="100%" height="100%" fill="{BG}"/>',
-        f'<rect x="8" y="8" width="{width-16}" height="{height-16}" fill="{PANEL}" stroke="{CREAM}" stroke-width="2"/>',
-        f'<text x="24" y="36" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700">CHRONO RING</text>',
-        f'<text x="{width-24}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">JST · commit clock</text>',
+        f'<rect x="6" y="6" width="{width-12}" height="{height-12}" fill="{CREAM}"/>',
+        f'<rect x="12" y="12" width="{width-24}" height="{height-24}" fill="{BG}"/>',
+        f'<rect x="18" y="18" width="{width-36}" height="{height-36}" fill="{PANEL}"/>',
+        f'<text x="32" y="44" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">じかんたい</text>',
+        f'<text x="{width-32}" y="44" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">JST COMMIT RING</text>',
     ]
 
     max_h = max(hours.values()) if hours else 1
@@ -603,7 +600,7 @@ def render_hour_ring_svg(hours: dict[int, int]) -> str:
 
     parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r_in-6}" fill="{SLOT}" stroke="{CREAM}" stroke-width="2"/>')
     parts.append(
-        f'<text x="{cx}" y="{cy - 18}" text-anchor="middle" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">PEAK</text>'
+        f'<text x="{cx}" y="{cy - 18}" text-anchor="middle" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">さいこう</text>'
     )
     parts.append(
         f'<text x="{cx}" y="{cy + 6}" text-anchor="middle" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="700">{peak_h:02d}:00</text>'
@@ -612,7 +609,7 @@ def render_hour_ring_svg(hours: dict[int, int]) -> str:
         f'<text x="{cx}" y="{cy + 28}" text-anchor="middle" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{peak_n} commits</text>'
     )
     parts.append(
-        f'<text x="{cx}" y="{cy + 46}" text-anchor="middle" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">NIGHT {night_pct}%</text>'
+        f'<text x="{cx}" y="{cy + 46}" text-anchor="middle" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">よる {night_pct}%</text>'
     )
     parts.append("</svg>")
     return "\n".join(parts)
