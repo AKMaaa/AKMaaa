@@ -77,6 +77,23 @@ jobs:
             output/github-snake.svg?color_snake=#2DE2E6&color_dots=#0B0B10,#E8E0D0,#2DE2E6,#FF2D95,#FF9F1C
             output/github-snake-dark.svg?color_snake=#FF2D95&color_dots=#07070C,#1A1A22,#2DE2E6,#E8E0D0,#FF2D95
 
+      - name: GitHub stats rank card (cache locally; public API is flaky)
+        env:
+          USERNAME: ${{ github.repository_owner }}
+        run: |
+          mkdir -p output
+          URL="https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&include_all_commits=true&rank_icon=default&hide_border=true&bg_color=07070C&title_color=E8E0D0&icon_color=2DE2E6&text_color=F4F0F7&ring_color=FF2D95"
+          for i in 1 2 3 4 5; do
+            curl -fsSL "$URL" -o output/github-stats.svg && \
+              grep -q 'rank-circle\|level-rank-icon\|Rank:' output/github-stats.svg && \
+              ! grep -qi 'Something went wrong' output/github-stats.svg && \
+              echo "stats ok (try $i)" && exit 0
+            echo "stats fetch retry $i"
+            sleep $((i * 5))
+          done
+          echo "failed to fetch stats card" >&2
+          exit 1
+
       - name: Commit generated assets
         run: |
           git config user.name github-actions[bot]
