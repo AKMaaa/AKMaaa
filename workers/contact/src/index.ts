@@ -14,6 +14,12 @@ const json = (body: unknown, status = 200, extra: HeadersInit = {}) =>
 		},
 	});
 
+const html = (body: string, status = 200) =>
+	new Response(body, {
+		status,
+		headers: { 'content-type': 'text/html; charset=utf-8' },
+	});
+
 const redirect = (url: string) =>
 	new Response(null, {
 		status: 303,
@@ -35,9 +41,14 @@ async function verifyTurnstile(token: string, secret: string, ip: string | null)
 	return data.success === true;
 }
 
+/**
+ * FormSubmit はブラウザ Origin 前提。Worker から送るときは Referer を付与し、
+ * JSON の success を見る。失敗しやすいので呼び出し側でフォールバックすること。
+ */
 async function forwardToFormSubmit(
 	to: string,
 	fields: { name: string; email: string; message: string; subject: string },
+	origin: string,
 ) {
 	const body = new URLSearchParams();
 	body.set('name', fields.name);
@@ -53,16 +64,26 @@ async function forwardToFormSubmit(
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/x-www-form-urlencoded',
+			Origin: origin,
+			Referer: `${origin}/AKMaaa/contact/`,
 		},
 		body,
 	});
 
-	return res.ok;
+	const text = await res.text();
+	try {
+		const data = JSON.parse(text) as { success?: boolean | string };
+		return data.success === true || data.success === 'true';
+	} catch {
+		return res.ok;
+	}
 }
 
 export default {
 	async fetch(request: Request, env: Env): Promise<Response> {
-		const allowOrigin = env.ALLOW_ORIGIN || '*';
+		const allowOrigin = env.ALLOW_ORIGIN || 'https://akmaaa.github.io';
+		const thanks = env.THANKS_URL || 'https://akmaaa.github.io/AKMaaa/contact/?sent=1';
+		const errorUrl = thanks.replace('sent=1', 'error=1');
 
 		if (request.method === 'OPTIONS') {
 			return new Response(null, {
@@ -70,7 +91,7 @@ export default {
 				headers: {
 					'Access-Control-Allow-Origin': allowOrigin,
 					'Access-Control-Allow-Methods': 'POST, OPTIONS',
-					'Access-Control-Allow-Headers': 'Content-Type',
+					'Access-Control-Allow-Headers': 'Content-Type, Accept',
 					'Access-Control-Max-Age': '86400',
 				},
 			});
@@ -87,41 +108,34 @@ export default {
 		const form = await request.formData();
 		const honey = String(form.get('_honey') ?? '').trim();
 		if (honey) {
-			// ボットは成功したふりをして終わる
-			return redirect(env.THANKS_URL);
+			return redirect(thanks);
 		}
 
 		const name = String(form.get('name') ?? '').trim();
 		const email = String(form.get('email') ?? '').trim();
 		const message = String(form.get('message') ?? '').trim();
 		const subject = String(form.get('_subject') ?? 'Portfolio contact — Maeda Akira').trim();
+		const mode = String(form.get('_mode') ?? '').trim(); // verify | deliver
 		const token = String(
 			form.get('cf-turnstile-response') ?? form.get('g-recaptcha-response') ?? '',
 		).trim();
 
+		const wantsJson = (request.headers.get('Accept') || '').includes('application/json');
+
 		if (!name || !email || !message || !token) {
-			return json({ ok: false, error: 'invalid_request' }, 400);
+			if (wantsJson) return json({ ok: false, error: 'invalid_request' }, 400);
+			return redirect(errorUrl);
 		}
 
 		const ip = request.headers.get('CF-Connecting-IP');
 		const human = await verifyTurnstile(token, env.TURNSTILE_SECRET_KEY, ip);
 		if (!human) {
-			return json({ ok: false, error: 'turnstile_failed' }, 403);
+			if (wantsJson) return json({ ok: false, error: 'turnstile_failed' }, 403);
+			return redirect(errorUrl);
 		}
 
-		const sent = await forwardToFormSubmit(env.CONTACT_TO, {
-			name,
-			email,
-			message,
-			subject,
-		});
-
-		if (!sent) {
-			return json({ ok: false, error: 'delivery_failed' }, 502);
-		}
-
-		const wantsJson = (request.headers.get('Accept') || '').includes('application/json');
-		if (wantsJson) {
+		// フロントが FormSubmit に渡す前の検証のみ
+		if (mode === 'verify') {
 			return json(
 				{ ok: true },
 				200,
@@ -129,6 +143,21 @@ export default {
 			);
 		}
 
-		return redirect(env.THANKS_URL);
+		const sent = await forwardToFormSubmit(
+			env.CONTACT_TO,
+			{ name, email, message, subject },
+			allowOrigin,
+		);
+
+		if (!sent) {
+			if (wantsJson) return json({ ok: false, error: 'delivery_failed' }, 502);
+			return redirect(errorUrl);
+		}
+
+		if (wantsJson) {
+			return json({ ok: true }, 200, { 'Access-Control-Allow-Origin': allowOrigin });
+		}
+
+		return redirect(thanks);
 	},
 } satisfies ExportedHandler<Env>;

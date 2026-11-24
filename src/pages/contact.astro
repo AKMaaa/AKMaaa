@@ -3,12 +3,12 @@ import { contactEmail } from '../data/bio';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const turnstileSiteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '').trim();
-// Actions で Secret 未設定だと空文字が入り、?? をすり抜けるので trim 後にフォールバックする
 const contactApiRaw = (import.meta.env.PUBLIC_CONTACT_API_URL ?? '').trim();
 const contactApi = contactApiRaw || 'https://akmaaa-contact.akmaaa.workers.dev';
+const formsubmitAction = `https://formsubmit.co/${contactEmail}`;
 const turnstileEnabled = turnstileSiteKey.length > 0;
-const endpoint = contactApi;
 const sent = Astro.url.searchParams.get('sent') === '1';
+const errored = Astro.url.searchParams.get('error') === '1';
 ---
 
 <BaseLayout
@@ -19,23 +19,28 @@ const sent = Astro.url.searchParams.get('sent') === '1';
 >
 	<div class="contact-intro">
 		<a class="mail" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+		{sent && <p class="contact-sent">メッセージを受け付けました。ありがとうございます。</p>}
 		{
-			sent && (
-				<p class="contact-sent">メッセージを受け付けました。ありがとうございます。</p>
+			errored && (
+				<p class="contact-error">
+					送信に失敗しました。時間をおいて再度お試しください。またはメールでご連絡ください。
+				</p>
 			)
 		}
 	</div>
 
 	<form
 		class="contact-form"
-		action={endpoint}
+		action={formsubmitAction}
 		method="POST"
 		data-turnstile={turnstileEnabled ? 'on' : 'off'}
+		data-verify-url={contactApi}
+		data-formsubmit={formsubmitAction}
 	>
 		<input type="hidden" name="_subject" value="Portfolio contact — Maeda Akira" />
 		<input type="hidden" name="_template" value="table" />
-		{/* Worker 経由時は Turnstile を Worker が検証。直 FormSubmit 時の保険 */}
 		<input type="hidden" name="_captcha" value="false" />
+		<input type="hidden" name="_next" value="https://akmaaa.github.io/AKMaaa/contact/?sent=1" />
 		<input
 			type="text"
 			name="_honey"
@@ -88,6 +93,8 @@ const sent = Astro.url.searchParams.get('sent') === '1';
 			)
 		}
 
+		<p class="contact-status" data-contact-status hidden></p>
+
 		<div class="actions">
 			<button type="submit" disabled={turnstileEnabled} data-contact-submit>
 				send
@@ -106,9 +113,18 @@ const sent = Astro.url.searchParams.get('sent') === '1';
 	(() => {
 		const form = document.querySelector('.contact-form');
 		const submit = document.querySelector('[data-contact-submit]');
+		const statusEl = document.querySelector('[data-contact-status]');
 		if (!(form instanceof HTMLFormElement) || !(submit instanceof HTMLButtonElement)) return;
 
 		const gated = form.dataset.turnstile === 'on';
+		const verifyUrl = form.dataset.verifyUrl || '';
+		const formsubmit = form.dataset.formsubmit || form.action;
+
+		const setStatus = (text, show) => {
+			if (!(statusEl instanceof HTMLElement)) return;
+			statusEl.hidden = !show;
+			statusEl.textContent = text || '';
+		};
 
 		window.onContactTurnstileSuccess = () => {
 			if (gated) submit.disabled = false;
@@ -118,8 +134,9 @@ const sent = Astro.url.searchParams.get('sent') === '1';
 			if (gated) submit.disabled = true;
 		};
 
-		form.addEventListener('submit', (event) => {
-			if (!gated) return;
+		form.addEventListener('submit', async (event) => {
+			if (!gated || !verifyUrl) return;
+
 			const token = form.querySelector(
 				'textarea[name="cf-turnstile-response"], input[name="cf-turnstile-response"]',
 			);
@@ -130,6 +147,56 @@ const sent = Astro.url.searchParams.get('sent') === '1';
 			if (!value) {
 				event.preventDefault();
 				submit.disabled = true;
+				return;
+			}
+
+			// Turnstile を Worker で検証してから、ブラウザ経由で FormSubmit へ送る
+			event.preventDefault();
+			submit.disabled = true;
+			setStatus('送信しています…', true);
+
+			const fd = new FormData(form);
+			fd.set('_mode', 'verify');
+
+			try {
+				const res = await fetch(verifyUrl, {
+					method: 'POST',
+					body: fd,
+					headers: { Accept: 'application/json' },
+				});
+				const data = await res.json().catch(() => ({}));
+				if (!res.ok || !data.ok) {
+					setStatus('認証に失敗しました。ページを再読み込みして再度お試しください。', true);
+					submit.disabled = false;
+					return;
+				}
+
+				const bridge = document.createElement('form');
+				bridge.method = 'POST';
+				bridge.action = formsubmit;
+				bridge.style.display = 'none';
+
+				const pass = ['name', 'email', 'message', '_subject', '_template', '_captcha', '_next'];
+				for (const key of pass) {
+					const val = fd.get(key);
+					if (typeof val !== 'string') continue;
+					const input = document.createElement('input');
+					input.type = 'hidden';
+					input.name = key;
+					input.value = val;
+					bridge.appendChild(input);
+				}
+				const reply = document.createElement('input');
+				reply.type = 'hidden';
+				reply.name = '_replyto';
+				reply.value = String(fd.get('email') || '');
+				bridge.appendChild(reply);
+
+				document.body.appendChild(bridge);
+				bridge.submit();
+			} catch (err) {
+				setStatus('送信に失敗しました。ネットワークを確認して再度お試しください。', true);
+				submit.disabled = false;
 			}
 		});
 	})();

@@ -155,13 +155,21 @@ h3 {
 	font-size: 1.15rem;
 }
 
-.contact-sent {
+.contact-sent,
+.contact-error,
+.contact-status {
 	margin: 0;
 	font-family: var(--font-en);
 	font-size: 0.9rem;
 	font-weight: 300;
 	letter-spacing: 0.02em;
+	line-height: 1.55;
 	color: var(--text-secondary);
+}
+
+.contact-error,
+.contact-status {
+	color: #8a4b4b;
 }
 
 .contact-form {
