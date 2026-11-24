@@ -136,7 +136,9 @@ Let's build something amazing together! 💖
       <br /><sub>よふかし クラス</sub>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="https://streak-stats.demolab.com/?user=AKMaaa&theme=radical&hide_border=true&background=07070C&ring=FF2D95&fire=2DE2E6&currStreakLabel=E8E0D0&sideLabels=E8E0D0&dates=9A93A5" alt="GitHub streak" height="170" />
+      <img src="https://streak-stats.demolab.com/?user=AKMaaa&theme=radical&hide_border=true&background=07070C&ring=FF2D95&fire=2DE2E6&currStreakLabel=E8E0D0&sideLabels=E8E0D0&dates=9A93A5" alt="GitHub streak" height="160" />
+      <br />
+      <img src="https://github-readme-stats.vercel.app/api?username=AKMaaa&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&hide_border=true&bg_color=07070C&title_color=E8E0D0&icon_color=2DE2E6&text_color=F4F0F7&ring_color=FF2D95" alt="GitHub stats with rank grade" height="168" />
       <br />
       <img src="./output/trophy.svg" alt="GitHub trophies" width="100%" />
     </td>
