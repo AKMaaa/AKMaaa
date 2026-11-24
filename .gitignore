@@ -26,3 +26,8 @@ pnpm-debug.log*
 # Cloudflare Workers local
 workers/*/.wrangler/
 workers/*/.dev.vars
+
+# accidental npm installs under public
+public/images/.npm/
+public/images/Library/
+public/images/.local/
