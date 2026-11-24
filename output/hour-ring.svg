@@ -5,29 +5,29 @@
 <rect x="18" y="18" width="384" height="384" fill="#101018"/>
 <text x="32" y="44" fill="#E8E0D0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">じかんたい</text>
 <text x="388" y="44" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">JST COMMIT RING</text>
-<path d="M210.00,132.00 L210.00,94.44 A125.56,125.56 0 0 1 242.50,98.72 L232.78,135.00 A88.00,88.00 0 0 0 210.00,132.00 Z" fill="#FF2D95" fill-opacity="0.64" stroke="#07070C" stroke-width="1"/>
-<path d="M232.78,135.00 L240.44,106.40 A117.61,117.61 0 0 1 268.81,118.15 L254.00,143.79 A88.00,88.00 0 0 0 232.78,135.00 Z" fill="#FF2D95" fill-opacity="0.52" stroke="#07070C" stroke-width="1"/>
-<path d="M254.00,143.79 L267.28,120.79 A114.56,114.56 0 0 1 291.00,139.00 L272.23,157.77 A88.00,88.00 0 0 0 254.00,143.79 Z" fill="#FF2D95" fill-opacity="0.48" stroke="#07070C" stroke-width="1"/>
-<path d="M272.23,157.77 L286.68,143.32 A108.44,108.44 0 0 1 303.92,165.78 L286.21,176.00 A88.00,88.00 0 0 0 272.23,157.77 Z" fill="#FF2D95" fill-opacity="0.39" stroke="#07070C" stroke-width="1"/>
-<path d="M286.21,176.00 L302.33,166.69 A106.61,106.61 0 0 1 312.98,192.41 L295.00,197.22 A88.00,88.00 0 0 0 286.21,176.00 Z" fill="#FF2D95" fill-opacity="0.36" stroke="#07070C" stroke-width="1"/>
+<path d="M210.00,132.00 L210.00,95.47 A124.53,124.53 0 0 1 242.23,99.72 L232.78,135.00 A88.00,88.00 0 0 0 210.00,132.00 Z" fill="#FF2D95" fill-opacity="0.62" stroke="#07070C" stroke-width="1"/>
+<path d="M232.78,135.00 L240.28,106.99 A117.00,117.00 0 0 1 268.50,118.68 L254.00,143.79 A88.00,88.00 0 0 0 232.78,135.00 Z" fill="#FF2D95" fill-opacity="0.51" stroke="#07070C" stroke-width="1"/>
+<path d="M254.00,143.79 L267.05,121.18 A114.11,114.11 0 0 1 290.68,139.32 L272.23,157.77 A88.00,88.00 0 0 0 254.00,143.79 Z" fill="#FF2D95" fill-opacity="0.47" stroke="#07070C" stroke-width="1"/>
+<path d="M272.23,157.77 L286.59,143.41 A108.32,108.32 0 0 1 303.80,165.84 L286.21,176.00 A88.00,88.00 0 0 0 272.23,157.77 Z" fill="#FF2D95" fill-opacity="0.38" stroke="#07070C" stroke-width="1"/>
+<path d="M286.21,176.00 L302.30,166.71 A106.58,106.58 0 0 1 312.95,192.42 L295.00,197.22 A88.00,88.00 0 0 0 286.21,176.00 Z" fill="#FF2D95" fill-opacity="0.36" stroke="#07070C" stroke-width="1"/>
 <path d="M295.00,197.22 L312.39,192.57 A106.00,106.00 0 0 1 316.00,220.00 L298.00,220.00 A88.00,88.00 0 0 0 295.00,197.22 Z" fill="#22222C" fill-opacity="0.55" stroke="#07070C" stroke-width="1"/>
 <path d="M298.00,220.00 L316.00,220.00 A106.00,106.00 0 0 1 312.39,247.43 L295.00,242.78 A88.00,88.00 0 0 0 298.00,220.00 Z" fill="#22222C" fill-opacity="0.55" stroke="#07070C" stroke-width="1"/>
-<path d="M295.00,242.78 L313.57,247.75 A107.22,107.22 0 0 1 302.86,273.61 L286.21,264.00 A88.00,88.00 0 0 0 295.00,242.78 Z" fill="#2DE2E6" fill-opacity="0.37" stroke="#07070C" stroke-width="1"/>
-<path d="M286.21,264.00 L303.39,273.92 A107.83,107.83 0 0 1 286.25,296.25 L272.23,282.23 A88.00,88.00 0 0 0 286.21,264.00 Z" fill="#2DE2E6" fill-opacity="0.38" stroke="#07070C" stroke-width="1"/>
-<path d="M272.23,282.23 L288.84,298.84 A111.50,111.50 0 0 1 265.75,316.56 L254.00,296.21 A88.00,88.00 0 0 0 272.23,282.23 Z" fill="#2DE2E6" fill-opacity="0.43" stroke="#07070C" stroke-width="1"/>
-<path d="M254.00,296.21 L265.44,316.03 A110.89,110.89 0 0 1 238.70,327.11 L232.78,305.00 A88.00,88.00 0 0 0 254.00,296.21 Z" fill="#2DE2E6" fill-opacity="0.42" stroke="#07070C" stroke-width="1"/>
-<path d="M232.78,305.00 L241.39,337.15 A121.28,121.28 0 0 1 210.00,341.28 L210.00,308.00 A88.00,88.00 0 0 0 232.78,305.00 Z" fill="#2DE2E6" fill-opacity="0.58" stroke="#07070C" stroke-width="1"/>
-<path d="M210.00,308.00 L210.00,331.50 A111.50,111.50 0 0 1 181.14,327.70 L187.22,305.00 A88.00,88.00 0 0 0 210.00,308.00 Z" fill="#2DE2E6" fill-opacity="0.43" stroke="#07070C" stroke-width="1"/>
-<path d="M187.22,305.00 L179.09,335.37 A119.44,119.44 0 0 1 150.28,323.44 L166.00,296.21 A88.00,88.00 0 0 0 187.22,305.00 Z" fill="#2DE2E6" fill-opacity="0.55" stroke="#07070C" stroke-width="1"/>
-<path d="M166.00,296.21 L145.69,331.38 A128.61,128.61 0 0 1 119.06,310.94 L147.77,282.23 A88.00,88.00 0 0 0 166.00,296.21 Z" fill="#2DE2E6" fill-opacity="0.68" stroke="#07070C" stroke-width="1"/>
-<path d="M147.77,282.23 L113.87,316.13 A135.94,135.94 0 0 1 92.27,287.97 L133.79,264.00 A88.00,88.00 0 0 0 147.77,282.23 Z" fill="#2DE2E6" fill-opacity="0.79" stroke="#07070C" stroke-width="1"/>
-<path d="M133.79,264.00 L93.33,287.36 A134.72,134.72 0 0 1 79.87,254.87 L125.00,242.78 A88.00,88.00 0 0 0 133.79,264.00 Z" fill="#2DE2E6" fill-opacity="0.77" stroke="#07070C" stroke-width="1"/>
-<path d="M125.00,242.78 L82.82,254.08 A131.67,131.67 0 0 1 78.33,220.00 L122.00,220.00 A88.00,88.00 0 0 0 125.00,242.78 Z" fill="#2DE2E6" fill-opacity="0.73" stroke="#07070C" stroke-width="1"/>
-<path d="M122.00,220.00 L80.78,220.00 A129.22,129.22 0 0 1 85.18,186.55 L125.00,197.22 A88.00,88.00 0 0 0 122.00,220.00 Z" fill="#2DE2E6" fill-opacity="0.69" stroke="#07070C" stroke-width="1"/>
-<path d="M125.00,197.22 L102.30,191.14 A111.50,111.50 0 0 1 113.44,164.25 L133.79,176.00 A88.00,88.00 0 0 0 125.00,197.22 Z" fill="#2DE2E6" fill-opacity="0.43" stroke="#07070C" stroke-width="1"/>
-<path d="M133.79,176.00 L102.85,158.14 A123.72,123.72 0 0 1 122.52,132.52 L147.77,157.77 A88.00,88.00 0 0 0 133.79,176.00 Z" fill="#2DE2E6" fill-opacity="0.61" stroke="#07070C" stroke-width="1"/>
-<path d="M147.77,157.77 L116.03,126.03 A132.89,132.89 0 0 1 143.56,104.91 L166.00,143.79 A88.00,88.00 0 0 0 147.77,157.77 Z" fill="#2DE2E6" fill-opacity="0.75" stroke="#07070C" stroke-width="1"/>
-<path d="M166.00,143.79 L140.19,99.09 A139.61,139.61 0 0 1 173.87,85.15 L187.22,135.00 A88.00,88.00 0 0 0 166.00,143.79 Z" fill="#FF2D95" fill-opacity="0.85" stroke="#07070C" stroke-width="1"/>
+<path d="M295.00,242.78 L313.51,247.73 A107.16,107.16 0 0 1 302.80,273.58 L286.21,264.00 A88.00,88.00 0 0 0 295.00,242.78 Z" fill="#2DE2E6" fill-opacity="0.37" stroke="#07070C" stroke-width="1"/>
+<path d="M286.21,264.00 L303.30,273.87 A107.74,107.74 0 0 1 286.18,296.18 L272.23,282.23 A88.00,88.00 0 0 0 286.21,264.00 Z" fill="#2DE2E6" fill-opacity="0.38" stroke="#07070C" stroke-width="1"/>
+<path d="M272.23,282.23 L288.64,298.64 A111.21,111.21 0 0 1 265.61,316.31 L254.00,296.21 A88.00,88.00 0 0 0 272.23,282.23 Z" fill="#2DE2E6" fill-opacity="0.43" stroke="#07070C" stroke-width="1"/>
+<path d="M254.00,296.21 L265.32,315.81 A110.63,110.63 0 0 1 238.63,326.86 L232.78,305.00 A88.00,88.00 0 0 0 254.00,296.21 Z" fill="#2DE2E6" fill-opacity="0.42" stroke="#07070C" stroke-width="1"/>
+<path d="M232.78,305.00 L241.18,336.37 A120.47,120.47 0 0 1 210.00,340.47 L210.00,308.00 A88.00,88.00 0 0 0 232.78,305.00 Z" fill="#2DE2E6" fill-opacity="0.56" stroke="#07070C" stroke-width="1"/>
+<path d="M210.00,308.00 L210.00,331.21 A111.21,111.21 0 0 1 181.22,327.42 L187.22,305.00 A88.00,88.00 0 0 0 210.00,308.00 Z" fill="#2DE2E6" fill-opacity="0.43" stroke="#07070C" stroke-width="1"/>
+<path d="M187.22,305.00 L179.27,334.69 A118.74,118.74 0 0 1 150.63,322.83 L166.00,296.21 A88.00,88.00 0 0 0 187.22,305.00 Z" fill="#2DE2E6" fill-opacity="0.54" stroke="#07070C" stroke-width="1"/>
+<path d="M166.00,296.21 L146.29,330.35 A127.42,127.42 0 0 1 119.90,310.10 L147.77,282.23 A88.00,88.00 0 0 0 166.00,296.21 Z" fill="#2DE2E6" fill-opacity="0.67" stroke="#07070C" stroke-width="1"/>
+<path d="M147.77,282.23 L114.99,315.01 A134.37,134.37 0 0 1 93.63,287.18 L133.79,264.00 A88.00,88.00 0 0 0 147.77,282.23 Z" fill="#2DE2E6" fill-opacity="0.77" stroke="#07070C" stroke-width="1"/>
+<path d="M133.79,264.00 L94.64,286.61 A133.21,133.21 0 0 1 81.33,254.48 L125.00,242.78 A88.00,88.00 0 0 0 133.79,264.00 Z" fill="#2DE2E6" fill-opacity="0.75" stroke="#07070C" stroke-width="1"/>
+<path d="M125.00,242.78 L84.12,253.73 A130.32,130.32 0 0 1 79.68,220.00 L122.00,220.00 A88.00,88.00 0 0 0 125.00,242.78 Z" fill="#2DE2E6" fill-opacity="0.71" stroke="#07070C" stroke-width="1"/>
+<path d="M122.00,220.00 L82.00,220.00 A128.00,128.00 0 0 1 86.36,186.87 L125.00,197.22 A88.00,88.00 0 0 0 122.00,220.00 Z" fill="#2DE2E6" fill-opacity="0.68" stroke="#07070C" stroke-width="1"/>
+<path d="M125.00,197.22 L103.70,191.52 A110.05,110.05 0 0 1 114.69,164.97 L133.79,176.00 A88.00,88.00 0 0 0 125.00,197.22 Z" fill="#2DE2E6" fill-opacity="0.41" stroke="#07070C" stroke-width="1"/>
+<path d="M133.79,176.00 L104.66,159.18 A121.63,121.63 0 0 1 123.99,133.99 L147.77,157.77 A88.00,88.00 0 0 0 133.79,176.00 Z" fill="#2DE2E6" fill-opacity="0.58" stroke="#07070C" stroke-width="1"/>
+<path d="M147.77,157.77 L117.03,127.03 A131.47,131.47 0 0 1 144.26,106.14 L166.00,143.79 A88.00,88.00 0 0 0 147.77,157.77 Z" fill="#2DE2E6" fill-opacity="0.73" stroke="#07070C" stroke-width="1"/>
+<path d="M166.00,143.79 L141.08,100.63 A137.84,137.84 0 0 1 174.32,86.85 L187.22,135.00 A88.00,88.00 0 0 0 166.00,143.79 Z" fill="#FF2D95" fill-opacity="0.82" stroke="#07070C" stroke-width="1"/>
 <path d="M187.22,135.00 L171.18,75.11 A150.00,150.00 0 0 1 210.00,70.00 L210.00,132.00 A88.00,88.00 0 0 0 187.22,135.00 Z" fill="#FF2D95" fill-opacity="1.00" stroke="#07070C" stroke-width="1"/>
 <text x="210.0" y="56.0" text-anchor="middle" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">0</text>
 <text x="378.0" y="224.0" text-anchor="middle" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">6</text>
@@ -36,6 +36,6 @@
 <circle cx="210" cy="220" r="82" fill="#0B0B12" stroke="#E8E0D0" stroke-width="2"/>
 <text x="210" y="202" text-anchor="middle" fill="#FF2D95" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">さいこう</text>
 <text x="210" y="226" text-anchor="middle" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="700">23:00</text>
-<text x="210" y="248" text-anchor="middle" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">72 commits</text>
+<text x="210" y="248" text-anchor="middle" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">76 commits</text>
 <text x="210" y="266" text-anchor="middle" fill="#E8E0D0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">よる 35%</text>
 </svg>

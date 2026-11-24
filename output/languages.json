@@ -3,73 +3,73 @@
   "languages": [
     {
       "name": "PHP",
-      "bytes": 42267190,
-      "percent": 44.89
+      "bytes": 58398236,
+      "percent": 48.99
     },
     {
       "name": "JavaScript",
-      "bytes": 31907157,
-      "percent": 33.89
+      "bytes": 37143012,
+      "percent": 31.16
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 10154530,
-      "percent": 10.78
+      "percent": 8.52
     },
     {
       "name": "CSS",
-      "bytes": 3888959,
-      "percent": 4.13
+      "bytes": 7340203,
+      "percent": 6.16
     },
     {
       "name": "TypeScript",
       "bytes": 3091521,
-      "percent": 3.28
+      "percent": 2.59
     },
     {
       "name": "HTML",
       "bytes": 1114161,
-      "percent": 1.18
+      "percent": 0.93
     },
     {
       "name": "SCSS",
-      "bytes": 495220,
-      "percent": 0.53
+      "bytes": 698925,
+      "percent": 0.59
     },
     {
       "name": "Vue",
       "bytes": 388448,
-      "percent": 0.41
+      "percent": 0.33
     },
     {
       "name": "TeX",
       "bytes": 257523,
-      "percent": 0.27
+      "percent": 0.22
     },
     {
       "name": "Java",
       "bytes": 137855,
-      "percent": 0.15
+      "percent": 0.12
     },
     {
       "name": "Python",
       "bytes": 108170,
-      "percent": 0.11
+      "percent": 0.09
     },
     {
       "name": "Dart",
       "bytes": 79286,
-      "percent": 0.08
+      "percent": 0.07
     },
     {
       "name": "Processing",
       "bytes": 64858,
-      "percent": 0.07
+      "percent": 0.05
     },
     {
       "name": "Svelte",
       "bytes": 40765,
-      "percent": 0.04
+      "percent": 0.03
     },
     {
       "name": "R",
@@ -84,7 +84,7 @@
     {
       "name": "C++",
       "bytes": 29616,
-      "percent": 0.03
+      "percent": 0.02
     },
     {
       "name": "CMake",
@@ -102,13 +102,18 @@
       "percent": 0.02
     },
     {
-      "name": "Stylus",
-      "bytes": 3512,
-      "percent": 0.0
+      "name": "Handlebars",
+      "bytes": 17334,
+      "percent": 0.01
     },
     {
       "name": "Hack",
-      "bytes": 3187,
+      "bytes": 7222,
+      "percent": 0.01
+    },
+    {
+      "name": "Stylus",
+      "bytes": 3512,
       "percent": 0.0
     },
     {
@@ -160,33 +165,33 @@
   "domains": [
     {
       "name": "Backend",
-      "bytes": 42535462,
-      "percent": 45.17
+      "bytes": 58670543,
+      "percent": 49.22
     },
     {
       "name": "Frontend",
-      "bytes": 40978417,
-      "percent": 43.52
+      "bytes": 49886555,
+      "percent": 41.85
     },
     {
       "name": "Data / ML",
       "bytes": 10188509,
-      "percent": 10.82
+      "percent": 8.55
     },
     {
       "name": "Research / Docs",
       "bytes": 257523,
-      "percent": 0.27
+      "percent": 0.22
     },
     {
       "name": "Mobile",
       "bytes": 82925,
-      "percent": 0.09
+      "percent": 0.07
     },
     {
       "name": "Creative",
       "bytes": 64858,
-      "percent": 0.07
+      "percent": 0.05
     },
     {
       "name": "Systems",
@@ -232,11 +237,11 @@
     "16": 47,
     "17": 42,
     "18": 38,
-    "19": 9,
-    "20": 29,
+    "19": 7,
+    "20": 27,
     "21": 44,
     "22": 55,
-    "23": 72
+    "23": 76
   },
   "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"
