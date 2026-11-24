@@ -465,7 +465,11 @@ def build_loadout(
     よろい = languages / frameworks from repos
     じゅもん = AI SDKs + research spells
     """
-    weapons = [(n, sub, lv) for n, sub, lv in HARDWARE_WEAPONS]
+    weapons = sorted(
+        [(n, sub, lv) for n, sub, lv in HARDWARE_WEAPONS],
+        key=lambda x: x[2],
+        reverse=True,
+    )
 
     armor: list[tuple[str, str, int]] = []
     total_bytes = sum(lang_totals.values()) or 1
