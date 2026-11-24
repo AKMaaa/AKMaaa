@@ -69,13 +69,13 @@ jobs:
           options: >-
             username=${{ github.repository_owner }}&theme=radical&column=7&margin-w=8&margin-h=4&no-frame=true
 
-      - name: Contribution snake
+      - name: Contribution snake (litty cyan × badhop cream × pink)
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            output/github-snake.svg
-            output/github-snake-dark.svg?palette=github-dark
+            output/github-snake.svg?color_snake=#2DE2E6&color_dots=#0B0B10,#E8E0D0,#2DE2E6,#FF2D95,#FF9F1C
+            output/github-snake-dark.svg?color_snake=#FF2D95&color_dots=#07070C,#1A1A22,#2DE2E6,#E8E0D0,#FF2D95
 
       - name: Commit generated assets
         run: |

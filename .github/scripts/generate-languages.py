@@ -17,14 +17,16 @@ TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("PERSONAL_ACCESS_TOKEN"
 USERNAME = os.environ.get("USERNAME") or os.environ.get("GITHUB_ACTOR") or "AKMaaa"
 OUT_DIR = Path(os.environ.get("OUT_DIR") or "output")
 
-# Hot pink / electric cyan — distinct from default metrics look
-BG = "#0B0B10"
-PANEL = "#12121A"
+# Litty cyan × Badhop cream × brand pink — RPG / pixel night board
+BG = "#07070C"
+PANEL = "#101018"
 PINK = "#FF2D95"
 CYAN = "#2DE2E6"
+CREAM = "#E8E0D0"
 TEXT = "#F4F0F7"
 MUTED = "#9A93A5"
 BAR_TRACK = "#1E1E2A"
+SLOT = "#0B0B12"
 
 # GitHub linguist-ish colors (fallback hash if missing)
 LANG_COLORS: dict[str, str] = {
@@ -425,57 +427,193 @@ def collect_ai_toolkit(repos: list) -> dict[str, dict]:
     return out
 
 
-def render_ai_toolkit_svg(toolkit: dict[str, dict]) -> str:
-    ranked = sorted(toolkit.items(), key=lambda x: (x[1]["repos"], x[1]["hits"]), reverse=True)
-    width = 920
-    if not ranked:
-        height = 120
-        return "\n".join(
-            [
-                f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-                f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
-                f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.35"/>',
-                f'<text x="28" y="48" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">AI / LLM RADAR</text>',
-                f'<text x="28" y="78" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">no Gemini / OpenAI / LangChain signals in scanned manifests yet</text>',
-                "</svg>",
-            ]
-        )
+RPG_SLOT_KIND: dict[str, str] = {
+    "Gemini": "WEAPON",
+    "OpenAI": "WEAPON",
+    "Claude / Anthropic": "WEAPON",
+    "Mistral": "WEAPON",
+    "Cohere": "WEAPON",
+    "LangChain": "ARMOR",
+    "LangGraph": "ARMOR",
+    "Vercel AI SDK": "ARMOR",
+    "LlamaIndex": "ARMOR",
+    "Hugging Face": "SKILL",
+    "Ollama": "SKILL",
+}
 
-    pad_x = 24
-    pad_top = 62
-    row_h = 34
-    height = pad_top + 12 + len(ranked) * row_h + 24
-    max_repos = max(v["repos"] for _, v in ranked) or 1
-    bar_x = 240
-    bar_w = 520
+
+def render_ai_toolkit_svg(toolkit: dict[str, dict]) -> str:
+    """RPG inventory / loadout board for detected AI stack."""
+    width = 920
+    height = 320
+    ranked = sorted(toolkit.items(), key=lambda x: (x[1]["repos"], x[1]["hits"]), reverse=True)
+    buckets = {"WEAPON": [], "ARMOR": [], "SKILL": []}
+    for label, data in ranked:
+        kind = RPG_SLOT_KIND.get(label, "SKILL")
+        buckets[kind].append((label, data))
 
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="AI LLM toolkit radar">',
-        f'<rect width="100%" height="100%" rx="14" fill="{BG}"/>',
-        f'<rect x="10" y="10" width="{width-20}" height="{height-20}" rx="10" fill="{PANEL}" stroke="{PINK}" stroke-opacity="0.45"/>',
-        f'<text x="{pad_x}" y="36" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">AI / LLM RADAR</text>',
-        f'<text x="{width - pad_x}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">deps + manifests · private/org included</text>',
-        f'<text x="{pad_x}" y="52" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Gemini · OpenAI · Claude · LangChain… scanned from package.json / requirements / pyproject</text>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="crispEdges" role="img" aria-label="AI loadout RPG inventory">',
+        f'<rect width="100%" height="100%" fill="{BG}"/>',
+        f'<rect x="8" y="8" width="{width-16}" height="{height-16}" fill="{PANEL}" stroke="{CREAM}" stroke-width="2"/>',
+        f'<rect x="8" y="8" width="12" height="12" fill="{CYAN}"/>',
+        f'<rect x="{width-20}" y="8" width="12" height="12" fill="{PINK}"/>',
+        f'<rect x="8" y="{height-20}" width="12" height="12" fill="{PINK}"/>',
+        f'<rect x="{width-20}" y="{height-20}" width="12" height="12" fill="{CYAN}"/>',
+        f'<text x="28" y="36" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">LOADOUT // AI EQUIPMENT</text>',
+        f'<text x="{width-28}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">WEAPON · ARMOR · SKILL</text>',
     ]
 
-    palette = [PINK, CYAN, "#FF9F1C", "#A855F7", "#22C55E", "#38BDF8", "#F472B6", "#EAB308"]
-    for i, (label, data) in enumerate(ranked):
-        y = pad_top + i * row_h
-        fill = palette[i % len(palette)]
-        filled = max(8, bar_w * (data["repos"] / max_repos))
+    col_meta = [
+        ("WEAPON", 28, PINK, "⚔ ATK APIs"),
+        ("ARMOR", 328, CYAN, "🛡 FRAMEWORK"),
+        ("SKILL", 628, CREAM, "✦ UTILITY"),
+    ]
+    for kind, x0, accent, subtitle in col_meta:
         parts.append(
-            f'<text x="{pad_x}" y="{y + 18}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{escape(label)}</text>'
+            f'<rect x="{x0}" y="52" width="264" height="244" fill="{SLOT}" stroke="{accent}" stroke-width="2"/>'
         )
         parts.append(
-            f'<rect x="{bar_x}" y="{y + 8}" width="{bar_w}" height="12" rx="6" fill="{BAR_TRACK}"/>'
+            f'<rect x="{x0}" y="52" width="264" height="28" fill="{accent}"/>'
         )
         parts.append(
-            f'<rect x="{bar_x}" y="{y + 8}" width="{filled:.2f}" height="12" rx="6" fill="{fill}"/>'
+            f'<text x="{x0 + 132}" y="71" text-anchor="middle" fill="#07070C" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">{kind}</text>'
         )
         parts.append(
-            f'<text x="{width - pad_x}" y="{y + 18}" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">{data["repos"]} repos</text>'
+            f'<text x="{x0 + 132}" y="98" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">{escape(subtitle)}</text>'
+        )
+        items = buckets[kind][:4]
+        if not items:
+            parts.append(
+                f'<text x="{x0 + 132}" y="180" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">empty slot</text>'
+            )
+            continue
+        for i, (label, data) in enumerate(items):
+            y = 112 + i * 42
+            parts.append(
+                f'<rect x="{x0 + 14}" y="{y}" width="236" height="34" fill="#14141E" stroke="{accent}" stroke-opacity="0.55"/>'
+            )
+            parts.append(
+                f'<rect x="{x0 + 20}" y="{y + 7}" width="20" height="20" fill="{accent}"/>'
+            )
+            short = label if len(label) <= 18 else label[:17] + "…"
+            parts.append(
+                f'<text x="{x0 + 48}" y="{y + 15}" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">{escape(short)}</text>'
+            )
+            parts.append(
+                f'<text x="{x0 + 48}" y="{y + 28}" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">LV.{data["repos"]} · {data["hits"]} hits</text>'
+            )
+
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
+def _parse_commit_hour(iso: str) -> int | None:
+    # author date like 2026-01-02T15:04:05+09:00 or Z
+    if "T" not in iso:
+        return None
+    try:
+        from datetime import datetime, timezone, timedelta
+
+        jst = timezone(timedelta(hours=9))
+        dt = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(jst)
+        return dt.hour
+    except Exception:
+        return None
+
+
+def collect_commit_hours(repos: list) -> dict[int, int]:
+    """Hour-of-day histogram in Asia/Tokyo from recent authored commits."""
+    hours: dict[int, int] = defaultdict(int)
+    scan = repos[:35]
+    print(f"commit-hour scan: {len(scan)} repos")
+    for repo in scan:
+        full = repo["full_name"]
+        try:
+            commits = api(
+                f"https://api.github.com/repos/{full}/commits?author={urllib.parse.quote(USERNAME)}&per_page=40"
+            )
+        except urllib.error.HTTPError as exc:
+            print(f"skip commits {full}: {exc}")
+            continue
+        if not isinstance(commits, list):
+            continue
+        for c in commits:
+            try:
+                iso = c["commit"]["author"]["date"]
+            except (KeyError, TypeError):
+                continue
+            h = _parse_commit_hour(iso)
+            if h is not None:
+                hours[h] += 1
+    return dict(hours)
+
+
+def render_hour_ring_svg(hours: dict[int, int]) -> str:
+    import math
+
+    width, height = 420, 420
+    cx, cy, r_out, r_in = 210, 220, 150, 88
+    total = sum(hours.values()) or 1
+    peak_h = max(range(24), key=lambda h: hours.get(h, 0)) if hours else 0
+    peak_n = hours.get(peak_h, 0)
+    night = sum(hours.get(h, 0) for h in list(range(0, 6)) + list(range(22, 24)))
+    night_pct = round(100 * night / total)
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" shape-rendering="geometricPrecision" role="img" aria-label="Commit hour ring">',
+        f'<rect width="100%" height="100%" fill="{BG}"/>',
+        f'<rect x="8" y="8" width="{width-16}" height="{height-16}" fill="{PANEL}" stroke="{CREAM}" stroke-width="2"/>',
+        f'<text x="24" y="36" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700">CHRONO RING</text>',
+        f'<text x="{width-24}" y="36" text-anchor="end" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">JST · commit clock</text>',
+    ]
+
+    max_h = max(hours.values()) if hours else 1
+    for h in range(24):
+        start = -math.pi / 2 + (h / 24) * 2 * math.pi
+        end = -math.pi / 2 + ((h + 1) / 24) * 2 * math.pi
+        val = hours.get(h, 0)
+        t = val / max_h if max_h else 0
+        # night hours lean pink, day lean cyan
+        fill = PINK if h >= 22 or h < 6 else CYAN
+        if t == 0:
+            fill = "#22222C"
+            alpha = 0.55
+            rr = r_in + 18
+        else:
+            alpha = 0.35 + 0.65 * t
+            rr = r_in + 18 + (r_out - r_in - 18) * t
+        # wedge as path
+        x1, y1 = cx + r_in * math.cos(start), cy + r_in * math.sin(start)
+        x2, y2 = cx + rr * math.cos(start), cy + rr * math.sin(start)
+        x3, y3 = cx + rr * math.cos(end), cy + rr * math.sin(end)
+        x4, y4 = cx + r_in * math.cos(end), cy + r_in * math.sin(end)
+        large = 0
+        parts.append(
+            f'<path d="M{x1:.2f},{y1:.2f} L{x2:.2f},{y2:.2f} A{rr:.2f},{rr:.2f} 0 {large} 1 {x3:.2f},{y3:.2f} L{x4:.2f},{y4:.2f} A{r_in:.2f},{r_in:.2f} 0 {large} 0 {x1:.2f},{y1:.2f} Z" fill="{fill}" fill-opacity="{alpha:.2f}" stroke="{BG}" stroke-width="1"/>'
         )
 
+    # labels N/E/S/W
+    for label, ang in (("0", -math.pi / 2), ("6", 0), ("12", math.pi / 2), ("18", math.pi)):
+        lx = cx + (r_out + 18) * math.cos(ang)
+        ly = cy + (r_out + 18) * math.sin(ang) + 4
+        parts.append(
+            f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" fill="{MUTED}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{label}</text>'
+        )
+
+    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r_in-6}" fill="{SLOT}" stroke="{CREAM}" stroke-width="2"/>')
+    parts.append(
+        f'<text x="{cx}" y="{cy - 18}" text-anchor="middle" fill="{PINK}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">PEAK</text>'
+    )
+    parts.append(
+        f'<text x="{cx}" y="{cy + 6}" text-anchor="middle" fill="{TEXT}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="700">{peak_h:02d}:00</text>'
+    )
+    parts.append(
+        f'<text x="{cx}" y="{cy + 28}" text-anchor="middle" fill="{CYAN}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">{peak_n} commits</text>'
+    )
+    parts.append(
+        f'<text x="{cx}" y="{cy + 46}" text-anchor="middle" fill="{CREAM}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">NIGHT {night_pct}%</text>'
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 
@@ -580,6 +718,12 @@ def main() -> None:
     ai_path.write_text(ai_svg, encoding="utf-8")
     print(f"wrote {ai_path} ({len(toolkit)} signals)")
 
+    hour_hist = collect_commit_hours(repos)
+    hour_svg = render_hour_ring_svg(hour_hist)
+    hour_path = OUT_DIR / "hour-ring.svg"
+    hour_path.write_text(hour_svg, encoding="utf-8")
+    print(f"wrote {hour_path} ({sum(hour_hist.values())} commits sampled)")
+
     icons_url = render_skillicons(totals)
     d_totals = domain_totals(totals)
     d_sum = sum(d_totals.values()) or 1
@@ -594,6 +738,7 @@ def main() -> None:
             for n, b in sorted(d_totals.items(), key=lambda x: x[1], reverse=True)
         ],
         "ai_toolkit": toolkit,
+        "commit_hours_jst": {str(k): v for k, v in sorted(hour_hist.items())},
         "skillicons": icons_url,
         "note": "YAML/GitHub Actions often under-counted by the languages API",
     }
