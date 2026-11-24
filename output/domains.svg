@@ -9,29 +9,29 @@
 <text x="54" y="78" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Backend</text>
 <text x="54" y="92" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">PHP, Java, Python, Go</text>
 <rect x="200" y="76" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="76" width="275.62" height="12" rx="6" fill="#FF2D95"/>
-<text x="880" y="86" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">49.2%</text>
+<rect x="200" y="76" width="252.97" height="12" rx="6" fill="#FF2D95"/>
+<text x="880" y="86" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">45.2%</text>
 <rect x="24" y="104" width="22" height="22" rx="6" fill="#38BDF8"/>
 <text x="35" y="119" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">FE</text>
 <text x="54" y="114" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Frontend</text>
 <text x="54" y="128" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">JavaScript, CSS, TypeScript, HTML</text>
 <rect x="200" y="112" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="112" width="234.36" height="12" rx="6" fill="#38BDF8"/>
-<text x="880" y="122" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">41.8%</text>
+<rect x="200" y="112" width="243.71" height="12" rx="6" fill="#38BDF8"/>
+<text x="880" y="122" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">43.5%</text>
 <rect x="24" y="140" width="22" height="22" rx="6" fill="#FF9F1C"/>
 <text x="35" y="155" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">ML</text>
 <text x="54" y="150" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Data / ML</text>
 <text x="54" y="164" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Jupyter Notebook, R, PLpgSQL</text>
 <rect x="200" y="148" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="148" width="47.86" height="12" rx="6" fill="#FF9F1C"/>
-<text x="880" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">8.5%</text>
+<rect x="200" y="148" width="60.59" height="12" rx="6" fill="#FF9F1C"/>
+<text x="880" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">10.8%</text>
 <rect x="24" y="176" width="22" height="22" rx="6" fill="#EAB308"/>
 <text x="35" y="191" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">RD</text>
 <text x="54" y="186" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Research / Docs</text>
 <text x="54" y="200" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">TeX</text>
 <rect x="200" y="184" width="560" height="12" rx="6" fill="#1E1E2A"/>
 <rect x="200" y="184" width="4.00" height="12" rx="6" fill="#EAB308"/>
-<text x="880" y="194" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.2%</text>
+<text x="880" y="194" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">0.3%</text>
 <rect x="24" y="212" width="22" height="22" rx="6" fill="#A855F7"/>
 <text x="35" y="227" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">MO</text>
 <text x="54" y="222" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Mobile</text>
