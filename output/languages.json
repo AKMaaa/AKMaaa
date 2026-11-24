@@ -219,6 +219,30 @@
       "hits": 2
     }
   },
+  "commit_hours_jst": {
+    "0": 32,
+    "1": 19,
+    "2": 14,
+    "3": 4,
+    "4": 1,
+    "7": 2,
+    "8": 3,
+    "9": 9,
+    "10": 8,
+    "11": 25,
+    "12": 9,
+    "13": 22,
+    "14": 37,
+    "15": 49,
+    "16": 47,
+    "17": 42,
+    "18": 38,
+    "19": 10,
+    "20": 29,
+    "21": 44,
+    "22": 55,
+    "23": 71
+  },
   "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,svelte,r,astro,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"
 }

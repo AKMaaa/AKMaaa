@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="440" viewBox="0 0 920 440" role="img" aria-label="Language spectrum for AKMaaa">
-<rect width="100%" height="100%" rx="14" fill="#0B0B10"/>
-<rect x="10" y="10" width="900" height="420" rx="10" fill="#12121A" stroke="#FF2D95" stroke-opacity="0.35"/>
+<rect width="100%" height="100%" rx="14" fill="#07070C"/>
+<rect x="10" y="10" width="900" height="420" rx="10" fill="#101018" stroke="#FF2D95" stroke-opacity="0.35"/>
 <text x="20" y="34" fill="#FF2D95" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">LANGUAGE SPECTRUM</text>
 <text x="900" y="34" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">AKMaaa · private + org · 32 langs</text>
 <rect x="20" y="58" width="16" height="16" rx="4" fill="#4F5D95"/>
