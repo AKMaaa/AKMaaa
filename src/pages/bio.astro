@@ -1,6 +1,8 @@
 ---
+import { withBase } from '../library/paths';
+
 /**
  * /bio は /profile に統合。旧 URL からの誘導用。
  */
-return Astro.redirect('/profile', 301);
+return Astro.redirect(withBase('/profile/'), 301);
 ---

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formatDate } from '../../library/format';
 import { getNews, hasMicroCMSCredentials } from '../../library/microcms';
+import { withBase } from '../../library/paths';
 
 const items = await getNews();
 const emptyMessage = hasMicroCMSCredentials()
@@ -22,7 +23,7 @@ const emptyMessage = hasMicroCMSCredentials()
 			<ul class="news-index">
 				{items.map((item) => (
 					<li>
-						<a class="news-index-item" href={`/news/${item.id}/`}>
+						<a class="news-index-item" href={withBase(`/news/${item.id}/`)}>
 							<span class="news-index-date">
 								{item.date ? (
 									<time datetime={item.date}>{formatDate(item.date)}</time>

@@ -1,3 +1,5 @@
+import { withBase } from '../library/paths';
+
 export type CareerType = 'employment' | 'parttime' | 'internship' | 'side' | 'education';
 
 export type CareerItem = {
@@ -272,7 +274,7 @@ export const socials: SocialLink[] = [
 export const contactEmail = 'akira.vvs@upskillingjp.org';
 
 export const orgLogoUrl = (item: Pick<CareerItem, 'logoPath' | 'logoDomain'>) => {
-	if (item.logoPath) return item.logoPath;
+	if (item.logoPath) return withBase(item.logoPath);
 	if (item.logoDomain) {
 		return `https://www.google.com/s2/favicons?domain=${item.logoDomain}&sz=128`;
 	}
@@ -284,7 +286,7 @@ export const skillIconUrl = (slug: string) =>
 	`https://cdn.simpleicons.org/${slug}/57534e`;
 
 export const skillImageUrl = (skill: SkillItem) => {
-	if (skill.iconPath) return skill.iconPath;
+	if (skill.iconPath) return withBase(skill.iconPath);
 	if (skill.icon) return skillIconUrl(skill.icon);
 	return '';
 };

@@ -6,6 +6,7 @@ import {
 	getNewsDetail,
 	getNewsNeighbors,
 } from '../../library/microcms';
+import { withBase } from '../../library/paths';
 
 export async function getStaticPaths() {
 	const items = await getNews();
@@ -17,13 +18,13 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 
 if (!id) {
-	return Astro.redirect('/news/');
+	return Astro.redirect(withBase('/news/'));
 }
 
 const item = await getNewsDetail(id);
 
 if (!item) {
-	return Astro.redirect('/news/');
+	return Astro.redirect(withBase('/news/'));
 }
 
 const { newer, older } = await getNewsNeighbors(id);
@@ -86,7 +87,7 @@ const { newer, older } = await getNewsNeighbors(id);
 		<nav class="article-nav" aria-label="前後の記事">
 			{
 				older ? (
-					<a class="article-nav-link is-older" href={`/news/${older.id}/`}>
+					<a class="article-nav-link is-older" href={withBase(`/news/${older.id}/`)}>
 						<span class="article-nav-label">older</span>
 						<span class="article-nav-title">{older.title}</span>
 					</a>
@@ -96,7 +97,7 @@ const { newer, older } = await getNewsNeighbors(id);
 			}
 			{
 				newer ? (
-					<a class="article-nav-link is-newer" href={`/news/${newer.id}/`}>
+					<a class="article-nav-link is-newer" href={withBase(`/news/${newer.id}/`)}>
 						<span class="article-nav-label">newer</span>
 						<span class="article-nav-title">{newer.title}</span>
 					</a>
@@ -107,7 +108,7 @@ const { newer, older } = await getNewsNeighbors(id);
 		</nav>
 
 		<p class="article-back">
-			<a href="/news/">← news</a>
+			<a href={withBase('/news/')}>← news</a>
 		</p>
 	</article>
 </BaseLayout>
