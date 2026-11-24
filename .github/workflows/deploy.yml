@@ -1,21 +1,51 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
+  # 古い「Deploy from a branch / Jekyll」が併走して赤くなるのを止める
+  setup-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure Pages source is GitHub Actions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          current=$(gh api "repos/${{ github.repository }}/pages" 2>/dev/null)
+          echo "$current" | head -c 500; echo
+          if [ -z "$current" ]; then
+            gh api --method POST "repos/${{ github.repository }}/pages" \
+              -H "Accept: application/vnd.github+json" \
+              -f build_type=workflow
+          else
+            gh api --method PUT "repos/${{ github.repository }}/pages" \
+              -H "Accept: application/vnd.github+json" \
+              -f build_type=workflow
+          fi
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "::warning::Could not switch Pages to Actions automatically."
+            echo "Do this once: Settings → Pages → Source → GitHub Actions"
+            exit 0
+          fi
+          gh api "repos/${{ github.repository }}/pages" --jq '{build_type,html_url,status}'
+
   build:
+    needs: setup-pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -30,7 +60,6 @@ jobs:
         # GitHub → Settings → Secrets and variables → Actions に
         # MICROCMS_* / PUBLIC_TURNSTILE_SITE_KEY / PUBLIC_CONTACT_API_URL
         # Turnstile の Secret Key は Worker の Encrypted Secret のみ
-        # （workers/contact → wrangler secret put TURNSTILE_SECRET_KEY）
 
   deploy:
     needs: build
