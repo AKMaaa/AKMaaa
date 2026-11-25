@@ -4,27 +4,27 @@
     {
       "name": "PHP",
       "bytes": 58398236,
-      "percent": 48.97
+      "percent": 48.95
     },
     {
       "name": "JavaScript",
       "bytes": 37143202,
-      "percent": 31.15
+      "percent": 31.13
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 10154530,
-      "percent": 8.52
+      "percent": 8.51
     },
     {
       "name": "CSS",
       "bytes": 7341094,
-      "percent": 6.16
+      "percent": 6.15
     },
     {
       "name": "TypeScript",
-      "bytes": 3126063,
-      "percent": 2.62
+      "bytes": 3178911,
+      "percent": 2.66
     },
     {
       "name": "HTML",
@@ -166,12 +166,12 @@
     {
       "name": "Backend",
       "bytes": 58670543,
-      "percent": 49.2
+      "percent": 49.18
     },
     {
       "name": "Frontend",
-      "bytes": 49933853,
-      "percent": 41.87
+      "bytes": 49986701,
+      "percent": 41.9
     },
     {
       "name": "Data / ML",
@@ -220,7 +220,7 @@
     }
   },
   "commit_hours_jst": {
-    "0": 32,
+    "0": 33,
     "1": 20,
     "2": 14,
     "3": 4,
@@ -236,12 +236,12 @@
     "15": 49,
     "16": 47,
     "17": 42,
-    "18": 38,
+    "18": 37,
     "19": 7,
     "20": 24,
     "21": 44,
-    "22": 55,
-    "23": 78
+    "22": 54,
+    "23": 79
   },
   "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"

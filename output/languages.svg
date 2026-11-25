@@ -7,19 +7,19 @@
 <text x="28.0" y="69" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">PH</text>
 <text x="42" y="70" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">PHP</text>
 <rect x="138" y="61" width="272" height="8" rx="4" fill="#1E1E2A"/>
-<rect x="138" y="61" width="133.20" height="8" rx="4" fill="#4F5D95"/>
-<text x="448" y="70" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">49.0%</text>
+<rect x="138" y="61" width="133.14" height="8" rx="4" fill="#4F5D95"/>
+<text x="448" y="70" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">48.9%</text>
 <rect x="20" y="80" width="16" height="16" rx="4" fill="#f1e05a"/>
 <text x="28.0" y="91" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">JA</text>
 <text x="42" y="92" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">JavaScript</text>
 <rect x="138" y="83" width="272" height="8" rx="4" fill="#1E1E2A"/>
-<rect x="138" y="83" width="84.72" height="8" rx="4" fill="#f1e05a"/>
+<rect x="138" y="83" width="84.68" height="8" rx="4" fill="#f1e05a"/>
 <text x="448" y="92" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">31.1%</text>
 <rect x="20" y="102" width="16" height="16" rx="4" fill="#DA5B0B"/>
 <text x="28.0" y="113" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">JU</text>
 <text x="42" y="114" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Jupyter Not…</text>
 <rect x="138" y="105" width="272" height="8" rx="4" fill="#1E1E2A"/>
-<rect x="138" y="105" width="23.16" height="8" rx="4" fill="#DA5B0B"/>
+<rect x="138" y="105" width="23.15" height="8" rx="4" fill="#DA5B0B"/>
 <text x="448" y="114" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">8.5%</text>
 <rect x="20" y="124" width="16" height="16" rx="4" fill="#563d7c"/>
 <text x="28.0" y="135" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">CS</text>
@@ -31,8 +31,8 @@
 <text x="28.0" y="157" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">TY</text>
 <text x="42" y="158" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">TypeScript</text>
 <rect x="138" y="149" width="272" height="8" rx="4" fill="#1E1E2A"/>
-<rect x="138" y="149" width="7.13" height="8" rx="4" fill="#3178c6"/>
-<text x="448" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">2.6%</text>
+<rect x="138" y="149" width="7.25" height="8" rx="4" fill="#3178c6"/>
+<text x="448" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">2.7%</text>
 <rect x="20" y="168" width="16" height="16" rx="4" fill="#e34c26"/>
 <text x="28.0" y="179" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">HT</text>
 <text x="42" y="180" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">HTML</text>
