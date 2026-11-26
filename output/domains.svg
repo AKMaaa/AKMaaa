@@ -9,21 +9,21 @@
 <text x="54" y="78" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Backend</text>
 <text x="54" y="92" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">PHP, Java, Python, Go</text>
 <rect x="200" y="76" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="76" width="275.39" height="12" rx="6" fill="#FF2D95"/>
+<rect x="200" y="76" width="275.33" height="12" rx="6" fill="#FF2D95"/>
 <text x="880" y="86" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">49.2%</text>
 <rect x="24" y="104" width="22" height="22" rx="6" fill="#38BDF8"/>
 <text x="35" y="119" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">FE</text>
 <text x="54" y="114" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Frontend</text>
 <text x="54" y="128" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">JavaScript, CSS, TypeScript, HTML</text>
 <rect x="200" y="112" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="112" width="234.63" height="12" rx="6" fill="#38BDF8"/>
+<rect x="200" y="112" width="234.70" height="12" rx="6" fill="#38BDF8"/>
 <text x="880" y="122" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">41.9%</text>
 <rect x="24" y="140" width="22" height="22" rx="6" fill="#FF9F1C"/>
 <text x="35" y="155" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">ML</text>
 <text x="54" y="150" fill="#F4F0F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">Data / ML</text>
 <text x="54" y="164" fill="#9A93A5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Jupyter Notebook, R, PLpgSQL</text>
 <rect x="200" y="148" width="560" height="12" rx="6" fill="#1E1E2A"/>
-<rect x="200" y="148" width="47.82" height="12" rx="6" fill="#FF9F1C"/>
+<rect x="200" y="148" width="47.81" height="12" rx="6" fill="#FF9F1C"/>
 <text x="880" y="158" text-anchor="end" fill="#2DE2E6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">8.5%</text>
 <rect x="24" y="176" width="22" height="22" rx="6" fill="#EAB308"/>
 <text x="35" y="191" text-anchor="middle" fill="#0B0B10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700">RD</text>

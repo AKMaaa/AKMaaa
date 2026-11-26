@@ -4,12 +4,12 @@
     {
       "name": "PHP",
       "bytes": 58398236,
-      "percent": 48.95
+      "percent": 48.94
     },
     {
       "name": "JavaScript",
-      "bytes": 37143202,
-      "percent": 31.13
+      "bytes": 37164730,
+      "percent": 31.14
     },
     {
       "name": "Jupyter Notebook",
@@ -18,7 +18,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 7341094,
+      "bytes": 7344598,
       "percent": 6.15
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 1114161,
+      "bytes": 1114195,
       "percent": 0.93
     },
     {
@@ -166,12 +166,12 @@
     {
       "name": "Backend",
       "bytes": 58670543,
-      "percent": 49.18
+      "percent": 49.17
     },
     {
       "name": "Frontend",
-      "bytes": 49986701,
-      "percent": 41.9
+      "bytes": 50011767,
+      "percent": 41.91
     },
     {
       "name": "Data / ML",
@@ -239,9 +239,9 @@
     "18": 37,
     "19": 7,
     "20": 24,
-    "21": 44,
-    "22": 54,
-    "23": 79
+    "21": 46,
+    "22": 53,
+    "23": 78
   },
   "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"
