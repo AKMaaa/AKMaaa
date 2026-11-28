@@ -4,22 +4,22 @@
     {
       "name": "PHP",
       "bytes": 58398236,
-      "percent": 48.94
+      "percent": 48.88
     },
     {
       "name": "JavaScript",
       "bytes": 37160744,
-      "percent": 31.14
+      "percent": 31.11
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 10154530,
-      "percent": 8.51
+      "percent": 8.5
     },
     {
       "name": "CSS",
       "bytes": 7344598,
-      "percent": 6.16
+      "percent": 6.15
     },
     {
       "name": "TypeScript",
@@ -45,6 +45,11 @@
       "name": "TeX",
       "bytes": 257523,
       "percent": 0.22
+    },
+    {
+      "name": "C#",
+      "bytes": 138707,
+      "percent": 0.12
     },
     {
       "name": "Java",
@@ -132,6 +137,11 @@
       "percent": 0.0
     },
     {
+      "name": "ShaderLab",
+      "bytes": 1637,
+      "percent": 0.0
+    },
+    {
       "name": "C",
       "bytes": 1425,
       "percent": 0.0
@@ -165,18 +175,18 @@
   "domains": [
     {
       "name": "Backend",
-      "bytes": 58670543,
-      "percent": 49.17
+      "bytes": 58809250,
+      "percent": 49.23
     },
     {
       "name": "Frontend",
       "bytes": 50007781,
-      "percent": 41.91
+      "percent": 41.86
     },
     {
       "name": "Data / ML",
       "bytes": 10188509,
-      "percent": 8.54
+      "percent": 8.53
     },
     {
       "name": "Research / Docs",
@@ -205,7 +215,7 @@
     },
     {
       "name": "Other",
-      "bytes": 613,
+      "bytes": 2250,
       "percent": 0.0
     }
   ],
@@ -243,6 +253,6 @@
     "22": 53,
     "23": 78
   },
-  "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12",
+  "skillicons": "https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,cs,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12",
   "note": "YAML/GitHub Actions often under-counted by the languages API"
 }

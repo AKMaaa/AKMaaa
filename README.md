@@ -182,7 +182,7 @@ Let's build something amazing together! 💖
 
 <!-- SKILLICONS:START -->
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12" alt="Skill icons" />
+  <img src="https://skillicons.dev/icons?i=php,js,css,ts,html,sass,vue,cs,java,py,dart,astro,svelte,r,cpp,go,swift,docker,c,kotlin,bash&perline=12" alt="Skill icons" />
 </p>
 <!-- SKILLICONS:END -->
 
